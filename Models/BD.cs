@@ -46,22 +46,33 @@ public static class BD
             connection.Execute(query, new {pLogin = DateTime.Now, pId = idUsuario});
         }
     }
-
-     public static void subirPublicacion(Publicacion publicacion)
-    {
-        string query = "INSERT INTO PublicacionLista (IdPublicacion, IdUsuario, IdEtiqueta, Descripcion, Foto, Precio) VALUES (@pIdPublicacion, @pIdUsuario, @pIdEtiqueta, @pDescripcion, @pFoto, @pPrecio)";
-
-    using (SqlConnection connection = new SqlConnection(_connectionString))
-
+public static void subirPublicacion(Publicacion publicacion)
+{
+    string query = "INSERT INTO PublicacionLista (IdPublicacion, IdUsuario, IdEtiqueta, Descripcion, Foto, Precio) VALUES (@pIdPublicacion, @pIdUsuario, @pIdEtiqueta, @pDescripcion, @pFoto, @pPrecio)";
+    try
+    { 
+        using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new {pIdPublicacion = publicacion.idPublicacion,
-            pIdUsuario = publicacion.idUsuario,
-            pIdEtiqueta = publicacion.idEtiqueta,
-            pDescripcion = publicacion.descripcion,
-            pFoto = publicacion.foto,
-            pPrecio = publicacion.precio});
+            connection.Execute(query, new 
+            {
+                pIdPublicacion = publicacion.idPublicacion,
+                pIdUsuario = publicacion.idUsuario,
+                pIdEtiqueta = publicacion.idEtiqueta,
+                pDescripcion = publicacion.descripcion,
+                pFoto = publicacion.foto,
+                pPrecio = publicacion.precio
+            });
         }
+    } 
+    catch (Exception e) 
+    {
+        // Registrar el error (puedes cambiar esto por tu sistema de logging preferido)
+        Console.WriteLine("Error al subir publicación: " + e.Message);
+        // Si prefieres, puedes lanzar la excepción nuevamente:
+        // throw;
     }
+}
+    
 public static Publicacion devolverPublicacion(int idPublicacion)
 {
     using (SqlConnection connection = new SqlConnection(_connectionString))
