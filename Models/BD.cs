@@ -48,13 +48,12 @@ public static class BD
     }
     public static bool subirPublicacion(Publicacion publicacion)
     {
-        string query = "INSERT INTO Publicaciones (IdUsuario, IdEtiqueta, Descripcion, Foto, Precio) VALUES (@pIdUsuario, @pIdEtiqueta, @pDescripcion, @pFoto, @pPrecio)";
+        string query = "INSERT INTO Publicaciones (IdUsuario, Descripcion, Foto, Precio) VALUES (@pIdUsuario, @pIdEtiqueta, @pDescripcion, @pFoto, @pPrecio)";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             connection.Execute(query, new
             {
                 pIdUsuario = publicacion.idUsuario,
-                pIdEtiqueta = publicacion.idEtiqueta,
                 pDescripcion = publicacion.descripcion,
                 pFoto = publicacion.foto,
                 pPrecio = publicacion.precio
@@ -90,6 +89,16 @@ public static class BD
         }
         return publicaciones;
     }
+    public static List<Publicacion> devolverPublicacionesBuscador(string texto)
+    {
+        List<Publicacion> publicaciones;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM Publicaciones WHERE Descripcion LIKE '%@ptexto%'";
+            publicaciones = connection.Query<Publicacion>(query, new { ptexto = texto }).ToList();
+        }
+        return publicaciones;
+    }
     public static bool eliminarPublicacion(int idPublicacion)
     {
         string query = "DELETE FROM Publicaciones WHERE IdPublicacion = @pIdPublicacion";
@@ -107,5 +116,33 @@ public static class BD
             eliminado = true;
         }
         return eliminado;
+    }
+    public static void agregarLista(int idPublicacion, int idLista)
+    {
+        string query = "INSERT INTO PublicacionLista (IdPublicacion, IdLista) VALUES (@pIdPublicacion, @pIdLista)";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Execute(query, new
+            {
+                pIdPublicacion = idPublicacion;
+                pIdLista = idLista;
+            });
+        }
+    }
+    public static void editarPublicacion(int idPublicacion, int IdUsuario, string Descripcion, string Foto, decimal Precio)
+    {
+        string query = "UPDATE Publicaciones SET IdUsuario = @pIdUsuario, Descripcion = @pDescripcion, Foto = @pFoto, Precio = @pPrecio WHERE IdPublicacion = @pIdPublicacion";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Execute(query, new { pIdUsuario = IdUsuario, pDescripcion = Descripcion, pFoto = Foto, pPrecio = Precio, pIdPublicacion = IdPublicacion });
+        }
+    }
+    public static void editarUsuario(int idUsuario, string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono)
+    {
+        string query = "UPDATE Usuarios SET Email = @pEmail, Contrasenia = @pContrasenia, NombreUsuario = @pNombreUsuario, NombreCompleto = @pNombreCompleto, Pais = @pPais, Telefono = @pTelefono WHERE IdUsuario = @pIdUsuario";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Execute(query, new { pEmail = email, pContrasenia = contrasenia, pNombreUsuario = nombreUsuario, pNombreCompleto = nombreCompleto, pPais = pais, pTelefono = telefono, pIdUsuario = idUsuario });
+        }
     }
 }
