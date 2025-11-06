@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z4iumIJs+R1p6M0Cmt3YAQBhc7NHNPLj5PYEULi1HPKIxPy/7CXTqk1u/agbcxYqTnQttcARC+SplwHy2WgyLw==",
+  "dgSpecHash": "c0KHHgBDoYUaoLt5WZ2xT3HW36PH93bPPDjGXNY1T2tOPcMbhoOBGdb7KrA7oMWxtfIZz9itGOXvHfFBdEU3/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\49002222\\ReEstrena\\ReEstrena.csproj",
+  "projectFilePath": "C:\\Users\\49002222\\Re-Estrena\\ReEstrena.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\49002222\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\49002222\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

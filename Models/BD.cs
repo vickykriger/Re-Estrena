@@ -1,6 +1,8 @@
+namespace ReEstrena.Models;
 using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
 using Dapper;
+
 public static class BD
 {
     private static string _connectionString = @"Server=localhost;
@@ -124,11 +126,12 @@ public static class BD
         {
             connection.Execute(query, new
             {
-                pIdPublicacion = idPublicacion;
-                pIdLista = idLista;
+                pIdPublicacion = idPublicacion,
+                pIdLista = idLista,
             });
         }
     }
+
     public static void editarPublicacion(int idPublicacion, int IdUsuario, string Descripcion, string Foto, decimal Precio)
     {
         string query = "UPDATE Publicaciones SET IdUsuario = @pIdUsuario, Descripcion = @pDescripcion, Foto = @pFoto, Precio = @pPrecio WHERE IdPublicacion = @pIdPublicacion";

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\49002222\\ReEstrena\\ReEstrena.csproj": {}
+    "C:\\Users\\49002222\\Re-Estrena\\ReEstrena.csproj": {}
   },
   "projects": {
-    "C:\\Users\\49002222\\ReEstrena\\ReEstrena.csproj": {
+    "C:\\Users\\49002222\\Re-Estrena\\ReEstrena.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\49002222\\ReEstrena\\ReEstrena.csproj",
+        "projectUniqueName": "C:\\Users\\49002222\\Re-Estrena\\ReEstrena.csproj",
         "projectName": "ReEstrena",
-        "projectPath": "C:\\Users\\49002222\\ReEstrena\\ReEstrena.csproj",
+        "projectPath": "C:\\Users\\49002222\\Re-Estrena\\ReEstrena.csproj",
         "packagesPath": "C:\\Users\\49002222\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49002222\\ReEstrena\\obj\\",
+        "outputPath": "C:\\Users\\49002222\\Re-Estrena\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

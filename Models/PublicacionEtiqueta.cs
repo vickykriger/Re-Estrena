@@ -3,14 +3,15 @@ using Microsoft.AspNetCore.Mvc;
 using ReEstrena.Models;
 using Microsoft.Data.SqlClient;
 using Dapper;
+using Newtonsoft.Json;
 
 namespace ReEstrena.Models
 {
     public class PublicacionEtiqueta
     {
-        public int IdPublicacionEtiqueta { get; set; }
-        public int IdPublicacion { get; set; }
-        public int IdEtiqueta { get; set; }
+        public int IdPublicacionEtiqueta { get; private set; }
+        public int IdPublicacion { get; private set; }
+        public int IdEtiqueta { get; private set; }
 
         public PublicacionEtiqueta() { }
 

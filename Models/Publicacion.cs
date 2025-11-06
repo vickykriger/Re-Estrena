@@ -3,16 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 using ReEstrena.Models;
 using Microsoft.Data.SqlClient;
 using Dapper;
+using Newtonsoft.Json;
 
 namespace ReEstrena.Models
 {
     public class Publicacion
     {
-        public int IdPublicacion { get; set; }
-        public int IdUsuario { get; set; }
-        public string Descripcion { get; set; }
-        public string Foto { get; set; }
-        public decimal Precio { get; set; }
+        public int IdPublicacion { get; private set; }
+        public int IdUsuario { get; private set; }
+        public string Descripcion { get; private set; }
+        public string Foto { get; private set; }
+        public decimal Precio { get; private set; }
 
         public Publicacion() { }
 

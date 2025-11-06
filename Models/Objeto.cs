@@ -1,3 +1,4 @@
+using ReEstrena.Models;
 using Newtonsoft.Json;
 using Dapper;
 public static class Objeto
