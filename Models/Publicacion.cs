@@ -14,7 +14,7 @@ namespace ReEstrena.Models
         public string Descripcion { get; private set; }
         public string Foto { get; private set; }
         public decimal Precio { get; private set; }
-
+        public string NombreProducto { get; private set; }
         public Publicacion() { }
 
         public Publicacion(int idPublicacion, int idUsuario, string descripcion, string foto, decimal precio)

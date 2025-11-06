@@ -59,6 +59,7 @@ CREATE TABLE [dbo].[Publicaciones](
 	[Descripcion] [nvarchar](50) NOT NULL,
 	[Foto] [nvarchar](50) NOT NULL,
 	[Precio] [float] NOT NULL,
+	[NombreProducto] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Publicaciones] PRIMARY KEY CLUSTERED 
 (
 	[IdPublicacion] ASC
