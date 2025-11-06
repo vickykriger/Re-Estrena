@@ -109,6 +109,7 @@ CREATE TABLE [dbo].[Usuarios](
 	[NombreCompleto] [nvarchar](50) NOT NULL,
 	[Pais] [nvarchar](50) NOT NULL,
 	[Telefono] [int] NOT NULL,
+	[Foto] [nvarchar](50) NULL,
  CONSTRAINT [PK_Usuarios] PRIMARY KEY CLUSTERED 
 (
 	[IdUsuario] ASC

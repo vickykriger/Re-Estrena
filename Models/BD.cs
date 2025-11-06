@@ -19,10 +19,10 @@ public static class BD
         }
         if (validar == null)
         {
-            string query = "INSERT INTO Usuarios (Email, Contrasenia, Usuario, NombreCompleto, Pais, Telefono) VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono)";
+            string query = "INSERT INTO Usuarios (Email, Contrasenia, Usuario, NombreCompleto, Pais, Telefono, Foto) VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono, @pFoto)";
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono });
+                connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pFoto = user.Foto });
             }
             registrado = true;
         }
@@ -131,12 +131,12 @@ public static class BD
             connection.Execute(query, new { pIdUsuario = IdUsuario, pDescripcion = Descripcion, pFoto = Foto, pPrecio = Precio, pIdPublicacion = IdPublicacion, pNombreProducto = NombreProducto });
         }
     }
-    public static void editarUsuario(int idUsuario, string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono)
+    public static void editarUsuario(int idUsuario, string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono, string foto)
     {
-        string query = "UPDATE Usuarios SET Email = @pEmail, Contrasenia = @pContrasenia, NombreUsuario = @pNombreUsuario, NombreCompleto = @pNombreCompleto, Pais = @pPais, Telefono = @pTelefono WHERE IdUsuario = @pIdUsuario";
+        string query = "UPDATE Usuarios SET Email = @pEmail, Contrasenia = @pContrasenia, NombreUsuario = @pNombreUsuario, NombreCompleto = @pNombreCompleto, Pais = @pPais, Telefono = @pTelefono WHERE IdUsuario = @pIdUsuario, Foto = @pFoto";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pEmail = email, pContrasenia = contrasenia, pNombreUsuario = nombreUsuario, pNombreCompleto = nombreCompleto, pPais = pais, pTelefono = telefono, pIdUsuario = idUsuario });
+            connection.Execute(query, new { pEmail = email, pContrasenia = contrasenia, pNombreUsuario = nombreUsuario, pNombreCompleto = nombreCompleto, pPais = pais, pTelefono = telefono, pIdUsuario = idUsuario, pFoto = foto });
         }
     }
     public static List<Publicacion> devolverPublicacionesVendedor(int idUsuario)
@@ -149,7 +149,7 @@ public static class BD
         }
         return publicaciones;
     }
-    public static Usuario  devolverUsuario(int idUsuario)
+    public static Usuario devolverUsuario(int idUsuario)
     {
         string query = "SELECT * FROM Usuarios WHERE IdUsuario = @pIdUsuario";
         Usuario user;
@@ -158,5 +158,35 @@ public static class BD
             user = connection.Execute(query, new {pIdUsuario = idUsuario});
         }
         return user;
+    }
+    public static List<Publicacion> devolverPublicacionesPorLista(int idLista)
+    {
+        string query = "SELECT * FROM Publicaciones INNER JOIN PublicacionLista ON Publicaciones.IdPublicacion = PublicacionLista.IdPublicacion WHERE PublicacionLista.IdLista = @pIdLista";
+        List<Publicacion> publicaciones;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            publicaciones = connection.Execute(query, new {pIdLista = idLista}).ToList();
+        }
+        return publicaciones;
+    }
+    public static List<Lista> devolverListasPorUsuario(int idUsuario)
+    {
+        string query = "SELECT * FROM Listas INNER JOIN UsuariosLista ON Listas.IdLista = UsuariosLista.IdLista WHERE UsuariosLista.IdUsuario = @pIdUsuario";
+        List<Lista> listas;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            publicaciones = connection.Execute(query, new {pIdUsuario = idUsuario}).ToList();
+        }
+        return listas;
+    }
+    public static List<Etiqueta> devolverLista(int idPublicacion)
+    {
+        string query = "SELECT * FROM Etiquetas INNER JOIN PublicacionEtiqueta ON Etiquetas.IdEtiqueta = PublicacionEtiqueta.IdEtiqueta WHERE PublicacionEtiqueta.IdPublicacion = @pIdPublicacion";
+        List<Etiqueta> etiquetas;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            etiquetas = connection.Execute(query, new {pIdPublicacion = idPublicacion}).ToList();
+        }
+        return etiquetas;
     }
 }
