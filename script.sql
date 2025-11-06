@@ -104,7 +104,7 @@ GO
 CREATE TABLE [dbo].[Usuarios](
 	[IdUsuario] [int] IDENTITY(1,1) NOT NULL,
 	[Email] [nvarchar](50) NOT NULL,
-	[Contraseña] [nvarchar](50) NOT NULL,
+	[Contrasenia] [nvarchar](50) NOT NULL,
 	[Usuario] [nvarchar](50) NOT NULL,
 	[NombreCompleto] [nvarchar](50) NOT NULL,
 	[Pais] [nvarchar](50) NOT NULL,

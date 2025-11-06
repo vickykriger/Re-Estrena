@@ -14,43 +14,33 @@ public static class BD
         bool registrado = false;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT username FROM Usuarios WHERE username = @pUusername";
-            validar = connection.QueryFirstOrDefault<Usuario>(query, new { pUusername = user.username });
+            string query = "SELECT NombreUsuario FROM Usuarios WHERE NombreUsuario = @pUNombreUsuario";
+            validar = connection.QueryFirstOrDefault<Usuario>(query, new { pUNombreUsuario = user.NombreUsuario });
         }
         if (validar == null)
         {
-            string query = "INSERT INTO Usuarios (nombre, apellido, foto, username, ultimoLogin, password) VALUES (@pnombre, @papellido, @pfoto, @pusername, @pultimoLogin, @ppassword)";
+            string query = "INSERT INTO Usuarios (Email, Contrasenia, Usuario, NombreCompleto, Pais, Telefono) VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono)";
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                if (user.ultimoLogin < new DateTime(1753, 1, 1))
-                    user.ultimoLogin = DateTime.Now;
-                connection.Execute(query, new { pnombre = user.nombre, papellido = user.apellido, pfoto = user.foto, pusername = user.username, pultimoLogin = user.ultimoLogin, ppassword = user.password });
+                connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono });
             }
             registrado = true;
         }
         return registrado;
     }
-    public static Usuario login(string username, string password)
+    public static Usuario login(string NombreUsuario, string password)
     {
         Usuario logeado = new Usuario();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Usuarios WHERE username = @pUsername AND password = @pPassword";
-            logeado = connection.QueryFirstOrDefault<Usuario>(query, new { pUsername = username, pPassword = password });
+            string query = "SELECT * FROM Usuarios WHERE NombreUsuario = @pNombreUsuario AND Contrasenia = @pContrasenia";
+            logeado = connection.QueryFirstOrDefault<Usuario>(query, new { pNombreUsuario = NombreUsuario, pContrasenia = password });
         }
         return logeado;
     }
-    public static void actualizarLogin(int idUsuario)
-    {
-        string query = "UPDATE Usuarios SET ultimoLogin = @pLogin WHERE id = @pId";
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            connection.Execute(query, new { pLogin = DateTime.Now, pId = idUsuario });
-        }
-    }
     public static bool subirPublicacion(Publicacion publicacion)
     {
-        string query = "INSERT INTO Publicaciones (IdUsuario, Descripcion, Foto, Precio) VALUES (@pIdUsuario, @pIdEtiqueta, @pDescripcion, @pFoto, @pPrecio)";
+        string query = "INSERT INTO Publicaciones (IdUsuario, Descripcion, Foto, Precio, NombreProducto) VALUES (@pIdUsuario, @pIdEtiqueta, @pDescripcion, @pFoto, @pPrecio, @pNombreProducto)";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             connection.Execute(query, new
@@ -58,10 +48,11 @@ public static class BD
                 pIdUsuario = publicacion.idUsuario,
                 pDescripcion = publicacion.descripcion,
                 pFoto = publicacion.foto,
-                pPrecio = publicacion.precio
+                pPrecio = publicacion.precio,
+                pNombreProducto = publicacion.NombreProducto
             });
         }
-        Publicacion verificar = devolverPublicacion(publicacion.idPublicacion);
+        Publicacion verificar = DevolverPublicacion(publicacion.idPublicacion);
         bool existe = false;
         if (verficiar != null)
         {
@@ -70,7 +61,7 @@ public static class BD
         return verificar;
     }
 
-    public static Publicacion devolverPublicacion(int idPublicacion)
+    public static Publicacion DevolverPublicacion(int idPublicacion)
     {
         Publicacion publicacion;
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -81,7 +72,7 @@ public static class BD
         return publicacion;
     }
 
-    public static List<Publicacion> devolverPublicacionesEtiquetas(int idEtiqueta)
+    public static List<Publicacion> DevolverPublicacionesEtiquetas(int idEtiqueta)
     {
         List<Publicacion> publicaciones;
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -91,7 +82,7 @@ public static class BD
         }
         return publicaciones;
     }
-    public static List<Publicacion> devolverPublicacionesBuscador(string texto)
+    public static List<Publicacion> DevolverPublicacionesBuscador(string texto)
     {
         List<Publicacion> publicaciones;
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -132,12 +123,12 @@ public static class BD
         }
     }
 
-    public static void editarPublicacion(int idPublicacion, int IdUsuario, string Descripcion, string Foto, decimal Precio)
+    public static void editarPublicacion(int idPublicacion, int IdUsuario, string Descripcion, string Foto, decimal Precio, string NombreProducto)
     {
-        string query = "UPDATE Publicaciones SET IdUsuario = @pIdUsuario, Descripcion = @pDescripcion, Foto = @pFoto, Precio = @pPrecio WHERE IdPublicacion = @pIdPublicacion";
+        string query = "UPDATE Publicaciones SET IdUsuario = @pIdUsuario, Descripcion = @pDescripcion, Foto = @pFoto, Precio = @pPrecio, NombreProducto = @pNombreProducto WHERE IdPublicacion = @pIdPublicacion";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pIdUsuario = IdUsuario, pDescripcion = Descripcion, pFoto = Foto, pPrecio = Precio, pIdPublicacion = IdPublicacion });
+            connection.Execute(query, new { pIdUsuario = IdUsuario, pDescripcion = Descripcion, pFoto = Foto, pPrecio = Precio, pIdPublicacion = IdPublicacion, pNombreProducto = NombreProducto });
         }
     }
     public static void editarUsuario(int idUsuario, string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono)
@@ -147,5 +138,25 @@ public static class BD
         {
             connection.Execute(query, new { pEmail = email, pContrasenia = contrasenia, pNombreUsuario = nombreUsuario, pNombreCompleto = nombreCompleto, pPais = pais, pTelefono = telefono, pIdUsuario = idUsuario });
         }
+    }
+    public static List<Publicacion> devolverPublicacionesVendedor(int idUsuario)
+    {
+        string query = "SELECT * FROM Publicaciones WHERE IdUsuario = @pidUsuario";
+        List<Publicacion> publicaciones;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            publicaciones = connection.Execute(query, new { pidUsuario = idUsuario}).ToList();
+        }
+        return publicaciones;
+    }
+    public static Usuario  devolverUsuario(int idUsuario)
+    {
+        string query = "SELECT * FROM Usuarios WHERE IdUsuario = @pIdUsuario";
+        Usuario user;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            user = connection.Execute(query, new {pIdUsuario = idUsuario});
+        }
+        return user;
     }
 }

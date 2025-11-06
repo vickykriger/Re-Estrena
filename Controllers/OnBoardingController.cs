@@ -33,7 +33,6 @@ public class OnBoardingController : Controller
         }
         else 
         {
-            BD.actualizarLogin(user.id);
             HttpContext.Session.SetString("user", Objeto.ObjectToString(user));
             return RedirectToAction("VerPaginaPrincipal", "Account");
         }
