@@ -16,9 +16,8 @@ namespace ReEstrena.Models
 
         public Compra() { }
 
-        public Compra(int idCompra, int idVendedor, int idComprador, DateTime fechaCompra)
+        public Compra(int idVendedor, int idComprador, DateTime fechaCompra)
         {
-            IdCompra = idCompra;
             IdVendedor = idVendedor;
             IdComprador = idComprador;
             FechaCompra = fechaCompra;

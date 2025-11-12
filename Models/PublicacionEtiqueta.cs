@@ -15,9 +15,8 @@ namespace ReEstrena.Models
 
         public PublicacionEtiqueta() { }
 
-        public PublicacionEtiqueta(int idPublicacionEtiqueta, int idPublicacion, int idEtiqueta)
+        public PublicacionEtiqueta(int idPublicacion, int idEtiqueta)
         {
-            IdPublicacionEtiqueta = idPublicacionEtiqueta;
             IdPublicacion = idPublicacion;
             IdEtiqueta = idEtiqueta;
         }

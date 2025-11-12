@@ -15,9 +15,8 @@ namespace ReEstrena.Models
 
         public PublicacionLista() { }
 
-        public PublicacionLista(int idPublicacionLista, int idPublicacion, int idLista)
+        public PublicacionLista(int idPublicacion, int idLista)
         {
-            IdPublicacionLista = idPublicacionLista;
             IdPublicacion = idPublicacion;
             IdLista = idLista;
         }

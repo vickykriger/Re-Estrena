@@ -12,13 +12,13 @@ namespace ReEstrena.Controllers
         {
             return View("PaginaPrincipalComprador");
         }
-        public IActionResult VerNotificacionesC()
+        public IActionResult VerNotificaciones()
         {
-            return View("NotificacionesComprador");
+            return View("Notificaciones");
         }
-        public IActionResult VerMensajesC()
+        public IActionResult VerMensajes()
         {
-            return View("MensajesComprador");
+            return View("Mensajes");
         }
         public IActionResult VerUsuarioC()
         {
@@ -28,13 +28,11 @@ namespace ReEstrena.Controllers
         {
             return View("PaginaPrincipalVendedor");
         }
-        public IActionResult VerNotificacionesV()
+        public IActionResult VerLista(int idLista)
         {
-            return View("NotificacionesVendedor");
-        }
-        public IActionResult VerMensajesV()
-        {
-            return View("MensajesVendedor");
+            ViewBag.Publicaciones = BD.devolverPublicacionesPorLista(idLista);
+            ViewBag.NombreLista = BD.devolverLista(idLista).NombreLista;
+            return View("VerLista");
         }
         public IActionResult seleccionarEtiqueta(int idEtiqueta)
         {
@@ -67,6 +65,25 @@ namespace ReEstrena.Controllers
         {
             int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).id;
             BD.editarUsuario(id, email, contrasenia, nombreUsuario, nombreCompleto, pais, telefono, foto);
+            return View("UsuarioComprador");
+        }
+        public IActionResult hacerLista(string NombreLista)
+        {
+            int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).id;
+            Lista lista = new Lista(id, NombreLista);
+            BD.hacerLista(lista);
+            return View();
+        }
+        public IActionResult eliminarDeLista(int idPublicacion, int idLista)
+        {
+            BD.eliminarDeLista(idPublicacion, idLista);
+            ViewBag.Publicaciones = BD.devolverPublicacionesPorLista(idLista);
+            ViewBag.NombreLista = BD.devolverLista(idLista).NombreLista;
+            return View("VerLista");
+        }
+        public IActionResult eliminarLista(int idLista)
+        {
+            BD.eliminarLista(idLista);
             return View("UsuarioComprador");
         }
     }

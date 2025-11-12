@@ -14,9 +14,8 @@ namespace ReEstrena.Models
 
         public Etiqueta() { }
 
-        public Etiqueta(int idEtiqueta, string nombre)
+        public Etiqueta(string nombre)
         {
-            IdEtiqueta = idEtiqueta;
             Nombre = nombre;
         }
     }

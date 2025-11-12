@@ -23,9 +23,8 @@ namespace ReEstrena.Models
 
         }
 
-        public Usuario(int idUsuario, string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono)
+        public Usuario(string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono)
         {
-            IdUsuario = idUsuario;
             Email = email;
             Contrasenia = contrasenia;
             NombreUsuario = nombreUsuario;

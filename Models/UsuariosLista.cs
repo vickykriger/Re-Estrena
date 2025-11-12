@@ -15,9 +15,8 @@ namespace ReEstrena.Models
 
         public UsuariosLista() { }
 
-        public UsuariosLista(int idUsuariosLista, int idLista, int idUsuario)
+        public UsuariosLista(int idLista, int idUsuario)
         {
-            IdUsuariosLista = idUsuariosLista;
             IdLista = idLista;
             IdUsuario = idUsuario;
         }

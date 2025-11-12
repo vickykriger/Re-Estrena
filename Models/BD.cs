@@ -20,9 +20,13 @@ public static class BD
         if (validar == null)
         {
             string query = "INSERT INTO Usuarios (Email, Contrasenia, Usuario, NombreCompleto, Pais, Telefono, Foto) VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono, @pFoto)";
+            string query1 = "INSERT INTO Listas (IdUsuario, NombreLista) VALUES (@pIdUsuario, @pNombreLista)";
+            string query2 = "INSERT INTO UsuariosLista (IdLista, IdUsuario) VALUES (@pIdLista, @pIdUsuario)";
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pFoto = user.Foto });
+                connection.Execute(query1, new { pIdUsuario = user.IdUsuario, pNombreLista = "Favoritos"});
+                connection.Execute(query2, new { pIdLista = 1, pIdUsuario = userIdUsuario});
             }
             registrado = true;
         }
@@ -188,5 +192,31 @@ public static class BD
             etiquetas = connection.Execute(query, new {pIdPublicacion = idPublicacion}).ToList();
         }
         return etiquetas;
+    }
+    public static void hacerLista(Lista lista)
+    {
+        string query = "INSERT INTO Listas (IdUsuario, NombreLista) VALUES (@pIdUsuario, @pNombreLista)";
+        string query1 = "INSERT INTO UsuariosLista (IdLista, IdUsuario) VALUES (@pIdLista, @pIdUsuario)";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Execute(query, new { pIdUsuario = lista.IdUsuario, pNombreLista = lista.NombreLista});
+            connection.Execute(query1, new { pIdLista = lista.IdLista, pIdUsuario = lista.IdUsuario});
+        }
+    }
+    public static void eliminarDeLista(int idPublicacion, int idLista)
+    {
+        string query = "DELETE FROM PublicacionLista WHERE IdPublicacion = @pIdPublicacion AND IdLista = @pIdLista";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Execute(query, new { pIdPublicacion = idPublicacion, pIdLista = idLista});
+        }
+    }
+    public static void eliminarLista(Lista lista)
+    {
+        string query = "DELETE FROM Listas WHERE IdLista = @pIdLista";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Execute(query, new { pIdLista = lista.IdLista});
+        }
     }
 }
