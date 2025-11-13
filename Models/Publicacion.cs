@@ -17,12 +17,13 @@ namespace ReEstrena.Models
         public string NombreProducto { get; private set; }
         public Publicacion() { }
 
-        public Publicacion(int idUsuario, string descripcion, string foto, decimal precio)
+        public Publicacion(int idUsuario, string descripcion, string foto, decimal precio, string nombreProducto)
         {
             IdUsuario = idUsuario;
             Descripcion = descripcion;
             Foto = foto;
             Precio = precio;
+            NombreProducto = nombreProducto;
         }
     }
 }

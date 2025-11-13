@@ -3,6 +3,7 @@
     Layout = null;
 }
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,31 +14,35 @@
 </head>
 <body>
     <header class="header-login">
-        <div class="logo-container">
+        <div>
             <img src="~/images/logo.png" alt="Logo Re-Estrena" class="logo">
             <h1>RE-ESTRENA</h1>
         </div>
     </header>
 
-    <main class="main-login">
-        <section>
+
+    <main class = "fotito">
+        <section class="login-box">
             <div>
                 <h2>¿Ya tienes cuenta?</h2>
-                
+               
                 <form asp-controller="OnBoarding" asp-action="loginGuardar" method="post">
                     <label for="username">Usuario</label>
                     <input type="text" id="username" name="username" placeholder="Usuario" required>
 
+
                     <label for="password">Contraseña</label>
                     <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
 
                     <button type="submit" class="btn-login">Iniciar sesión</button>
                 </form>
 
+
                 <section class="registrate">
                     <div>
                         <p>¿No tienes cuenta?</p>
-                        <a asp-controller="OnBoarding" asp-action="registro" class="btn-registro">Registrarse</a>
+                        <a asp-controller="OnBoarding" asp-action="registro">Registrarse</a>
                     </div>
                 </section>
             </div>
@@ -46,3 +51,6 @@
 
 </body>
 </html>
+
+
+

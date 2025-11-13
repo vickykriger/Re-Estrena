@@ -12,6 +12,10 @@ namespace ReEstrena.Controllers
         {
             return View("PaginaPrincipalComprador");
         }
+        /*public IActionResult buscador()
+        {
+            return View("Buscador");
+        }*/
         public IActionResult VerNotificaciones()
         {
             return View("Notificaciones");
@@ -26,6 +30,8 @@ namespace ReEstrena.Controllers
         }
         public IActionResult VerPaginaPrincipalV()
         {
+            int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).IdUsuario;
+            ViewBag.PublicacionesPropias = BD.devolverPublicacionesVendedor(id);
             return View("PaginaPrincipalVendedor");
         }
         public IActionResult VerLista(int idLista)
@@ -61,10 +67,11 @@ namespace ReEstrena.Controllers
             ViewBag.Publicacion = BD.DevolverPublicacion(idPublicacion);
             return View("VerPublicacion");
         }
-        public IActionResult editarUsuarioGuardar(string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono, string foto)
+        public IActionResult editarUsuarioGuardar(string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono)
         {
             int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).IdUsuario;
-            BD.editarUsuario(id, email, contrasenia, nombreUsuario, nombreCompleto, pais, telefono, foto);
+            Usuario usuario = new Usuario(id, email, contrasenia, nombreUsuario, nombreCompleto, pais, telefono);
+            BD.editarUsuario(usuario);
             return View("UsuarioComprador");
         }
         public IActionResult hacerLista(string NombreLista)

@@ -24,7 +24,7 @@
             </ul>
         </nav>
         
-        <form class="search-bar" method="get" action="@Url.Action("buscarProducto", "Account")">
+        <form method="get" action='@Url.Action("buscarProducto", "Account")'>
             <input type="text" name="descripcion" placeholder="Buscar productos..." />
             <button type="submit">🔍</button>
         </form>
@@ -32,14 +32,14 @@
             
             @if (ViewBag.Usuario != null)
             {
-                <a href="@Url.Action("VerUsuarioC", "Account")" class="icon-link user-icon" title="@ViewBag.Usuario.Nombre">
-                    <span class="user-initial">@ViewBag.Usuario.Nombre</span>
+                <a href='@Url.Action("VerUsuarioC", "Account")' title="@ViewBag.Usuario.Nombre">
+                    <p>@ViewBag.Usuario.Nombre</p>
                 </a>
             }
-            <a href="@Url.Action("VerCarrito", "Purchase")" class="icon-link">🛒</a>
-            <a href="#" class="icon-link">⚙️</a>
-            <a href="@Url.Action("VerNotificaciones", "Account")" class="icon-link">🔔</a>
-            <a href="@Url.Action("VerMensajes", "Account")" class="icon-link">💬</a>
+            <a href='@Url.Action("VerCarrito", "Purchase")'>🛒</a>
+            <a href="#">⚙️</a>
+            <a href='@Url.Action("VerNotificaciones", "Account")'>🔔</a>
+            <a href='@Url.Action("VerMensajes", "Account")'>💬</a>
         </div>
     </header>
 
@@ -48,27 +48,26 @@
             <h2>Ofertas</h2>
         </div>
 
-        <div class="productos-grid">
+        <section class="productos-grid">
             @if (ViewBag.Publicaciones != null && ViewBag.Publicaciones.Count > 0)
             {
                 foreach (var publicacion in ViewBag.Publicaciones)
                 {
-                    <article class="producto-card">
+                    <article>
                         <div>
-                            <h3 class="producto-titulo">@publicacion.Titulo</h3>
-                            <!-- Added form to submit likear action -->
-                            <form method="post" action="@Url.Action("likear", "Account")" class="favorito-form">
+                            <h3>@publicacion.Titulo</h3>
+                            <form method="post" action='@Url.Action("likear", "Account")' class="favorito-form">
                                 <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
-                                <button type="submit" class="favorito-btn">❤️</button>
+                                <button type="submit">❤️</button>
                             </form>
                         </div>
                         
                        
-                        <a href="@Url.Action("verPublicacion", "Post", new { idPublicacion = publicacion.Id })">
+                        <a href='@Url.Action("verPublicacion", "Post", new { idPublicacion = publicacion.IdPublicacion })'>
                             <div class="producto-imagen">
-                                @if (!string.IsNullOrEmpty(publicacion.ImagenUrl))
+                                @if (!string.IsNullOrEmpty(publicacion.Foto))
                                 {
-                                    <img src="@publicacion.ImagenUrl" alt="@publicacion.NombreProducto" />
+                                    <img src="@publicacion.Foto" alt="@publicacion.NombreProducto" />
                                 }
                                 else
                                 {
@@ -77,22 +76,21 @@
                             </div>
                         </a>
 
-                        <div class="producto-info">
-                            <p class="producto-descripcion">@publicacion.Descripcion</p>
+                        <section class="producto-info">
+                            <p>@publicacion.Descripcion</p>
                             
-                            <div class="producto-detalles">
+                            <div>
                                 <p>Foto: @publicacion.Foto</p>
                                 <p>Precio: @publicacion.Precio</p>
                             </div>
 
-                            <div class="producto-footer">
-                                <!-- Added form to add product to cart -->
-                                <form method="post" action='@Url.Action("AgregarACarrito", "Purchase")' class="add-to-cart-form">
-                                    <input type="hidden" name="idPublicacion" value="@publicacion.Id" />
-                                    <button type="submit" class="precio-btn">${@publicacion.Precio}</button>
+                            <div class="producto-carrito">
+                                <form method="post" action='@Url.Action("AgregarACarrito", "Purchase")'>
+                                    <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
+                                    <button type="submit">${@publicacion.Precio}</button>
                                 </form>
                             </div>
-                        </div>
+                        </section>
                     </article> 
                 }
             }
@@ -100,7 +98,7 @@
             {
                 <p>No hay ofertas disponibles en este momento.</p>
             }
-        </div>
+        </section>
     </main>
 
 </body>

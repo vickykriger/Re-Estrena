@@ -1,0 +1,88 @@
+@{
+    ViewData["Title"] = "Buscador - Re-Estrena";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/buscador.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <p>🏠</p>
+                <p>RE-ESTRENA</p>
+            </div>
+            <nav>
+                <a href='@Url.Action("VerPaginaPrincipalV", "Account")'>Vender</a>
+                <a href='@Url.Action("buscarProducto", "Account")'>🔍</a>
+                <a href='@Url.Action("VerUsuarioC", "Account")'>👤</a>
+                <a href='@Url.Action("VerNotificaciones", "Account")'>🔔</a>
+                <a href='@Url.Action("VerCarrito", "Purchase")'>🛒</a>
+                <a href='@Url.Action("VerMensajes", "Account")'>💬</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-section">
+            <form asp-action="buscarProducto" asp-controller="Account" method="get" class="search-form">
+                <input type="text" name="descripcion" placeholder="Buscar productos..." class="search-input" required>
+                <button type="submit" class="search-button">Buscar</button>
+            </form>
+        </div>
+
+        @if (ViewBag.Publicaciones != null && ViewBag.Publicaciones.Count > 0)
+        {
+            <section class="productos-grid">
+                @foreach (var publicacion in ViewBag.Publicaciones)
+                {
+                    <div class="card-header">
+                    <h3 class="producto-titulo">@publicacion.NombreProducto</h3>
+                    <form asp-action="likear" asp-controller="Account" method="post" class="like-form">
+                        <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
+                        <button type="submit">♡</button>
+                    </form>
+                    </div>
+
+                    <a href='@Url.Action("verPublicacion", "Account", new { idPublicacion = publicacion.IdPublicacion })'>
+                        <img src="@publicacion.Imagen" alt="@publicacion.NombreProducto">
+                    </a>
+
+                    <div class="producto-info">
+                        <p class="producto-descripcion">@publicacion.Descripcion</p>
+                            
+                        @if (!string.IsNullOrEmpty(publicacion.Etiquetas))
+                        {
+                            <div>
+                                @foreach (var etiqueta in publicacion.Etiquetas)
+                                {
+                                    <p>@etiqueta.Trim()</p> //elimina los espacios innecesarios de una cadena de texto
+                                }
+                            </div>
+                        }
+                    </div>
+
+                    <div class="card-footer">
+                        <form asp-action="AgregarACarrito" asp-controller="Purchase" method="post" class="precio-form">
+                                <input type="hidden" name="idPublicacion" value="@publicacion.Id" />
+                                <button type="submit" class="precio-button">$@publicacion.Precio</button>
+                        </form>
+                    </div>
+                }
+            </section>
+        }
+        else
+        {
+            <div>
+                <p >No se encontraron productos</p>
+                <p>Intenta con otras palabras clave</p>
+            </div>
+        }
+    </main>
+</body>
+</html>
