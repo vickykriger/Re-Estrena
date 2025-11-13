@@ -24,7 +24,7 @@
             </ul>
         </nav>
         
-        <form class="search-bar" method="get" action="@Url.Action('buscarProducto', 'Account')">
+        <form class="search-bar" method="get" action="@Url.Action("buscarProducto", "Account")">
             <input type="text" name="descripcion" placeholder="Buscar productos..." />
             <button type="submit">🔍</button>
         </form>
@@ -32,14 +32,14 @@
             
             @if (ViewBag.Usuario != null)
             {
-                <a href="@Url.Action('VerUsuarioC', 'Account')" class="icon-link user-icon" title="@ViewBag.Usuario.Nombre">
+                <a href="@Url.Action("VerUsuarioC", "Account")" class="icon-link user-icon" title="@ViewBag.Usuario.Nombre">
                     <span class="user-initial">@ViewBag.Usuario.Nombre</span>
                 </a>
             }
-            <a href="@Url.Action('VerCarrito', 'Purchase')" class="icon-link">🛒</a>
+            <a href="@Url.Action("VerCarrito", "Purchase")" class="icon-link">🛒</a>
             <a href="#" class="icon-link">⚙️</a>
-            <a href="@Url.Action('VerNotificaciones', 'Account')" class="icon-link">🔔</a>
-            <a href="@Url.Action('VerMensajes', 'Account')" class="icon-link">💬</a>
+            <a href="@Url.Action("VerNotificaciones", "Account")" class="icon-link">🔔</a>
+            <a href="@Url.Action("VerMensajes", "Account")" class="icon-link">💬</a>
         </div>
     </header>
 
@@ -57,34 +57,32 @@
                         <div>
                             <h3 class="producto-titulo">@publicacion.Titulo</h3>
                             <!-- Added form to submit likear action -->
-                            <form method="post" action="@Url.Action('likear', 'Account')" class="favorito-form">
-                                <input type="hidden" name="idPublicacion" value="@Publicacion.Id" />
+                            <form method="post" action="@Url.Action("likear", "Account")" class="favorito-form">
+                                <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
                                 <button type="submit" class="favorito-btn">❤️</button>
                             </form>
                         </div>
                         
                        
-                        <a href="@Url.Action('verPublicacion', 'Post', new { idPublicacion = publicacion.Id })">
+                        <a href="@Url.Action("verPublicacion", "Post", new { idPublicacion = publicacion.Id })">
                             <div class="producto-imagen">
                                 @if (!string.IsNullOrEmpty(publicacion.ImagenUrl))
                                 {
-                                    <img src="@Publicacion.ImagenUrl" alt="@Publicacion.Titulo" />
+                                    <img src="@publicacion.ImagenUrl" alt="@publicacion.NombreProducto" />
                                 }
                                 else
                                 {
-                                    <img src="/placeholder.svg?height=200&width=200" alt="@Publicacion.Titulo" />
+                                    <img src="/placeholder.svg?height=200&width=200" alt="@publicacion.NombreProducto" />
                                 }
                             </div>
                         </a>
 
                         <div class="producto-info">
-                            <p class="producto-descripcion">@Publicacion.Descripcion</p>
+                            <p class="producto-descripcion">@publicacion.Descripcion</p>
                             
                             <div class="producto-detalles">
-                                <p>Categoría: @Publicacion.Categoria</p>
-                                <p>Estado: @Publicacion.Estado</p>
-                                <p>Talle: @Publicacion.Talle</p>
-                                <p>Género: @Publicacion.Genero</p>
+                                <p>Foto: @publicacion.Foto</p>
+                                <p>Precio: @publicacion.Precio</p>
                             </div>
 
                             <div class="producto-footer">

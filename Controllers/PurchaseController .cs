@@ -40,7 +40,7 @@ namespace ReEstrena.Controllers
         public IActionResult EliminarDeCarrito(int id)
         {
             var carrito = ObtenerCarritoDeSesion();
-            carrito.RemoveAll(p => p.idPublicacion == id);
+            carrito.RemoveAll(p => p.IdPublicacion == id);
             GuardarCarritoEnSesion(carrito);
 
             return RedirectToAction("VerCarrito");

@@ -26,7 +26,7 @@ public static class BD
             {
                 connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pFoto = user.Foto });
                 connection.Execute(query1, new { pIdUsuario = user.IdUsuario, pNombreLista = "Favoritos"});
-                connection.Execute(query2, new { pIdLista = 1, pIdUsuario = userIdUsuario});
+                connection.Execute(query2, new { pIdLista = 1, pIdUsuario = user.IdUsuario});
             }
             registrado = true;
         }
@@ -49,20 +49,20 @@ public static class BD
         {
             connection.Execute(query, new
             {
-                pIdUsuario = publicacion.idUsuario,
-                pDescripcion = publicacion.descripcion,
-                pFoto = publicacion.foto,
-                pPrecio = publicacion.precio,
+                pIdUsuario = publicacion.IdUsuario,
+                pDescripcion = publicacion.Descripcion,
+                pFoto = publicacion.Foto,
+                pPrecio = publicacion.Precio,
                 pNombreProducto = publicacion.NombreProducto
             });
         }
-        Publicacion verificar = DevolverPublicacion(publicacion.idPublicacion);
+        Publicacion verificar = DevolverPublicacion(publicacion.IdPublicacion);
         bool existe = false;
-        if (verficiar != null)
+        if (verificar != null)
         {
             existe = true;
         }
-        return verificar;
+        return existe;
     }
 
     public static Publicacion DevolverPublicacion(int idPublicacion)
@@ -106,7 +106,7 @@ public static class BD
                 pIdPublicacion = idPublicacion
             });
         }
-        Publicacion verificar = devolverPublicacion(idPublicacion);
+        Publicacion verificar = DevolverPublicacion(idPublicacion);
         bool eliminado = false;
         if (verificar == null)
         {
@@ -132,7 +132,7 @@ public static class BD
         string query = "UPDATE Publicaciones SET IdUsuario = @pIdUsuario, Descripcion = @pDescripcion, Foto = @pFoto, Precio = @pPrecio, NombreProducto = @pNombreProducto WHERE IdPublicacion = @pIdPublicacion";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pIdUsuario = IdUsuario, pDescripcion = Descripcion, pFoto = Foto, pPrecio = Precio, pIdPublicacion = IdPublicacion, pNombreProducto = NombreProducto });
+            connection.Execute(query, new { pIdUsuario = IdUsuario, pDescripcion = Descripcion, pFoto = Foto, pPrecio = Precio, pIdPublicacion = idPublicacion, pNombreProducto = NombreProducto });
         }
     }
     public static void editarUsuario(int idUsuario, string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono, string foto)
@@ -149,7 +149,7 @@ public static class BD
         List<Publicacion> publicaciones;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            publicaciones = connection.Execute(query, new { pidUsuario = idUsuario}).ToList();
+            publicaciones = connection.Query<Publicacion>(query, new { pidUsuario = idUsuario}).ToList();
         }
         return publicaciones;
     }
@@ -159,7 +159,7 @@ public static class BD
         Usuario user;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            user = connection.Execute(query, new {pIdUsuario = idUsuario});
+            user = connection.QuerySingleOrDefault<Usuario>(query, new {pIdUsuario = idUsuario});
         }
         return user;
     }
@@ -169,27 +169,27 @@ public static class BD
         List<Publicacion> publicaciones;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            publicaciones = connection.Execute(query, new {pIdLista = idLista}).ToList();
+            publicaciones = connection.Query<Publicacion>(query, new {pIdLista = idLista}).ToList();
         }
         return publicaciones;
     }
     public static List<Lista> devolverListasPorUsuario(int idUsuario)
     {
-        string query = "SELECT * FROM Listas INNER JOIN UsuariosLista ON Listas.IdLista = UsuariosLista.IdLista WHERE UsuariosLista.IdUsuario = @pIdUsuario";
+        string query = "SELECT * FROM Listas INNER JOIN UsuariosLista ON Listas.IdLista = UsuariosLista.IdLista WHERE UsuariZosLista.IdUsuario = @pIdUsuario";
         List<Lista> listas;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            publicaciones = connection.Execute(query, new {pIdUsuario = idUsuario}).ToList();
+            listas = connection.Query<Lista>(query, new {pIdUsuario = idUsuario}).ToList();
         }
         return listas;
     }
-    public static List<Etiqueta> devolverLista(int idPublicacion)
+    public static List<Etiqueta> devolverEtiquetasPorPublicacion(int idPublicacion)
     {
         string query = "SELECT * FROM Etiquetas INNER JOIN PublicacionEtiqueta ON Etiquetas.IdEtiqueta = PublicacionEtiqueta.IdEtiqueta WHERE PublicacionEtiqueta.IdPublicacion = @pIdPublicacion";
         List<Etiqueta> etiquetas;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            etiquetas = connection.Execute(query, new {pIdPublicacion = idPublicacion}).ToList();
+            etiquetas = connection.Query<Etiqueta>(query, new {pIdPublicacion = idPublicacion}).ToList();
         }
         return etiquetas;
     }
@@ -211,12 +211,22 @@ public static class BD
             connection.Execute(query, new { pIdPublicacion = idPublicacion, pIdLista = idLista});
         }
     }
-    public static void eliminarLista(Lista lista)
+    public static void eliminarLista(int idLista)
     {
         string query = "DELETE FROM Listas WHERE IdLista = @pIdLista";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pIdLista = lista.IdLista});
+            connection.Execute(query, new { pIdLista = idLista});
         }
+    }
+    public static string devolverNombreLista(int idLista)
+    {
+        string query = "SELECT NombreLista FROM Listas WHERE IdLista = @pIdLista";
+        string nombre = "";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            nombre = connection.QuerySingleOrDefault<string>(query, new { pIdLista = idLista});
+        }
+        return nombre;
     }
 }

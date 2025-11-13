@@ -41,9 +41,9 @@ public class OnBoardingController : Controller
     {
         return View("Registro");
     }
-    public IActionResult registroGuardar(string Email, string Contrasenia, string Usuario, string NombreCompleto, string Pais, int Telefono, string Foto)
+    public IActionResult registroGuardar(string Email, string Contrasenia, string Usuario, string NombreCompleto, string Pais, int Telefono)
     {
-        Usuario user = new Usuario(username, password, nombre, apellido, foto);
+        Usuario user = new Usuario(Email, Contrasenia, Usuario, NombreCompleto, Pais, Telefono);
         bool registrado = BD.registrarse(user);
         if(registrado)
         {

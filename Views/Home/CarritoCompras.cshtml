@@ -19,8 +19,8 @@
                 <span class="brand">RE-ESTRENA</span>
             </div>
             <nav class="nav-links">
-                <a href="@Url.Action('VerPaginaPrincipalV', 'Account')">Vender</a>
-                <a href="@Url.Action('VerCarrito', 'Purchase')" class="icon">🛒</a>
+                <a href="@Url.Action("VerPaginaPrincipalV", "Account")">Vender</a>
+                <a href="@Url.Action("VerCarrito", "Purchase")" class="icon">🛒</a>
                 <a href="#" class="icon">👤</a>
                 <a href="#" class="icon">🔔</a>
                 <a href="#" class="icon">💬</a>
@@ -63,7 +63,7 @@
                 
                 <div class="resumen-item">
                     <span>Envío</span>
-                    <span>$@Publicaciones.Precio</span>
+                    <span>$@ViewBag.Carrito[0].Precio</span>
                 </div>
                 <div class="resumen-item resumen-total">
                     <span><strong>Total</strong></span>
