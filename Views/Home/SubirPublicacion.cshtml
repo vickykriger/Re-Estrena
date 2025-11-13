@@ -19,11 +19,11 @@
                 <span class="logo-text">RE-ESTRENA</span>
             </div>
             <nav>
-                <a href="@Url.Action('VerPaginaPrincipalV', 'AccountControllerControllerController')" class="nav-link">Volver</a>
-                <a href="@Url.Action('buscarProducto', 'AccountControllerControllerController')" class="nav-link">🏷️</a>
-                <a href="@Url.Action('VerPaginaPrincipalV', 'AccountControllerControllerController')" class="nav-link">👤</a>
-                <a href="@Url.Action('VerNotificaciones', 'AccountControllerControllerController')" class="nav-link">🔔</a>
-                <a href="@Url.Action('VerMensajes', 'AccountControllerControllerControllerController')" class="nav-link">💬</a>
+                <a href="@Url.Action('VerPaginaPrincipalV', 'Account')" class="nav-link">Volver</a>
+                <a href="@Url.Action('buscarProducto', 'Account')" class="nav-link">🏷️</a>
+                <a href="@Url.Action('VerPaginaPrincipalV', 'Account')" class="nav-link">👤</a>
+                <a href="@Url.Action('VerNotificaciones', 'Account')" class="nav-link">🔔</a>
+                <a href="@Url.Action('VerMensajes', 'Account')" class="nav-link">💬</a>
             </nav>
         </div>
     </header>
@@ -36,7 +36,7 @@
                 🗑️
             </button>
 
-            <form asp-action="GuardarPublicacion" asp-controller="AccountControllerControllerController" method="post" enctype="multipart/form-data" class="publicar-form">
+            <form asp-action="subirPublicacion" asp-controller="Post" method="post" enctype="multipart/form-data" class="publicar-form">
                 <!-- Sección de imagen -->
                 <div class="imagen-section">
                     <div class="imagen-preview" id="imagePreview">
@@ -75,9 +75,5 @@
         </div>
     </main>
 
-
-    <footer>
-        <p>© Copyright. Todos los derechos reservados a Re-Estrena</p>
-    </footer>
 </body>
 </html>

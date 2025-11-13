@@ -19,7 +19,7 @@
                 <span class="logo-text">RE-ESTRENA</span>
             </div>
             <nav class="nav-menu">
-                <a href="@Url.Action('VerPaginaPrincipalC', 'AccountController')">Volver</a>
+                <a href="@Url.Action('VerPaginaPrincipalC', 'Account')">Volver</a>
                 <button class="icon-btn">🏪</button>
                 <button class="icon-btn">🔔</button>
                 <button class="icon-btn">💬</button>
@@ -42,7 +42,7 @@
                     <div class="producto-card">
                         <!-- Removed card header with delete and like buttons -->
                         
-                        <a href="@Url.Action('verPublicacion', 'AccountController', new { idPublicacion = publicacion.Id })">
+                        <a href="@Url.Action('verPublicacion', 'Post', new { idPublicacion = publicacion.Id })">
                             <div class="producto-imagen">
                                 @if (!string.IsNullOrEmpty(publicacion.Imagen))
                                 {
@@ -96,13 +96,10 @@
         {
             <div class="empty-state">
                 <p>Esta lista está vacía. ¡Empieza a agregar productos!</p>
-                <a href="@Url.Action('VerPaginaPrincipalC', 'AccountController')">Explorar productos</a>
+                <a href="@Url.Action('VerPaginaPrincipalC', 'Account')">Explorar productos</a>
             </div>
         }
     </div>
 
-    <footer>
-        <p>© Copyright. Todos los derechos reservados a Re-Estrena</p>
-    </footer>
 </body>
 </html>

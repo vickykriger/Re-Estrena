@@ -18,13 +18,13 @@
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href='@Url.Action("VerPaginaPrincipalC", "AccountController")'>Inicio</a></li>
+                <li><a href='@Url.Action("VerPaginaPrincipalC", "Account")'>Inicio</a></li>
                 <li><a href="#">Nuestros Productos</a></li>
                 <li><a href="#">Favoritos</a></li>
             </ul>
         </nav>
         
-        <form class="search-bar" method="get" action="@Url.Action('buscarProducto', 'AccountController')">
+        <form class="search-bar" method="get" action="@Url.Action('buscarProducto', 'Account')">
             <input type="text" name="descripcion" placeholder="Buscar productos..." />
             <button type="submit">🔍</button>
         </form>
@@ -32,14 +32,14 @@
             
             @if (ViewBag.Usuario != null)
             {
-                <a href="@Url.Action('VerUsuarioC', 'AccountController')" class="icon-link user-icon" title="@ViewBag.Usuario.Nombre">
+                <a href="@Url.Action('VerUsuarioC', 'Account')" class="icon-link user-icon" title="@ViewBag.Usuario.Nombre">
                     <span class="user-initial">@ViewBag.Usuario.Nombre</span>
                 </a>
             }
-            <a href="@Url.Action('VerCarrito', 'PurchaseController')" class="icon-link">🛒</a>
+            <a href="@Url.Action('VerCarrito', 'Purchase')" class="icon-link">🛒</a>
             <a href="#" class="icon-link">⚙️</a>
-            <a href="@Url.Action('VerNotificaciones', 'AccountController')" class="icon-link">🔔</a>
-            <a href="@Url.Action('VerMensajes', 'AccountController')" class="icon-link">💬</a>
+            <a href="@Url.Action('VerNotificaciones', 'Account')" class="icon-link">🔔</a>
+            <a href="@Url.Action('VerMensajes', 'Account')" class="icon-link">💬</a>
         </div>
     </header>
 
@@ -57,14 +57,14 @@
                         <div>
                             <h3 class="producto-titulo">@publicacion.Titulo</h3>
                             <!-- Added form to submit likear action -->
-                            <form method="post" action="@Url.Action('likear', 'AccountController')" class="favorito-form">
+                            <form method="post" action="@Url.Action('likear', 'Account')" class="favorito-form">
                                 <input type="hidden" name="idPublicacion" value="@Publicacion.Id" />
                                 <button type="submit" class="favorito-btn">❤️</button>
                             </form>
                         </div>
                         
                        
-                        <a href="@Url.Action('verPublicacion', 'AccountController', new { idPublicacion = publicacion.Id })">
+                        <a href="@Url.Action('verPublicacion', 'Post', new { idPublicacion = publicacion.Id })">
                             <div class="producto-imagen">
                                 @if (!string.IsNullOrEmpty(publicacion.ImagenUrl))
                                 {
@@ -89,7 +89,7 @@
 
                             <div class="producto-footer">
                                 <!-- Added form to add product to cart -->
-                                <form method="post" action='@Url.Action("AgregarACarrito", "PurchaseController")' class="add-to-cart-form">
+                                <form method="post" action='@Url.Action("AgregarACarrito", "Purchase")' class="add-to-cart-form">
                                     <input type="hidden" name="idPublicacion" value="@publicacion.Id" />
                                     <button type="submit" class="precio-btn">${@publicacion.Precio}</button>
                                 </form>
@@ -105,8 +105,5 @@
         </div>
     </main>
 
-    <footer>
-        <p> &copy; 2025 Re-Estrena - Todos los derechos reservados a Re-Estrena</p>
-    </footer>
 </body>
 </html>

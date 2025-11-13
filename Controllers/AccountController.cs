@@ -18,24 +18,6 @@ namespace ReEstrena.Controllers
         }
         public IActionResult VerMensajes()
         {
-            int usuarioActualId = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).id;
-            
-            // Obtener todas las conversaciones del usuario
-            ViewBag.Conversaciones = BD.ObtenerConversaciones(usuarioActualId);
-            
-            // Si hay un usuario seleccionado, cargar sus mensajes
-            if (idUsuario.HasValue)
-            {
-                ViewBag.ConversacionActual = BD.ObtenerUsuario(idUsuario.Value);
-                ViewBag.MensajesActivos = BD.ObtenerMensajes(usuarioActualId, idUsuario.Value);
-            }
-            else
-            {
-                ViewBag.ConversacionActual = null;
-                ViewBag.MensajesActivos = null;
-            }
-            
-            return View("Mensajes");
             return View("Mensajes");
         }
         public IActionResult VerUsuarioC()
@@ -81,13 +63,13 @@ namespace ReEstrena.Controllers
         }
         public IActionResult editarUsuarioGuardar(string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono, string foto)
         {
-            int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).id;
+            int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).idUsuario;
             BD.editarUsuario(id, email, contrasenia, nombreUsuario, nombreCompleto, pais, telefono, foto);
             return View("UsuarioComprador");
         }
         public IActionResult hacerLista(string NombreLista)
         {
-            int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).id;
+            int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).idUsuario;
             Lista lista = new Lista(id, NombreLista);
             BD.hacerLista(lista);
             return View();

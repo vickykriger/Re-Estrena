@@ -7,3 +7,12 @@ C:\Users\49002222\Re-Estrena\obj\Debug\net8.0\ReEstrena.MvcApplicationPartsAssem
 C:\Users\49002222\Re-Estrena\obj\Debug\net8.0\ReEstrena.RazorAssemblyInfo.cache
 C:\Users\49002222\Re-Estrena\obj\Debug\net8.0\ReEstrena.RazorAssemblyInfo.cs
 C:\Users\49002222\Re-Estrena\obj\Debug\net8.0\ReEstrena.sourcelink.json
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.csproj.AssemblyReference.cache
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.AssemblyInfoInputs.cache
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.AssemblyInfo.cs
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.csproj.CoreCompileInputs.cache
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.RazorAssemblyInfo.cache
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.RazorAssemblyInfo.cs
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.sourcelink.json

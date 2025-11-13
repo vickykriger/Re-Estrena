@@ -18,12 +18,12 @@
             <span class="brand-name">RE-ESTRENA</span>
         </div>
         <nav class="header-nav">
-            <a href="@Url.Action('VerPaginaPrincipalC', 'AccountControllerControllerControllerController')">Vender</a>
+            <a href="@Url.Action('VerPaginaPrincipalC', 'Account')">Vender</a>
             <a href="#" class="icon-button">🏷️</a>
             <a href="#" class="icon-button">🛒</a>
-            <a href="@Url.Action('VerUsuarioC', 'AccountControllerControllerControllerController')" class="icon-button">👤</a>
-            <a href="@Url.Action('VerNotificaciones', 'AccountControllerControllerControllerController')" class="icon-button">🔔</a>
-            <a href="@Url.Action('VerMensajes', 'AccountControllerControllerControllerController')" class="icon-button">💬</a>
+            <a href="@Url.Action('VerUsuarioC', 'Account')" class="icon-button">👤</a>
+            <a href="@Url.Action('VerNotificaciones', 'Account')" class="icon-button">🔔</a>
+            <a href="@Url.Action('VerMensajes', 'Account')" class="icon-button">💬</a>
         </nav>
     </header>
 
@@ -39,7 +39,7 @@
                 <!-- Título y botón de favorito -->
                 <div class="product-header">
                     <h1 class="product-title">@ViewBag.Publicacion.NombreProducto</h1>
-                    <form asp-action="likear" asp-controller="AccountControllerControllerController" method="post">
+                    <form asp-action="likear" asp-controller="Account" method="post">
                         <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.Id">
                         <button type="submit">❤️</button>
                     </form>
@@ -89,8 +89,5 @@
         </div>
     </main>
 
-    <footer>
-        <p>© Copyright - Todos los derechos reservados a Re-Estrena</p>
-    </footer>
 </body>
 </html>
