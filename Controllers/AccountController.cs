@@ -12,10 +12,6 @@ namespace ReEstrena.Controllers
         {
             return View("PaginaPrincipalComprador");
         }
-        /*public IActionResult buscador()
-        {
-            return View("Buscador");
-        }*/
         public IActionResult VerNotificaciones()
         {
             return View("Notificaciones");
@@ -55,23 +51,34 @@ namespace ReEstrena.Controllers
         public IActionResult agregarLista(int idPublicacion, int idLista)
         {
             BD.agregarLista(idPublicacion, idLista);
-            return View();
+            string urlAnterior = Request.Headers["Referer"].ToString();
+            if (!string.IsNullOrEmpty(urlAnterior))
+            {
+                return Redirect(urlAnterior);
+            }
+
+            return View("VerPaginaPrincipalC");
         }
         public IActionResult likear(int idPublicacion)
         {
             BD.agregarLista(idPublicacion, 1);
-            return View();
+            string urlAnterior = Request.Headers["Referer"].ToString();
+            if (!string.IsNullOrEmpty(urlAnterior))
+            {
+                return Redirect(urlAnterior);
+            }
+
+            return View("VerPaginaPrincipalC");
         }
         public IActionResult verPublicacion(int idPublicacion)
         {
-            ViewBag.Publicacion = BD.DevolverPublicacion(idPublicacion);
-            return View("VerPublicacion");
+            return RedirectToAction("verPublicacion", "Post", new { idPublicacion = idPublicacion });
         }
-        public IActionResult editarUsuarioGuardar(string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono)
+        public IActionResult editarUsuarioGuardar(string email, string contrasenia, string usuario, string nombreCompleto, string pais, int telefono)
         {
             int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).IdUsuario;
-            Usuario usuario = new Usuario(id, email, contrasenia, nombreUsuario, nombreCompleto, pais, telefono);
-            BD.editarUsuario(usuario);
+            Usuario user = new Usuario(email, contrasenia, usuario, nombreCompleto, pais, telefono);
+            BD.editarUsuario(user, id);
             return View("UsuarioComprador");
         }
         public IActionResult hacerLista(string NombreLista)
@@ -79,7 +86,13 @@ namespace ReEstrena.Controllers
             int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).IdUsuario;
             Lista lista = new Lista(id, NombreLista);
             BD.hacerLista(lista);
-            return View();
+            string urlAnterior = Request.Headers["Referer"].ToString();
+            if (!string.IsNullOrEmpty(urlAnterior))
+            {
+                return Redirect(urlAnterior);
+            }
+
+            return View("VerPaginaPrincipalC");
         }
         public IActionResult eliminarDeLista(int idPublicacion, int idLista)
         {

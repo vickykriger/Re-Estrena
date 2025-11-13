@@ -74,38 +74,24 @@
             <h3>Tus publicaciones</h3>
 
             <div>
-                @if (ViewBag.PublicacionesPropias != null && ViewBag.PublicacionesPropias.Count > 0)
-                {
-                    foreach (var pub in ViewBag.PublicacionesPropias)
+                @{
+                    if (ViewBag.PublicacionesPropias != null && ViewBag.PublicacionesPropias.Count > 0)
                     {
-                        <article>
-                            <div>
-                                <h4>@pub.NombreProducto</h4>
-                                <button class="btn-editar-publicacion" onclick="location.href='@Url.Action("editarPublicacion", "Post", new { id = publicacion.IdPublicacion })'">✎</button>
-                            </div>
-                            <img src="@publicacion.Foto" alt="@publicacion.NombreProducto">
-                            <p >@pub.Descripcion</p>
-                            <div class="detalles-producto">
-                                @if (!string.IsNullOrEmpty(publicacion.Foto))
-                                {
-                                    <span>@publicacion.Foto</span>
-                                }
-                                @if (!string.IsNullOrEmpty(publicacion.NombreProducto))
-                                {
-                                    <span>@publicacion.NombreProducto</span>
-                                }
-                                @if (!string.IsNullOrEmpty(publicacion.Descripcion))
-                                {
-                                    <span>@publicacion.Descripcion</span>
-                                }
-                            </div>
-                            <p><strong>$@publicacion.Precio</strong></p>
-                        </article>
+                        foreach (var publicacion in ViewBag.PublicacionesPropias)
+                        {
+                            <article>
+                                <h4>@publicacion.NombreProducto</h4>
+                                <a href="@Url.Action("editarPublicacion", "Post", new { id = publicacion.IdPublicacion })">✎</a>
+                                <img src="@publicacion.Foto" alt="@publicacion.NombreProducto">
+                                <p>@publicacion.Descripcion</p>
+                                <p>$@publicacion.Precio</p>
+                            </article>
+                        }
                     }
-                }
-                else
-                {
-                    <p>Aún no tienes publicaciones. ¡Crea tu primera publicación!</p>
+                    else
+                    {
+                        <p>Aún no tienes publicaciones. ¡Crea tu primera publicación!</p>
+                    }
                 }
             </div>
 
@@ -120,6 +106,5 @@
             </form>
         </div>
     </main>
-
 </body>
 </html> 

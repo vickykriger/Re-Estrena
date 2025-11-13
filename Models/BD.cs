@@ -14,12 +14,12 @@ public static class BD
         bool registrado = false;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Usuarios WHERE NombreUsuario = @pNombreUsuario";
-            validar = connection.QueryFirstOrDefault<Usuario>(query, new { pNombreUsuario = user.NombreUsuario });
+            string query = "SELECT * FROM Usuarios WHERE NombreUsuario = @pUsuario";
+            validar = connection.QueryFirstOrDefault<Usuario>(query, new { pUsuario = user.NombreUsuario });
         }
         if (validar == null)
         {
-            string query = "INSERT INTO Usuarios (Email, Contrasenia, Usuario, NombreCompleto, Pais, Telefono, Foto) VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono, @pFoto)";
+            string query = "INSERT INTO Usuarios (Email, Contrasenia, NombreUsuario, NombreCompleto, Pais, Telefono, Foto) VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono, @pFoto)";
             string query1 = "INSERT INTO Listas (IdUsuario, NombreLista) VALUES (@pIdUsuario, @pNombreLista)";
             string query2 = "INSERT INTO UsuariosLista (IdLista, IdUsuario) VALUES (@pIdLista, @pIdUsuario)";
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -32,13 +32,13 @@ public static class BD
         }
         return registrado;
     }
-    public static Usuario login(string NombreUsuario, string password)
+    public static Usuario login(string usuario, string password)
     {
         Usuario logeado = new Usuario();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Usuarios WHERE NombreUsuario = @pNombreUsuario AND Contrasenia = @pContrasenia";
-            logeado = connection.QueryFirstOrDefault<Usuario>(query, new { pNombreUsuario = NombreUsuario, pContrasenia = password });
+            string query = "SELECT * FROM Usuarios WHERE NombreUsuario = @pUsuario AND Contrasenia = @pContrasenia";
+            logeado = connection.QueryFirstOrDefault<Usuario>(query, new { pUsuario = usuario, pContrasenia = password });
         }
         return logeado;
     }
@@ -91,7 +91,7 @@ public static class BD
         List<Publicacion> publicaciones;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Publicaciones WHERE Descripcion LIKE '%@ptexto%'";
+            string query = "SELECT * FROM Publicaciones WHERE Descripcion LIKE '%' + @ptexto + '%'";
             publicaciones = connection.Query<Publicacion>(query, new { ptexto = texto }).ToList();
         }
         return publicaciones;
@@ -127,20 +127,20 @@ public static class BD
         }
     }
 
-    public static void editarPublicacion(Publicacion publicacion)
+    public static void editarPublicacion(Publicacion publicacion, int id)
     {
         string query = "UPDATE Publicaciones SET IdUsuario = @pIdUsuario, Descripcion = @pDescripcion, Foto = @pFoto, Precio = @pPrecio, NombreProducto = @pNombreProducto WHERE IdPublicacion = @pIdPublicacion";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pIdUsuario = publicacion.IdUsuario, pDescripcion = publicacion.Descripcion, pFoto = publicacion.Foto, pPrecio = publicacion.Precio, pIdPublicacion = publicacion.IdPublicacion, pNombreProducto = publicacion.NombreProducto });
+            connection.Execute(query, new { pIdUsuario = publicacion.IdUsuario, pDescripcion = publicacion.Descripcion, pFoto = publicacion.Foto, pPrecio = publicacion.Precio, pNombreProducto = publicacion.NombreProducto, pIdPublicacion = id});
         }
     }
-    public static void editarUsuario(Usuario user)
+    public static void editarUsuario(Usuario user, int id)
     {
         string query = "UPDATE Usuarios SET Email = @pEmail, Contrasenia = @pContrasenia, NombreUsuario = @pNombreUsuario, NombreCompleto = @pNombreCompleto, Pais = @pPais, Telefono = @pTelefono WHERE IdUsuario = @pIdUsuario";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pNombreUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pIdUsuario = user.IdUsuariodUsuario});
+            connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pNombreUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pIdUsuario = id});
         }
     }
     public static List<Publicacion> devolverPublicacionesVendedor(int idUsuario)
@@ -175,7 +175,7 @@ public static class BD
     }
     public static List<Lista> devolverListasPorUsuario(int idUsuario)
     {
-        string query = "SELECT * FROM Listas INNER JOIN UsuariosLista ON Listas.IdLista = UsuariosLista.IdLista WHERE UsuariZosLista.IdUsuario = @pIdUsuario";
+        string query = "SELECT * FROM Listas INNER JOIN UsuariosLista ON Listas.IdLista = UsuariosLista.IdLista WHERE UsuariosLista.IdUsuario = @pIdUsuario";
         List<Lista> listas;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {

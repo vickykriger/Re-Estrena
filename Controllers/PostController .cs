@@ -8,10 +8,10 @@ namespace ReEstrena.Controllers
 {
     public class PostController : Controller
     {
-        public IActionResult subirPublicacion(string descripcion, string foto, decimal precio)
+        public IActionResult subirPublicacion(string nombreProducto, string descripcion, string foto, decimal precio)
         {
             int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).IdUsuario;
-            Publicacion publicacion = new Publicacion(id, descripcion, foto, precio);
+            Publicacion publicacion = new Publicacion(id, descripcion, foto, precio, nombreProducto);
             ViewBag.subido = BD.subirPublicacion(publicacion);
             ViewBag.Publicacion = publicacion;
             return View("VerPublicacion");
@@ -21,12 +21,12 @@ namespace ReEstrena.Controllers
             ViewBag.eliminado = BD.eliminarPublicacion(idProducto);
             return RedirectToAction("VerPaginaPrincipalV", "Account");
         }
-        public IActionResult editarPublicacion(string descripcion, string foto, decimal precio)
+        public IActionResult editarPublicacion(string nombreProducto, string descripcion, string foto, decimal precio, int idPub)
         {
             int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).IdUsuario;
-            Publicacion publicacion = new Publicacion(id, descripcion, foto, precio);
-            BD.editarPublicacion(publicacion);
-            ViewBag.Publicacion = publicacion;
+            Publicacion publicacion = new Publicacion(id, descripcion, foto, precio, nombreProducto);
+            BD.editarPublicacion(publicacion, idPub);
+            ViewBag.Publicacion = BD.DevolverPublicacion(idPub);
             return View("VerPublicacion");
         }
         public IActionResult verPublicacion(int idPublicacion)
