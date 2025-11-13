@@ -1,0 +1,108 @@
+@{
+    ViewData["Title"] = ViewBag.NombreLista ?? "Mi Lista";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.NombreLista - Re-Estrena</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span>🏠</span>
+                <span class="logo-text">RE-ESTRENA</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="@Url.Action('VerPaginaPrincipalC', 'AccountController')">Volver</a>
+                <button class="icon-btn">🏪</button>
+                <button class="icon-btn">🔔</button>
+                <button class="icon-btn">💬</button>
+                <button class="icon-btn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Simplified header - removed delete list button -->
+        <div class="lista-header">
+            <h1>@ViewBag.NombreLista:</h1>
+        </div>
+
+        @if (ViewBag.Publicaciones != null && ((List<dynamic>)ViewBag.Publicaciones).Count > 0)
+        {
+            <div class="productos-grid">
+                @foreach (var publicacion in ViewBag.Publicaciones)
+                {
+                    <div class="producto-card">
+                        <!-- Removed card header with delete and like buttons -->
+                        
+                        <a href="@Url.Action('verPublicacion', 'AccountController', new { idPublicacion = publicacion.Id })">
+                            <div class="producto-imagen">
+                                @if (!string.IsNullOrEmpty(publicacion.Imagen))
+                                {
+                                    <img src="@publicacion.Imagen" alt="@publicacion.NombreProducto">
+                                }
+                                else
+                                {
+                                    <img src="/placeholder.svg?height=200&width=200" alt="Producto sin imagen">
+                                }
+                            </div>
+                        </a>
+
+                        <!-- Información del producto -->
+                        <div class="producto-info">
+                            <h3 class="producto-titulo">@publicacion.NombreProducto</h3>
+                            <p class="producto-descripcion">@publicacion.Descripcion</p>
+                            
+                            <!-- Detalles -->
+                            <div class="producto-detalles">
+                                @if (!string.IsNullOrEmpty(publicacion.Categoria))
+                                {
+                                    <span>Categoría: @publicacion.Categoria</span>
+                                }
+                                @if (!string.IsNullOrEmpty(publicacion.Estado))
+                                {
+                                    <span>Estado: @publicacion.Estado</span>
+                                }
+                                @if (!string.IsNullOrEmpty(publicacion.Talle))
+                                {
+                                    <span>Talle: @publicacion.Talle</span>
+                                }
+                                @if (!string.IsNullOrEmpty(publicacion.Genero))
+                                {
+                                    <span>Género: @publicacion.Genero</span>
+                                }
+                            </div>
+
+                            <!-- Precio y botón -->
+                            <div class="producto-footer">
+                                <form asp-controller="Purchase" asp-action="AgregarACarrito" method="post" class="add-cart-form">
+                                    <input type="hidden" name="idPublicacion" value="@publicacion.Id" />
+                                    <button type="submit" class="precio-btn">$@publicacion.Precio</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="empty-state">
+                <p>Esta lista está vacía. ¡Empieza a agregar productos!</p>
+                <a href="@Url.Action('VerPaginaPrincipalC', 'AccountController')">Explorar productos</a>
+            </div>
+        }
+    </div>
+
+    <footer>
+        <p>© Copyright. Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+</body>
+</html>

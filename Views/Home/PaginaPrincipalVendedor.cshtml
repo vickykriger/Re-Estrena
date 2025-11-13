@@ -1,0 +1,133 @@
+@{
+    ViewData["Title"] = "Re-Estrena - Perfil Vendedor";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+            <div class="logo-section">
+                <img src="~/images/logo.png" alt="Logo Re-Estrena">
+                <h1>RE-ESTRENA</h1>
+            </div>
+           <div class="header-bar">
+      <img src="logo.png" alt="Logo Re-Estrena" class="logo">
+      <h1>RE-ESTRENA</h1>
+      <nav class="menu-bar">
+        <a href="@Url.Action('VerPaginaPrincipalV', 'Home')">Comprar</a>
+        <a href="@Url.Action('SubirPublicacion', 'Publicacion')"><img src="plus_icon.png" alt="Subir" title="Subir publicación"></a>
+        <a href="@Url.Action('VerCarrito', 'Carrito')"><img src="cart_icon.png" alt="Carrito" title="Carrito"></a>
+        <a href="@Url.Action('VerUsuario', 'Usuario')"><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
+        <a href="@Url.Action('VerNotificaciones', 'Notificaciones')"><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a>
+        <a href="@Url.Action('VerMensajes', 'Mensajes')"><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a>
+        <a href="@Url.Action('CerrarSesion', 'Account')"><img src="logout_icon.png" alt="Cerrar sesión" title="Cerrar sesión"></a>
+      </nav>
+    </div>
+    </header>
+
+    <main>
+        <section class="perfil">
+            <div class="perfil-container">
+                <div class="foto-perfil">
+                    <img src="@(ViewBag.Usuario.FotoPerfil ?? "  ~/images/default-avatar.png")" alt="Foto de perfil">
+                    <form asp-action="SubirFoto" asp-controller="AccountControllerController" method="post" enctype="multipart/form-data">
+                        <label for="foto-upload" class="subir-foto-btn">Subir foto</label>
+                        <input type="file" id="foto-upload" name="foto" accept="image/*" style="display: none;" onchange="this.form.submit()">
+                    </form>
+                </div>
+
+                <div class="datos-perfil">
+                    <div class="header-perfil">
+                        <div>
+                            <h2>@ViewBag.Usuario.Nombre</h2>
+                            <p class="username">@("@" + ViewBag.Usuario.Username)</p>
+                        </div>
+                        <button onclick="editarUsuarioGuardar()">✎</button>
+                        <button>⚙</button>
+                    </div>
+
+                    <div id="descripcion-vista" class="descripcion">
+                        <p>@Html.Raw(ViewBag.Usuario.Descripcion?.Replace("\n", "<br>") ?? "Sin descripción")</p>
+                    </div>
+
+                    <div id="descripcion-editar" class="descripcion-editar" style="display: none;">
+                        <form asp-action="ActualizarPerfil" asp-controller="AccountControllerController" method="post">
+                            <textarea name="descripcion" rows="5" placeholder="Escribe tu descripción...">@ViewBag.Usuario.Descripcion</textarea>
+                            <input type="hidden" name="userId" value="@ViewBag.Usuario.Id" />
+                            <div class="botones-editar">
+                                <button type="submit" class="btn-guardar">Guardar</button>
+                                <button type="button" class="btn-cancelar" onclick="editarUsuarioGuardar()">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="publicaciones">
+            <h3>Tus publicaciones</h3>
+
+            <div class="lista-publicaciones">
+                @if (ViewBag.PublicacionesPropias != null && ViewBag.PublicacionesPropias.Count > 0)
+                {
+                    foreach (var pub in ViewBag.PublicacionesPropias)
+                    {
+                        <article class="producto">
+                            <div class="producto-header">
+                                <h4>@pub.Titulo</h4>
+                                <button class="btn-editar-publicacion" onclick="location.href='@Url.Action("EditarPublicacion", "AccountController", new { id = pub.Id })'">✎</button>
+                            </div>
+                            <img src="@pub.ImagenUrl" alt="@pub.Titulo">
+                            <p class="descripcion-producto">@pub.Descripcion</p>
+                            <div class="detalles-producto">
+                                @if (!string.IsNullOrEmpty(pub.Categoria))
+                                {
+                                    <span>Categoría: @pub.Categoria</span>
+                                }
+                                @if (!string.IsNullOrEmpty(pub.Estado))
+                                {
+                                    <span>Estado: @pub.Estado</span>
+                                }
+                                @if (!string.IsNullOrEmpty(pub.Talle))
+                                {
+                                    <span>Talle: @pub.Talle</span>
+                                }
+                                @if (!string.IsNullOrEmpty(pub.Genero))
+                                {
+                                    <span>Género: @pub.Genero</span>
+                                }
+                            </div>
+                            <p class="precio"><strong>$@pub.Precio</strong></p>
+                        </article>
+                    }
+                }
+                else
+                {
+                    <p>Aún no tienes publicaciones. ¡Crea tu primera publicación!</p>
+                }
+            </div>
+
+            <div class="agregar-publicacion">
+                <a href="@Url.Action('CrearPublicacion', 'AccountController')" >+ Crear nueva publicación</a>
+            </div>
+
+        </section>
+
+        <div class="cerrar-sesion">
+            <form asp-action="CerrarSesion" asp-controller="OnBoarding" method="post">
+                <button type="submit">Cerrar sesión</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© Copyright - Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+</body>
+</html> 

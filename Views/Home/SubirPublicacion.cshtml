@@ -1,0 +1,83 @@
+@{
+    ViewData["Title"] = "Subir publicación";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/publicar.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="icon-home">🏠</span>
+                <span class="logo-text">RE-ESTRENA</span>
+            </div>
+            <nav>
+                <a href="@Url.Action('VerPaginaPrincipalV', 'AccountControllerControllerController')" class="nav-link">Volver</a>
+                <a href="@Url.Action('buscarProducto', 'AccountControllerControllerController')" class="nav-link">🏷️</a>
+                <a href="@Url.Action('VerPaginaPrincipalV', 'AccountControllerControllerController')" class="nav-link">👤</a>
+                <a href="@Url.Action('VerNotificaciones', 'AccountControllerControllerController')" class="nav-link">🔔</a>
+                <a href="@Url.Action('VerMensajes', 'AccountControllerControllerControllerController')" class="nav-link">💬</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="publicar-container">
+            <!-- Botón de eliminar (solo visible en modo edición) -->
+            <button type="button" class="btn-eliminar" id="btnEliminar" style="display: none;">
+                🗑️
+            </button>
+
+            <form asp-action="GuardarPublicacion" asp-controller="AccountControllerControllerController" method="post" enctype="multipart/form-data" class="publicar-form">
+                <!-- Sección de imagen -->
+                <div class="imagen-section">
+                    <div class="imagen-preview" id="imagePreview">
+                        <input type="file" name="imagen" id="inputImagen" accept="image/*" class="input-file" required>
+                        <label for="inputImagen" class="btn-subir-foto">
+                            <span class="icon">📷</span> Subir foto
+                        </label>
+                        <img id="previewImg" class="preview-img" style="display: none;" alt="Preview">
+                    </div>
+                </div>
+
+                <!-- Sección de información -->
+                <div class="info-section">
+                    <!-- Información del producto -->
+                    <div class="form-group">
+                        <label for="informacion">Información del producto</label>
+                        <textarea name="informacion" id="informacion" rows="6" class="form-control" placeholder="Describe tu producto..." required></textarea>
+                    </div>
+
+                    <!-- Agregar etiquetas -->
+                    <div class="form-group">
+                        <label for="etiquetas">Agregar etiquetas</label>
+                        <input type="text" name="etiquetas" id="etiquetas" class="form-control" placeholder="Ej: casual, verano, algodón">
+                    </div>
+
+                    <!-- Precio -->
+                    <div class="form-group">
+                        <label for="precio">Precio:</label>
+                        <input type="number" name="precio" id="precio" class="form-control" placeholder="$0" min="0" step="0.01" required>
+                    </div>
+
+                    <!-- Botón de submit -->
+                    <button type="submit">Subir publicación</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>© Copyright. Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+</body>
+</html>

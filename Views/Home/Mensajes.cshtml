@@ -1,0 +1,137 @@
+@{
+    ViewData["Title"] = "Mensajes";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Re-Estrena</title>
+    <link rel="stylesheet" href="~/css/mensajes.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div>
+                <span class="logo-icon">🏠</span>
+                <h1 class="logo-text">RE-ESTRENA</h1>
+            </div>
+            <nav>
+                <a href='@Url.Action("VerPaginaPrincipalC", "Account")' class="nav-link">Vender</a>
+                <button class="icon-btn">🏪</button>
+                <button class="icon-btn">👤</button>
+                <button class="icon-btn">🔔</button>
+                <button class="icon-btn active">💬</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mensajes-container">
+        <!-- Panel izquierdo - Lista de conversaciones -->
+        <div class="conversaciones-panel">
+            <div class="conversaciones-header">
+                <h2>Mensajes</h2>
+            </div>
+            <div class="conversaciones-lista">
+                @if (ViewBag.Conversaciones != null && ViewBag.Conversaciones.Count > 0)
+                {
+                    @foreach (var conversacion in ViewBag.Conversaciones)
+                    {
+                        <a href='@Url.Action("VerMensajes", "Account", new { idUsuario = conversacion.UsuarioId })"
+                            @(ViewBag.ConversacionActual != null && ViewBag.ConversacionActual.UsuarioId == conversacion.UsuarioId ? "active" : "")'>
+                            <div class="usuario-avatar">
+                                @if (!string.IsNullOrEmpty(conversacion.UsuarioFoto))
+                                {
+                                    <img src="@conversacion.UsuarioFoto" alt="@conversacion.UsuarioNombre" />
+                                }
+                                else
+                                {
+                                    <div class="avatar-placeholder">@conversacion.UsuarioNombre.Substring(0, 1)</div>
+                                }
+                            </div>
+                            <div class="conversacion-info">
+                                <div class="conversacion-header-row">
+                                    <h3 class="usuario-nombre">@conversacion.UsuarioNombre</h3>
+                                    <span class="ultimo-mensaje-fecha">@conversacion.UltimoMensajeFecha</span>
+                                </div>
+                                <div class="ultimo-mensaje">
+                                    <p>@conversacion.UltimoMensajeTexto</p>
+                                    @if (conversacion.TieneMensajesNoLeidos)
+                                    {
+                                        <span class="check-double">✓✓</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="check-single">✓</span>
+                                    }
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+                else
+                {
+                    <div class="empty-state">
+                        <p>No tienes conversaciones aún</p>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="chat-panel">
+            @if (ViewBag.ConversacionActual != null)
+            {
+                <!-- Header del chat con usuario seleccionado -->
+                <div class="chat-header">
+                    <h2>@ViewBag.ConversacionActual.UsuarioNombre</h2>
+                </div>
+
+                <!-- Mensajes -->
+                <div class="mensajes-lista">
+                    @if (ViewBag.MensajesActivos != null && ViewBag.MensajesActivos.Count > 0)
+                    {
+                        @foreach (var mensaje in ViewBag.MensajesActivos)
+                        {
+                            <div class="mensaje @(mensaje.EsPropio ? "mensaje-propio" : "mensaje-recibido")">
+                                <div class="mensaje-contenido">
+                                    <p>@mensaje.Texto</p>
+                                    <span class="mensaje-fecha">@mensaje.FechaHora</span>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="empty-chat">
+                            <p>No hay mensajes en esta conversación</p>
+                        </div>
+                    }
+                </div>
+
+                <!-- Input para enviar mensajes -->
+                <div class="mensaje-input-container">
+                    <form method="post" asp-controller="Account" asp-action="EnviarMensaje" class="mensaje-form">
+                        <input type="hidden" name="idUsuarioDestino" value="@ViewBag.ConversacionActual.UsuarioId" />
+                        <input type="text" name="mensaje" placeholder="Escribe tu mensaje..." class="mensaje-input" required />
+                        <button type="submit" class="enviar-btn">
+                            <span class="enviar-icon">✈️</span>
+                        </button>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <p>Selecciona una conversación para ver los mensajes</p>
+                </div>
+            }
+        </div>
+    </div>
+
+    <footer>
+        <p>© Copyright - Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+</body>
+</html>

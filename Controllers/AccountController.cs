@@ -18,6 +18,24 @@ namespace ReEstrena.Controllers
         }
         public IActionResult VerMensajes()
         {
+            int usuarioActualId = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).id;
+            
+            // Obtener todas las conversaciones del usuario
+            ViewBag.Conversaciones = BD.ObtenerConversaciones(usuarioActualId);
+            
+            // Si hay un usuario seleccionado, cargar sus mensajes
+            if (idUsuario.HasValue)
+            {
+                ViewBag.ConversacionActual = BD.ObtenerUsuario(idUsuario.Value);
+                ViewBag.MensajesActivos = BD.ObtenerMensajes(usuarioActualId, idUsuario.Value);
+            }
+            else
+            {
+                ViewBag.ConversacionActual = null;
+                ViewBag.MensajesActivos = null;
+            }
+            
+            return View("Mensajes");
             return View("Mensajes");
         }
         public IActionResult VerUsuarioC()

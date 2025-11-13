@@ -1,0 +1,94 @@
+@{
+    ViewData["Title"] = "Buscador - Re-Estrena";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/buscador.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span>🏠</span>
+                <span class="logo-text">RE-ESTRENA</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="@Url.Action("VerPaginaPrincipalC", "Account")">Vender</a>
+                <a href="@Url.Action("buscarProducto", "Account")">🔍</a>
+                <a href="@Url.Action("VerUsuarioC", "Account")">👤</a>
+                <a href="@Url.Action("VerNotificaciones", "Account")">🔔</a>
+                <a href="@Url.Action("VerCarrito", "Purchase")">🛒</a>
+                <a href="@Url.Action("VerMensajes", "Account")">💬</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="buscador-container">
+        <div class="search-section">
+            <form asp-action="buscarProducto" asp-controller="Account" method="get" class="search-form">
+                <input type="text" name="descripcion" placeholder="Buscar productos..." class="search-input" required>
+                <button type="submit" class="search-button">Buscar</button>
+            </form>
+        </div>
+
+        @if (ViewBag.Publicaciones != null && ViewBag.Publicaciones.Count > 0)
+        {
+            <div class="productos-grid">
+                @foreach (var publicacion in ViewBag.Publicaciones)
+                {
+                    <div class="producto-card">
+                        <div class="card-header">
+                            <h3 class="producto-titulo">@publicacion.NombreProducto</h3>
+                            <form asp-action="likear" asp-controller="Account" method="post" class="like-form">
+                                <input type="hidden" name="idPublicacion" value="@publicacion.Id" />
+                                <button type="submit" class="like-button">♡</button>
+                            </form>
+                        </div>
+
+                        <a href='@Url.Action("verPublicacion", "Account", new { idPublicacion = publicacion.Id })' class="imagen-link">
+                            <img src="@publicacion.Imagen" alt="@publicacion.NombreProducto" class="producto-imagen">
+                        </a>
+
+                        <div class="producto-info">
+                            <p class="producto-descripcion">@publicacion.Descripcion</p>
+                            
+                            @if (!string.IsNullOrEmpty(publicacion.Etiquetas))
+                            {
+                                <div class="producto-detalles">
+                                    @foreach (var etiqueta in publicacion.Etiquetas.Split(','))
+                                    {
+                                        <span class="detalle-item">@etiqueta.Trim()</span>
+                                    }
+                                </div>
+                            }
+                        </div>
+
+                        <div class="card-footer">
+                            <form asp-action="AgregarACarrito" asp-controller="Purchase" method="post" class="precio-form">
+                                <input type="hidden" name="idPublicacion" value="@publicacion.Id" />
+                                <button type="submit" class="precio-button">$@publicacion.Precio</button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div>
+                <p >No se encontraron productos</p>
+                <p>Intenta con otras palabras clave</p>
+            </div>
+        }
+    </main>
+
+    <footer>
+        <p>© Copyright. Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+</body>
+</html>

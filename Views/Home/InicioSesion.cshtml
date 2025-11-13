@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Iniciar sesión";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-Estrena - Iniciar sesión</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header class="header-login">
+        <div class="logo-container">
+            <img src="~/images/logo.png" alt="Logo Re-Estrena" class="logo">
+            <h1>RE-ESTRENA</h1>
+        </div>
+    </header>
+
+    <main class="main-login">
+        <section>
+            <div>
+                <h2>¿Ya tienes cuenta?</h2>
+                
+                <form asp-controller="OnBoarding" asp-action="loginGuardar" method="post">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+                    <button type="submit" class="btn-login">Iniciar sesión</button>
+                </form>
+
+                <section class="registrate">
+                    <div>
+                        <p>¿No tienes cuenta?</p>
+                        <a asp-controller="OnBoarding" asp-action="registro" class="btn-registro">Registrarse</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Copyright - Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+</body>
+</html>

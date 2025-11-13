@@ -1,0 +1,89 @@
+@{
+    ViewData["Title"] = "Carrito de Compras";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/carrito.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="icon">🏠</span>
+                <span class="brand">RE-ESTRENA</span>
+            </div>
+            <nav class="nav-links">
+                <a href="@Url.Action('VerPaginaPrincipalC', 'Ofertas')">Vender</a>
+                <a href="@Url.Action('VerCarrito', 'PurchaseController')" class="icon">🛒</a>
+                <a href="#" class="icon">👤</a>
+                <a href="#" class="icon">🔔</a>
+                <a href="#" class="icon">💬</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Carrito Content -->
+    <div class="carrito-container">
+        @if (ViewBag.Carrito != null && ViewBag.Carrito.Count > 0)
+        {
+            <!-- Lista de productos -->
+            <div class="productos-lista">
+                @foreach (var publicacion in ViewBag.Carrito)
+                {
+                    <div class="producto-item">
+                        <img src="@publicacion.Imagen" alt="@publicacion.NombreProducto" class="producto-imagen">
+                        <div class="producto-info">
+                            <h3 class="producto-nombre">@publicacion.NombreProducto</h3>
+                            <p class="producto-vendedor">@publicacion.VendedorUsername</p>
+                        </div>
+                        <form method="post" asp-controller="Purchase" asp-action="EliminarDeCarrito" class="eliminar-form">
+                            <input type="hidden" name="id" value="@publicacion.Id" />
+                            <button type="submit" class="btn-eliminar">🗑️</button>
+                        </form>
+                        <div class="producto-precio">${@publicacion.Precio}</div>
+                    </div>
+                }
+            </div>
+
+
+            <div class="resumen-container">
+                @foreach (var publicacion in ViewBag.Carrito)
+                {
+                    <div class="resumen-item">
+                        <span>@publicacion.NombreProducto</span>
+                        <span>$@publicacion.Precio</span>
+                    </div>
+                }
+                
+                <div class="resumen-item">
+                    <span>Envío</span>
+                    <span>$@Publicaciones.Precio</span>
+                </div>
+                <div class="resumen-item resumen-total">
+                    <span><strong>Total</strong></span>
+                    <span><strong>${@ViewBag.Total}</strong></span>
+                </div>
+
+                <button class="btn-continuar">Continuar compra</button>
+            </div>
+        }
+        else
+        {
+            <div class="carrito-vacio">
+                <p>Tu carrito está vacío</p>
+                <a href="@Url.Action('Index', 'Ofertas')">Ver productos</a>
+            </div>
+        }
+    </div>
+
+    <footer>
+        <p>© Copyright. Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+</body>
+</html>

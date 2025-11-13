@@ -1,0 +1,112 @@
+@{
+    ViewBag.Title = "Ofertas - Re-Estrena";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/ofertas.css">
+</head>
+<body>
+    <header class="header-ofertas">
+        <div class="logo-section">
+            <img src="~/images/logo.png" alt="Logo Re-Estrena" class="logo">
+            <h1>RE-ESTRENA</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href='@Url.Action("VerPaginaPrincipalC", "AccountController")'>Inicio</a></li>
+                <li><a href="#">Nuestros Productos</a></li>
+                <li><a href="#">Favoritos</a></li>
+            </ul>
+        </nav>
+        
+        <form class="search-bar" method="get" action="@Url.Action('buscarProducto', 'AccountController')">
+            <input type="text" name="descripcion" placeholder="Buscar productos..." />
+            <button type="submit">🔍</button>
+        </form>
+        <div class="header-icons">
+            
+            @if (ViewBag.Usuario != null)
+            {
+                <a href="@Url.Action('VerUsuarioC', 'AccountController')" class="icon-link user-icon" title="@ViewBag.Usuario.Nombre">
+                    <span class="user-initial">@ViewBag.Usuario.Nombre</span>
+                </a>
+            }
+            <a href="@Url.Action('VerCarrito', 'PurchaseController')" class="icon-link">🛒</a>
+            <a href="#" class="icon-link">⚙️</a>
+            <a href="@Url.Action('VerNotificaciones', 'AccountController')" class="icon-link">🔔</a>
+            <a href="@Url.Action('VerMensajes', 'AccountController')" class="icon-link">💬</a>
+        </div>
+    </header>
+
+    <main class="ofertas-container">
+        <div>
+            <h2>Ofertas</h2>
+        </div>
+
+        <div class="productos-grid">
+            @if (ViewBag.Publicaciones != null && ViewBag.Publicaciones.Count > 0)
+            {
+                foreach (var publicacion in ViewBag.Publicaciones)
+                {
+                    <article class="producto-card">
+                        <div>
+                            <h3 class="producto-titulo">@publicacion.Titulo</h3>
+                            <!-- Added form to submit likear action -->
+                            <form method="post" action="@Url.Action('likear', 'AccountController')" class="favorito-form">
+                                <input type="hidden" name="idPublicacion" value="@Publicacion.Id" />
+                                <button type="submit" class="favorito-btn">❤️</button>
+                            </form>
+                        </div>
+                        
+                       
+                        <a href="@Url.Action('verPublicacion', 'AccountController', new { idPublicacion = publicacion.Id })">
+                            <div class="producto-imagen">
+                                @if (!string.IsNullOrEmpty(publicacion.ImagenUrl))
+                                {
+                                    <img src="@Publicacion.ImagenUrl" alt="@Publicacion.Titulo" />
+                                }
+                                else
+                                {
+                                    <img src="/placeholder.svg?height=200&width=200" alt="@Publicacion.Titulo" />
+                                }
+                            </div>
+                        </a>
+
+                        <div class="producto-info">
+                            <p class="producto-descripcion">@Publicacion.Descripcion</p>
+                            
+                            <div class="producto-detalles">
+                                <p>Categoría: @Publicacion.Categoria</p>
+                                <p>Estado: @Publicacion.Estado</p>
+                                <p>Talle: @Publicacion.Talle</p>
+                                <p>Género: @Publicacion.Genero</p>
+                            </div>
+
+                            <div class="producto-footer">
+                                <!-- Added form to add product to cart -->
+                                <form method="post" action='@Url.Action("AgregarACarrito", "PurchaseController")' class="add-to-cart-form">
+                                    <input type="hidden" name="idPublicacion" value="@publicacion.Id" />
+                                    <button type="submit" class="precio-btn">${@publicacion.Precio}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </article> 
+                }
+            }
+            else
+            {
+                <p>No hay ofertas disponibles en este momento.</p>
+            }
+        </div>
+    </main>
+
+    <footer>
+        <p> &copy; 2025 Re-Estrena - Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+</body>
+</html>
