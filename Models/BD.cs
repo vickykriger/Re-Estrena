@@ -9,29 +9,73 @@ public static class BD
     DataBase=BD;Integrated Security =True;TrustServerCertificate=True;";
     public static bool registrarse(Usuario user)
     {
-
-        Usuario validar = new Usuario();
         bool registrado = false;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Usuarios WHERE NombreUsuario = @pUsuario";
-            validar = connection.QueryFirstOrDefault<Usuario>(query, new { pUsuario = user.NombreUsuario });
-        }
-        if (validar == null)
-        {
-            string query = "INSERT INTO Usuarios (Email, Contrasenia, NombreUsuario, NombreCompleto, Pais, Telefono, Foto) VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono, @pFoto)";
-            string query1 = "INSERT INTO Listas (IdUsuario, NombreLista) VALUES (@pIdUsuario, @pNombreLista)";
-            string query2 = "INSERT INTO UsuariosLista (IdLista, IdUsuario) VALUES (@pIdLista, @pIdUsuario)";
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            string checkQuery = "SELECT * FROM Usuarios WHERE NombreUsuario = @pUsuario";
+            Usuario validar = connection.QueryFirstOrDefault<Usuario>(
+                checkQuery,
+                new { pUsuario = user.NombreUsuario }
+            );
+
+            if (validar != null)
             {
-                connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pFoto = user.Foto });
-                connection.Execute(query1, new { pIdUsuario = user.IdUsuario, pNombreLista = "Favoritos"});
-                connection.Execute(query2, new { pIdLista = 1, pIdUsuario = user.IdUsuario});
+                return false;
             }
-            registrado = true;
         }
-        return registrado;
+
+        int nuevoIdUsuario;
+
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string insertUser = @"
+        INSERT INTO Usuarios (Email, Contrasenia, NombreUsuario, NombreCompleto, Pais, Telefono, Foto)
+        OUTPUT INSERTED.IdUsuario
+        VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono, @pFoto);
+        ";
+
+            nuevoIdUsuario = connection.QuerySingle<int>(
+                insertUser,
+                new
+                {
+                    pEmail = user.Email,
+                    pContrasenia = user.Contrasenia,
+                    pUsuario = user.NombreUsuario,
+                    pNombreCompleto = user.NombreCompleto,
+                    pPais = user.Pais,
+                    pTelefono = user.Telefono,
+                    pFoto = user.Foto
+                }
+            );
+        }
+        int nuevaListaId;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string insertLista = @"
+        INSERT INTO Listas (IdUsuario, NombreLista)
+        OUTPUT INSERTED.IdLista
+        VALUES (@pIdUsuario, @pNombreLista);
+        ";
+
+            nuevaListaId = connection.QuerySingle<int>(
+                insertLista,
+                new { pIdUsuario = nuevoIdUsuario, pNombreLista = "Favoritos" }
+            );
+        }
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string insertRelacion =
+                "INSERT INTO UsuariosLista (IdLista, IdUsuario) VALUES (@pIdLista, @pIdUsuario)";
+
+            connection.Execute(
+                insertRelacion,
+                new { pIdLista = nuevaListaId, pIdUsuario = nuevoIdUsuario }
+            );
+        }
+
+        return true;
     }
+
     public static Usuario login(string usuario, string password)
     {
         Usuario logeado = new Usuario();
@@ -72,6 +116,17 @@ public static class BD
         {
             string query = "SELECT * FROM Publicaciones WHERE IdPublicacion = @pIdPublicacion";
             publicacion = connection.QueryFirstOrDefault<Publicacion>(query, new { pIdPublicacion = idPublicacion });
+        }
+        return publicacion;
+    }
+
+    public static Publicacion RandomPublicacion()
+    {
+        Publicacion publicacion;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM Publicaciones ORDER BY NEWID()";
+            publicacion = connection.QueryFirstOrDefault<Publicacion>(query);
         }
         return publicacion;
     }
@@ -132,7 +187,7 @@ public static class BD
         string query = "UPDATE Publicaciones SET IdUsuario = @pIdUsuario, Descripcion = @pDescripcion, Foto = @pFoto, Precio = @pPrecio, NombreProducto = @pNombreProducto WHERE IdPublicacion = @pIdPublicacion";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pIdUsuario = publicacion.IdUsuario, pDescripcion = publicacion.Descripcion, pFoto = publicacion.Foto, pPrecio = publicacion.Precio, pNombreProducto = publicacion.NombreProducto, pIdPublicacion = id});
+            connection.Execute(query, new { pIdUsuario = publicacion.IdUsuario, pDescripcion = publicacion.Descripcion, pFoto = publicacion.Foto, pPrecio = publicacion.Precio, pNombreProducto = publicacion.NombreProducto, pIdPublicacion = id });
         }
     }
     public static void editarUsuario(Usuario user, int id)
@@ -140,7 +195,7 @@ public static class BD
         string query = "UPDATE Usuarios SET Email = @pEmail, Contrasenia = @pContrasenia, NombreUsuario = @pNombreUsuario, NombreCompleto = @pNombreCompleto, Pais = @pPais, Telefono = @pTelefono WHERE IdUsuario = @pIdUsuario";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pNombreUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pIdUsuario = id});
+            connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pNombreUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pIdUsuario = id });
         }
     }
     public static List<Publicacion> devolverPublicacionesVendedor(int idUsuario)
@@ -149,7 +204,7 @@ public static class BD
         List<Publicacion> publicaciones;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            publicaciones = connection.Query<Publicacion>(query, new { pidUsuario = idUsuario}).ToList();
+            publicaciones = connection.Query<Publicacion>(query, new { pidUsuario = idUsuario }).ToList();
         }
         return publicaciones;
     }
@@ -159,7 +214,7 @@ public static class BD
         Usuario user;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            user = connection.QuerySingleOrDefault<Usuario>(query, new {pIdUsuario = idUsuario});
+            user = connection.QuerySingleOrDefault<Usuario>(query, new { pIdUsuario = idUsuario });
         }
         return user;
     }
@@ -169,7 +224,7 @@ public static class BD
         List<Publicacion> publicaciones;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            publicaciones = connection.Query<Publicacion>(query, new {pIdLista = idLista}).ToList();
+            publicaciones = connection.Query<Publicacion>(query, new { pIdLista = idLista }).ToList();
         }
         return publicaciones;
     }
@@ -179,7 +234,7 @@ public static class BD
         List<Lista> listas;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            listas = connection.Query<Lista>(query, new {pIdUsuario = idUsuario}).ToList();
+            listas = connection.Query<Lista>(query, new { pIdUsuario = idUsuario }).ToList();
         }
         return listas;
     }
@@ -189,7 +244,7 @@ public static class BD
         List<Etiqueta> etiquetas;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            etiquetas = connection.Query<Etiqueta>(query, new {pIdPublicacion = idPublicacion}).ToList();
+            etiquetas = connection.Query<Etiqueta>(query, new { pIdPublicacion = idPublicacion }).ToList();
         }
         return etiquetas;
     }
@@ -199,8 +254,8 @@ public static class BD
         string query1 = "INSERT INTO UsuariosLista (IdLista, IdUsuario) VALUES (@pIdLista, @pIdUsuario)";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pIdUsuario = lista.IdUsuario, pNombreLista = lista.NombreLista});
-            connection.Execute(query1, new { pIdLista = lista.IdLista, pIdUsuario = lista.IdUsuario});
+            connection.Execute(query, new { pIdUsuario = lista.IdUsuario, pNombreLista = lista.NombreLista });
+            connection.Execute(query1, new { pIdLista = lista.IdLista, pIdUsuario = lista.IdUsuario });
         }
     }
     public static void eliminarDeLista(int idPublicacion, int idLista)
@@ -208,7 +263,7 @@ public static class BD
         string query = "DELETE FROM PublicacionLista WHERE IdPublicacion = @pIdPublicacion AND IdLista = @pIdLista";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pIdPublicacion = idPublicacion, pIdLista = idLista});
+            connection.Execute(query, new { pIdPublicacion = idPublicacion, pIdLista = idLista });
         }
     }
     public static void eliminarLista(int idLista)
@@ -216,7 +271,7 @@ public static class BD
         string query = "DELETE FROM Listas WHERE IdLista = @pIdLista";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pIdLista = idLista});
+            connection.Execute(query, new { pIdLista = idLista });
         }
     }
     public static string devolverNombreLista(int idLista)
@@ -225,7 +280,7 @@ public static class BD
         string nombre = "";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            nombre = connection.QuerySingleOrDefault<string>(query, new { pIdLista = idLista});
+            nombre = connection.QuerySingleOrDefault<string>(query, new { pIdLista = idLista });
         }
         return nombre;
     }

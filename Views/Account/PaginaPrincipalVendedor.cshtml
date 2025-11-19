@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
     <header>
@@ -23,7 +23,7 @@
         <a href='@Url.Action("VerPaginaPrincipalC", "Account")'>Comprar</a>
         <a href='@Url.Action("SubirPublicacion", "Post")'><img src="plus_icon.png" alt="Subir" title="Subir publicación"></a>
         <a href='@Url.Action("VerCarrito", "Purchase")'><img src="cart_icon.png" alt="Carrito" title="Carrito"></a>
-        <a href='@Url.Action("VerUsuarioC", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
+        <a href='@Url.Action("VerUsuarioV", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
         <a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a>
         <a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a>
         <a href='@Url.Action("CerrarSesion", "OnBoarding")'><img src="logout_icon.png" alt="Cerrar sesión" title="Cerrar sesión"></a>
@@ -38,12 +38,12 @@
                     <img src='@(ViewBag.Usuario.FotoPerfil ?? "  ~/images/default-avatar.png")" alt="Foto de perfil'>
                     <form asp-action="subirFoto" asp-controller="Account" method="post" enctype="multipart/form-data">
                         <label for="foto-upload">Subir foto</label>
-                        <input type="file" id="foto-upload" name="foto" accept="image/*" style="display: none;" onchange="this.form.submit()">
+                        <input type="file" id="foto-upload" name="foto" accept="image/*" onchange="this.form.submit()">
                     </form>
                 </div>
 
                 <section class="datos-perfil">
-                    <div class="header-perfil">
+                    <div>
                         <div>
                             <h2>@ViewBag.Usuario.Nombre</h2>
                             <p class="username">@("@" + ViewBag.Usuario.Username)</p>
@@ -56,13 +56,13 @@
                         <p>@Html.Raw(ViewBag.Usuario.Descripcion?.Replace("\n", "<br>") ?? "Sin descripción")</p>
                     </div>
 
-                    <div id="descripcion-editar" style="display: none;">
+                    <div id="descripcion-editar">
                         <form asp-action="editarUsuario" asp-controller="Account" method="post">
                             <textarea name="descripcion" rows="5" placeholder="Escribe tu descripción...">@ViewBag.Usuario.Descripcion</textarea>
                             <input type="hidden" name="userId" value="@ViewBag.Usuario.Id" />
-                            <div class="botones-editar">
-                                <button type="submit" class="btn-guardar">Guardar</button>
-                                <button type="button" class="btn-cancelar">Cancelar</button>
+                            <div>
+                                <button type="submit">Guardar</button>
+                                <button type="button">Cancelar</button>
                             </div>
                         </form>
                     </div>
@@ -81,7 +81,7 @@
                         {
                             <article>
                                 <h4>@publicacion.NombreProducto</h4>
-                                <a href="@Url.Action("editarPublicacion", "Post", new { id = publicacion.IdPublicacion })">✎</a>
+                                <a href='@Url.Action("editarPublicacion", "Post", new { id = publicacion.IdPublicacion })'>✎</a>
                                 <img src="@publicacion.Foto" alt="@publicacion.NombreProducto">
                                 <p>@publicacion.Descripcion</p>
                                 <p>$@publicacion.Precio</p>

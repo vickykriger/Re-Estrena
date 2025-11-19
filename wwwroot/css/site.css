@@ -359,71 +359,107 @@ footer {
 }
 
 
-
-
+/* ======= HEADER ======= */
 .header-login {
-    background-color: #7F99B7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width:100%;
-    padding-left: 2%;
-    padding-right: 2%;
-    margin-bottom: 1%;
-  }
+  background-color: #7F99B7;   /* azul suave del prototipo */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
 
+.header-login div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  .headerlogin h1 {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #1e2a33;
-    margin-right:5%;
+.header-login .logo {
+  height: 35px;
+}
+
+.header-login h1 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 700;
+  color: #002b3d;
+  letter-spacing: 1px;
 }
 
 
-.login-box div h2
-{
-  color: #333;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
-.login-box div form
-{
-  background-color: white;
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 30%;
-}
-
-
-.login-box div form label, input
-{
-  width: 30%;
-  margin-left: 5%;
-  margin-right: 5%;
-
-
-}
-
-
+/* ======= FONDO CON FOTO ======= */
 .fotito {
-  background-image: url("wwwroot/imagenes/fotito.jpg");
+  background-image: url('~/images/loginFondo.jpg'); /* reemplaza por tu imagen */
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 70px);   /* todo excepto header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
-.registrate div p
-{
-  color: #333;
-  font-size: larger;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+/* ======= CAJA DE LOGIN ======= */
+.login-box {
+  background-color: white;
+  width: 360px;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.login-box form button{
+  width: 380px;
 }
 
 
-.registrate div a
-{
-  background-color: A8BBA2;
-  margin-left: 5%;
-  margin-right: 5%;
+/* ======= INPUTS ======= */
+.login-box label {
+  text-align: left;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #f2e5ce;   /* beige */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+
+/* ======= BOTONES ======= */
+.btn-login,
+.registrate a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #a8bba2;   /* verde del prototipo */
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  margin-top: 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-login:hover,
+.registrate a:hover {
+  background-color: #5b7c67;
+}
+
+
+/* ======= REGISTRARSE ======= */
+.registrate p {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}

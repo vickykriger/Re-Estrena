@@ -8,49 +8,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Publicacion.NombreProducto - Re-Estrena</title>
-    <link rel="stylesheet" href="~/css/ver-publicacion.css">
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <div class="header-left">
+        <div>
             <img src="~/images/logo.png" alt="Re-Estrena" class="logo">
-            <span class="brand-name">RE-ESTRENA</span>
+            <p>RE-ESTRENA</p>
         </div>
-        <nav class="header-nav">
+        <nav>
             <a href='@Url.Action("VerPaginaPrincipalC", "Account")'>Vender</a>
-            <a href="#" class="icon-button">🏷️</a>
-            <a href="#" class="icon-button">🛒</a>
-            <a href='@Url.Action("VerUsuarioC", "Account")' class="icon-button">👤</a>
-            <a href='@Url.Action("VerNotificaciones", "Account")' class="icon-button">🔔</a>
-            <a href='@Url.Action("VerMensajes", "Account")' class="icon-button">💬</a>
+            <a href='@Url.Action("VerCarrito", "Purchase")'><img src="cart_icon.png" alt="Carrito" title="Carrito"></a>
+            <a href='@Url.Action("VerUsuarioC", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
+            <a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a>
+            <a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a>
+            <a href='@Url.Action("CerrarSesion", "OnBoarding")'><img src="logout_icon.png" alt="Cerrar sesión" title="Cerrar sesión"></a>
         </nav>
     </header>
 
     <main class="main-content">
-        <div class="product-container">
-            <!-- Columna izquierda: Imagen del producto -->
+        <section class="product-container">
             <div class="product-image-section">
                 <img src="@ViewBag.Publicacion.Imagen" alt="@ViewBag.Publicacion.NombreProducto" class="product-image">
             </div>
 
-            <!-- Columna derecha: Información del producto -->
             <div class="product-info-section">
-                <!-- Título y botón de favorito -->
+
                 <div class="product-header">
                     <h1 class="product-title">@ViewBag.Publicacion.NombreProducto</h1>
-                    <form asp-action="likear" asp-controller="Account" method="post" class="like-form">
-                        <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.Id">
-                        <button type="submit" class="btn-favorite">❤️</button>
+                    <form asp-action="likear" asp-controller="Account" method="post">
+                        <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.IdPublicacion">
+                        <button type="submit">❤️</button>
                     </form>
                 </div>
 
-                <!-- Descripción -->
                 <div class="product-description">
                     <p>@Html.Raw(ViewBag.Publicacion.Descripcion?.Replace("\n", "<br>") ?? "Sin descripción")</p>
                 </div>
 
-                <!-- Etiquetas/Categorías -->
                 <div class="product-tags">
                     <h3>Etiquetas/categorías:</h3>
                     <div class="tags-list">
@@ -58,7 +53,7 @@
                         {
                             @foreach (var etiqueta in ViewBag.Publicacion.Etiquetas.Split(','))
                             {
-                                <span class="tag">@etiqueta.Trim()</span>
+                                <p class="tag">@etiqueta.Trim()</p>
                             }
                         }
                     </div>
@@ -66,14 +61,14 @@
 
                 <!-- Información del vendedor -->
                 <div class="seller-info">
-                    <p><strong>Vendedor:</strong> <span class="seller-name">@ViewBag.Publicacion.NombreVendedor</span></p>
+                    <p><strong>Vendedor:</strong> <p class="seller-name">@ViewBag.Publicacion.NombreVendedor</p></p>
                 </div>
 
                 <!-- Precio y botón de compra -->
                 <div class="product-footer">
-                    <div class="price-section">
-                        <span class="price-label">Precio:</span>
-                        <span class="price-value">$@ViewBag.Publicacion.Precio</span>
+                    <div>
+                        <p class="price-label">Precio:</p>
+                        <p class="price-value">$@ViewBag.Publicacion.Precio</p>
                     </div>
                     <form asp-action="AgregarACarrito" asp-controller="Purchase" method="post">
                         <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.Id">
@@ -86,7 +81,7 @@
                     <button class="btn-send">📤</button>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
 </body>

@@ -34,7 +34,7 @@ public class OnBoardingController : Controller
         else 
         {
             HttpContext.Session.SetString("user", Objeto.ObjectToString(user));
-            return RedirectToAction("VerPaginaPrincipal", "Account");
+            return RedirectToAction("VerPaginaPrincipalC", "Account");
         }
     }
     public IActionResult registro()

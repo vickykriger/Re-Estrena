@@ -8,45 +8,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.NombreLista - Re-Estrena</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="main-header">
-        <div class="header-content">
+        <div>
             <div class="logo">
-                <span>🏠</span>
-                <span class="logo-text">RE-ESTRENA</span>
+                <p>🏠</p>
+                <p>RE-ESTRENA</p>
             </div>
-            <nav class="nav-menu">
-                <a href="@Url.Action("VerPaginaPrincipalC", "Account")">Volver</a>
-                <button class="icon-btn">🏪</button>
-                <button class="icon-btn">🔔</button>
-                <button class="icon-btn">💬</button>
-                <button class="icon-btn">☰</button>
+            <nav>
+                <a href='@Url.Action("VerPaginaPrincipalC", "Account")'>Volver</a>
+                <button>🏪</button>
+                <button>🔔</button>
+                <button>💬</button>
+                <button>☰</button>
             </nav>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Simplified header - removed delete list button -->
-        <div class="lista-header">
+    <section class="container">
+        <div>
             <h1>@ViewBag.NombreLista:</h1>
         </div>
 
-        @if (ViewBag.Publicaciones != null && ((List<dynamic>)ViewBag.Publicaciones).Count > 0)
+        @if (ViewBag.Publicacion != null && ((List<dynamic>)ViewBag.Publicacion).Count > 0)
         {
             <div class="productos-grid">
-                @foreach (var publicacion in ViewBag.Publicaciones)
+                @foreach (var publicacion in ViewBag.Publicacion)
                 {
                     <div class="producto-card">
-                        <!-- Removed card header with delete and like buttons -->
-                        
-                        <a href="@Url.Action("verPublicacion", "Post", new { idPublicacion = publicacion.Id })">
-                            <div class="producto-imagen">
-                                @if (!string.IsNullOrEmpty(publicacion.Imagen))
+                        <a href='@Url.Action("verPublicacion", "Post", new { idPublicacion = publicacion.Id })'>
+                            <div>
+                                @if (!string.IsNullOrEmpty(publicacion.Foto))
                                 {
-                                    <img src="@publicacion.Imagen" alt="@publicacion.NombreProducto">
+                                    <img src="@publicacion.Foto" alt="@publicacion.NombreProducto">
                                 }
                                 else
                                 {
@@ -55,34 +51,11 @@
                             </div>
                         </a>
 
-                        <!-- Información del producto -->
-                        <div class="producto-info">
-                            <h3 class="producto-titulo">@publicacion.NombreProducto</h3>
+                        <div>
+                            <h3>@publicacion.NombreProducto</h3>
                             <p class="producto-descripcion">@publicacion.Descripcion</p>
-                            
-                            <!-- Detalles -->
-                            <div class="producto-detalles">
-                                @if (!string.IsNullOrEmpty(publicacion.Categoria))
-                                {
-                                    <span>Categoría: @publicacion.Categoria</span>
-                                }
-                                @if (!string.IsNullOrEmpty(publicacion.Estado))
-                                {
-                                    <span>Estado: @publicacion.Estado</span>
-                                }
-                                @if (!string.IsNullOrEmpty(publicacion.Talle))
-                                {
-                                    <span>Talle: @publicacion.Talle</span>
-                                }
-                                @if (!string.IsNullOrEmpty(publicacion.Genero))
-                                {
-                                    <span>Género: @publicacion.Genero</span>
-                                }
-                            </div>
-
-                            <!-- Precio y botón -->
-                            <div class="producto-footer">
-                                <form asp-controller="Purchase" asp-action="AgregarACarrito" method="post" class="add-cart-form">
+                            <div>
+                                <form asp-controller="Purchase" asp-action="AgregarACarrito" method="post">
                                     <input type="hidden" name="idPublicacion" value="@publicacion.Id" />
                                     <button type="submit" class="precio-btn">$@publicacion.Precio</button>
                                 </form>
@@ -99,7 +72,7 @@
                 <a href="@Url.Action("VerPaginaPrincipalC", "Account")">Explorar productos</a>
             </div>
         }
-    </div>
+    </section>
 
 </body>
 </html>
