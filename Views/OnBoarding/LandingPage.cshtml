@@ -8,13 +8,10 @@
 </head>
 <body>
     <header class="landing">
-       
-        <div style="display:flex; align-items:center; gap:8px;">
-          <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
-          <img src="~/imagenes/titulo.png" alt="Re-Estrena">
-        </div>
-      
-     
+       <a href='@Url.Action("index", "OnBoarding")'>
+        <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+        <h1>RE-ESTRENA</h1>
+      </a>
         <nav>
           <ul>
             <li><a href='@Url.Action("login", "OnBoarding")'>Iniciar Sesión</a></li>
@@ -24,7 +21,7 @@
       </header>
       
   <section class = "landing-intro">
-    <img src="portada-ropa.jpg" alt="Ropa de colores">
+    <img src="~/imagenes/ropa.png" alt="Ropa de colores">
     <div>
       <h2>Dale una nueva vida a la moda.</h2>
       <p>Compra y vende ropa con estilo, sin culpa y con conciencia.</p>
@@ -32,16 +29,19 @@
   </section>
 
 
-  <section class="landing-Sobre">
+ <section class="landing-Sobre">
+  <div class="col-izq">
     <h2>¿Qué es ReEstrena?</h2>
-    <div>
-      <img src="icono-reciclaje.png" alt="Icono reciclaje">
-      <p>
-        Reestrena es una tienda online de moda circular. Ofrecemos ropa de segunda mano en excelente estado.
-        También puedes publicar tus prendas para darles una segunda oportunidad (¡y ganar dinero!).
-      </p>
-    </div>
-  </section>
+    <img src="~/imagenes/logo.png" alt="Logo">
+  </div>
+
+  <div class="col-der">
+    <p>
+      Reestrena es una tienda online de moda circular. Ofrecemos ropa de segunda mano en excelente estado.
+      También puedes publicar tus prendas para darles una segunda oportunidad (¡y ganar dinero!).
+    </p>
+  </div>
+</section>
 
  
   <section class="landing-Elegirnos">

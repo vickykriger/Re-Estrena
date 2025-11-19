@@ -13,6 +13,12 @@ html {
   }
 }
 
+@font-face {
+  font-family: "Crackajack";
+  src: url("/fonts/Crackajack.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -39,63 +45,77 @@ html, body {
   padding: 0;
   width: 100%;
 }
-
+/* ======== FOOTER ======== */
+footer {
+  background-color: #d6dbcf;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8em;
+  color: #333;
+  overflow-x: hidden;
+}
 /* ======== HEADER ======== */
 header.landing {
   background-color: #7F99B7;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 0 2%;
-  margin-bottom: 1%;
+  padding-top: 0.1%;
+  padding-bottom: 0.1%;
+  padding-left: 3%;
+  padding-right: 3%;
+  height: 5%;
+  overflow: hidden;
   box-sizing: border-box;
-  overflow-x: hidden; /* evita desbordes por imágenes */
 }
 
-header.landing img {
-  height: 40px;
-  width: auto;
-  margin-right: 10px;
+header.landing a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+header.landing .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.1%;
 }
 
-/* NAV */
+header.landing h1 {
+  font-family: "Crackajack", sans-serif;
+  font-size: 28px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
 header.landing nav ul {
   display: flex;
   list-style: none;
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
 
-header.landing nav a {
+header.landing nav ul li a {
   text-decoration: none;
-  color: white;
-  background-color: #90A8C0;
-  padding: 8px 18px;
-  border-radius: 20px;
-  margin-left: 10px;
-  font-size: 0.9em;
+  font-size: 16px;
+  color: #000;
   font-weight: 500;
-  transition: background-color 0.25s ease, 
-              transform 0.25s ease, 
-              box-shadow 0.25s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-header.landing nav a:hover {
-  background-color: #A7BDD4;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+header.landing nav ul li a:hover {
+  text-decoration: underline;
 }
 
+/*LANDING PAGE*/
 /* ======== PORTADA PRINCIPAL ======== */
 .landing-intro {
   position: relative;
-  width: 100%;         /* antes 90% → podía desbordar */
-  max-width: 100%;
-  overflow: hidden;
+  width: 91%;
   border-radius: 8px;
-  margin: 0 auto;
+  margin: 4%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .landing-intro img {
@@ -106,7 +126,7 @@ header.landing nav a:hover {
 }
 
 .landing-intro div {
-  width: 80%;
+  width: 60%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -118,50 +138,53 @@ header.landing nav a:hover {
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
+.landing-intro h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: white;
+}
+
+.landing-intro p {
+  font-size: 1.3rem;
+  margin-top: 1%;
+}
+
 /* ======== SECCIÓN: QUÉ ES ======== */
 .landing-Sobre {
   background-color: #ffffff;
   padding: 60px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
-  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* EXACTO LO QUE PEDISTE */
+  align-items: center;
+  gap: 40px;
+  text-align: center;
 }
 
-.landing-Sobre h2 {
+.col-izq h2 {
   font-size: 40px;
   margin-bottom: 20px;
-  margin-right: 50%;  
 }
 
-.landing-Sobre div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  width: 80%;
-  max-width: 100%;
+.col-izq img {
+  width: 140px;
+  margin: 0 auto;
 }
 
-.landing-Sobre img {
-  width: 120px;
-}
-
-.landing-Sobre p {
-  font-size: 25px;
+.col-der p {
+  font-size: 22px;
   color: #333;
-  line-height: 1.6;
-  width: 60%;
-  text-align: center;
-  margin-left: 30%;  
+  line-height: 1.5;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 /* ======== POR QUÉ ELEGIRNOS ======== */
 .landing-Elegirnos {
   background-color: #ffffff;
   text-align: center;
-  padding: 20px;
+  padding: 1%;
   width: 100%;
   border-radius: 6px;
   overflow-x: hidden;
@@ -170,12 +193,12 @@ header.landing nav a:hover {
 .landing-Elegirnos h2 {
   background-color: #f2e5ce;
   display: inline-block;
-  padding: 8px 20px;
+  padding: 2% 5%;
   border-radius: 4px;
   font-size: 35px;
-  margin-bottom: 15px;
+  margin-bottom: 1%;
   color: #222;
-  width: 85%;         /* antes 92% + margen → overflow */
+  width: 85%;
 }
 
 .landing-Elegirnos ul {
@@ -183,23 +206,23 @@ header.landing nav a:hover {
   padding: 0;
   margin: 0 auto;
   width: 90%;
-  max-width: 900px;
+  max-width: 91%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 1.5%;
   justify-items: center;
 }
 
 .landing-Elegirnos li {
   background: #ffffff;
-  padding: 15px 20px;
+  padding: 5% 6%;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 22;
   font-weight: 600;
   color: #333;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   width: 100%;
-  max-width: 350px;
+  max-width: 60%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -210,12 +233,6 @@ header.landing nav a:hover {
 .landing-Elegirnos li:hover {
   transform: translateY(-4px);
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-}
-
-.landing-Elegirnos li:first-child::before {
-  content: "♻️";
-  font-size: 24px;
-  margin-right: 10px;
 }
 
 /* ======== PRODUCTOS DESTACADOS ======== */
@@ -267,29 +284,6 @@ header.landing nav a:hover {
 .landing-arribaFooter a:hover {
   background-color: #77a277;
 }
-
-/* ======== FOOTER ======== */
-footer {
-  background-color: #d6dbcf;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.8em;
-  color: #333;
-  overflow-x: hidden;
-}
- 
-
-
-
-/* ======== FOOTER ======== */
-footer {
-  background-color: #d6dbcf;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.8em;
-  color: #333;
-}
-
 
 /*REGISTRARSE*/
 .fotito {
