@@ -47,7 +47,8 @@ public class OnBoardingController : Controller
         bool registrado = BD.registrarse(user);
         if(registrado)
         {
-            return View ("InicioSesion");
+            HttpContext.Session.SetString("user", Objeto.ObjectToString(user));
+            return RedirectToAction("VerPaginaPrincipalC", "Account");
         }
         else
         {

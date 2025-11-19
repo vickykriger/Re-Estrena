@@ -11,19 +11,18 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">
-                <span class="icon">🏠</span>
-                <span class="brand">RE-ESTRENA</span>
-            </div>
-            <nav class="nav-links">
-                <a href="@Url.Action("VerPaginaPrincipalV", "Account")">Vender</a>
-                <a href="@Url.Action("VerCarrito", "Purchase")" class="icon">🛒</a>
-                <a href="#" class="icon">👤</a>
-                <a href="#" class="icon">🔔</a>
-                <a href="#" class="icon">💬</a>
+    <header>
+        <div class="main-header">
+            <a href="@Url.Action("VerPaginaPrincipalC", "Account")">
+                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+                <img src="~/imagenes/reestrena.png" alt="Re-Estrena">
+            </a>
+            <nav>
+                <a href='@Url.Action("VerPaginaPrincipalV", "Account")'>Vender</a>
+                <a href='@Url.Action("VerCarrito", "Purchase")'><img src="cart_icon.png" alt="Carrito" title="Carrito"></a>
+                <a href='@Url.Action("VerUsuarioC", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
+                <a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a>
+                <a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a>
             </nav>
         </div>
     </header>

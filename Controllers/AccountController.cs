@@ -22,12 +22,14 @@ namespace ReEstrena.Controllers
         }
         public IActionResult VerUsuarioC()
         {
+            ViewBag.Usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user"));
             return View("UsuarioComprador");
         }
         public IActionResult VerPaginaPrincipalV()
         {
             int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).IdUsuario;
             ViewBag.PublicacionesPropias = BD.devolverPublicacionesVendedor(id);
+            ViewBag.Usuario = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user"));
             return View("PaginaPrincipalVendedor");
         }
         public IActionResult VerLista(int idLista)

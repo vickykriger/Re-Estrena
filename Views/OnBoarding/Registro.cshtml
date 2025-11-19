@@ -11,24 +11,27 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-
-<header>
-    <div class="header-content">
-        <div class="logo-section">
-            <img src="~/images/logo.png" alt="Logo Re-Estrena" class="logo">
-            <h1>RE-ESTRENA</h1>
-        </div>
-    </div>
-</header>
+<header class = "landing">
+      <a href='@Url.Action("index", "OnBoarding")'>
+        <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+        <img src="~/imagenes/reestrena.png" alt="Re-Estrena">
+      </a>
+        <nav>
+          <ul>
+            <a href='@Url.Action("login", "OnBoarding")'> Iniciar Sesion</a>
+            <a href='@Url.Action("registro", "OnBoarding")'>Registrarse</a>
+          </ul>
+        </nav> 
+    </header>
 
 <main class="registro-container">
     
-    <section class="imagen-lateral">
+    <div>
         <img src="/images/image.png" alt="Ropa de colores" class="imagen-ropa">
-    </section>
+    </div>
 
     <section class="formulario-section fondo-blanco">
-        <div class="form-box">
+        <div>
 
             <h2>Registrate en Re-Estrena</h2>
 
@@ -69,12 +72,12 @@
                     <label for="privacidad">Acepto la política de privacidad</label>
                 </div>
 
-                <p class="newsletter-text">
+                <p>
                     Si querés enterarte de cosas nuevas, suscribite a nuestro Newsletter:
                 </p>
                 <input type="email" id="newsletter" name="newsletter" placeholder="Ingresá tu mail">
 
-                <button type="submit" class="btn-registrarse">Registrarse</button>
+                <button type="submit">Registrarse</button>
 
             </form>
 

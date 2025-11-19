@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReEstrena")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4795aeef0e45922b0e32247644c281142e4c5dd5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fd3bec95121ea725dd111bde95d65930c08f83f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReEstrena")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReEstrena")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,11 +13,17 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-    <header class="header-login">
-        <div>
-            <img src="~/images/logo.png" alt="Logo Re-Estrena" class="logo">
-            <h1>RE-ESTRENA</h1>
-        </div>
+    <header class = "landing">
+      <a href='@Url.Action("index", "OnBoarding")'>
+        <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+        <img src="~/imagenes/reestrena.png" alt="Re-Estrena">
+      </a>
+        <nav>
+          <ul>
+            <a href='@Url.Action("login", "OnBoarding")'> Iniciar Sesion</a>
+            <a href='@Url.Action("registro", "OnBoarding")'>Registrarse</a>
+          </ul>
+        </nav> 
     </header>
 
 

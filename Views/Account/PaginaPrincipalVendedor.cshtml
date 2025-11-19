@@ -12,25 +12,20 @@
 </head>
 <body>
     <header>
-            <div class="logo-section">
-                <img src="~/images/logo.png" alt="Logo Re-Estrena">
-                <h1>RE-ESTRENA</h1>
-            </div>
-           <div class="header-bar">
-      <img src="logo.png" alt="Logo Re-Estrena" class="logo">
-      <h1>RE-ESTRENA</h1>
-      <nav>
-        <a href='@Url.Action("VerPaginaPrincipalC", "Account")'>Comprar</a>
-        <a href='@Url.Action("SubirPublicacion", "Post")'><img src="plus_icon.png" alt="Subir" title="Subir publicación"></a>
-        <a href='@Url.Action("VerCarrito", "Purchase")'><img src="cart_icon.png" alt="Carrito" title="Carrito"></a>
-        <a href='@Url.Action("VerUsuarioV", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
-        <a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a>
-        <a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a>
-        <a href='@Url.Action("CerrarSesion", "OnBoarding")'><img src="logout_icon.png" alt="Cerrar sesión" title="Cerrar sesión"></a>
-      </nav>
-    </div>
+        <div class="main-header">
+            <a href="@Url.Action("VerPaginaPrincipalV", "Account")">
+                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+                <img src="~/imagenes/reestrena.png" alt="Re-Estrena">
+            </a>
+            <nav>
+                <a href='@Url.Action("VerPaginaPrincipalC", "Account")'>Comprar</a>
+                <a href='@Url.Action("SubirPublicacion", "Post")'><img src="plus_icon.png" alt="Subir" title="Subir publicación"></a>
+                <a href='@Url.Action("VerUsuarioV", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
+                <a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a>
+                <a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a>
+            </nav>
+        </div>
     </header>
-
     <main>
         <section class="perfil">
             <div>
@@ -50,21 +45,6 @@
                         </div>
                         <button>✎</button>
                         <button>⚙</button>
-                    </div>
-
-                    <div id="descripcion-vista">
-                        <p>@Html.Raw(ViewBag.Usuario.Descripcion?.Replace("\n", "<br>") ?? "Sin descripción")</p>
-                    </div>
-
-                    <div id="descripcion-editar">
-                        <form asp-action="editarUsuario" asp-controller="Account" method="post">
-                            <textarea name="descripcion" rows="5" placeholder="Escribe tu descripción...">@ViewBag.Usuario.Descripcion</textarea>
-                            <input type="hidden" name="userId" value="@ViewBag.Usuario.Id" />
-                            <div>
-                                <button type="submit">Guardar</button>
-                                <button type="button">Cancelar</button>
-                            </div>
-                        </form>
                     </div>
                 </section>
             </div>
