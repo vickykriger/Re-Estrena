@@ -463,3 +463,284 @@ footer {
   margin-top: 15px;
   margin-bottom: 5px;
 }
+
+/* VER PUBLICACION*/
+
+.header {
+  background-color: #8fa8c7;
+  padding: 1% 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header div {
+  display: flex;
+  align-items: center;
+  gap: 1%;
+}
+
+.logo {
+  width: 8%;
+  max-width: 45px;
+}
+
+.header nav a {
+  margin-left: 3%;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.header nav img {
+  width: 1.4rem;
+}
+
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 4% 2%;
+}
+
+.product-container {
+  background-color: #f5e8cd;
+  width: 90%;
+  padding: 3%;
+  border-radius: 2%;
+
+  display: grid;
+  grid-template-columns: 45% 50%;
+  gap: 3%;
+
+  box-shadow: 0 0.3rem 0.8rem rgba(0,0,0,0.15);
+}
+
+
+.product-image-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.product-image {
+  width: 85%;
+  border-radius: 3%;
+}
+
+
+.product-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.product-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.product-tags h3 {
+  margin: 0;
+  margin-bottom: 1%;
+  font-size: 1rem;
+  color: #444;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.tag {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  border: 0.1rem solid #ddd;
+}
+
+.seller-info {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+
+.seller-name {
+  font-weight: 600;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2%;
+}
+
+.price-label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.price-value {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.btn-add-to-cart {
+  background-color: #b5c9a6;
+  color: black;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #a0b38f;
+}
+
+button {
+  background-color: white;
+  border: 0.1rem solid #ccc;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+}
+
+
+@media (max-width: 850px) {
+  .product-container {
+      grid-template-columns: 100%;
+  }
+
+  .product-image {
+      width: 70%;
+  }
+}
+/* HEADER */
+header {
+  width: 100%;
+  background-color: #94AFC4;   /* Celeste igual al de tu imagen */
+  padding: 10px 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 28px;   /* Tamaño igual al de la imagen */
+}
+
+.logo-section h1 {
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/* FORMULARIO (COLUMNA DERECHA) */
+.formulario-section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
+}
+
+.fondo-blanco {
+  background: white;
+}
+
+/* CAJA DEL FORMULARIO */
+.form-box {
+  width: 70%;
+  padding: 20px;
+}
+.form-box form button{
+  width: 690px;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 15px 0;
+  background: #F6EEDC;       /* Beige igual al de tu foto */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* CHECKBOX */
+.checkbox-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkbox-line label {
+  margin-left: 8px;
+}
+
+/* TEXTO NEWSLETTER */
+.newsletter-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* BOTÓN */
+.btn-registrarse {
+  background-color: #8BA189;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-registrarse:hover {
+  background-color: #7a9277;
+}

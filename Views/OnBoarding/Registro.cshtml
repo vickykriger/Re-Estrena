@@ -8,73 +8,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo-section">
-                <img src="~/images/logo.png" alt="Logo Re-Estrena" class="logo">
-                <h1>RE-ESTRENA</h1>
-            </div>
+
+<header>
+    <div class="header-content">
+        <div class="logo-section">
+            <img src="~/images/logo.png" alt="Logo Re-Estrena" class="logo">
+            <h1>RE-ESTRENA</h1>
         </div>
-    </header>
+    </div>
+</header>
 
-    <main class="registro-container">
-        <section class="imagen-lateral">
-            <img src="/images/image.png" alt="Ropa de colores" class="imagen-ropa">
-        </section>
+<main class="registro-container">
+    
+    <section class="imagen-lateral">
+        <img src="/images/image.png" alt="Ropa de colores" class="imagen-ropa">
+    </section>
 
-        <section class="formulario-section">
-            <div>
-                <h2>Registrate en Re-Estrena</h2>
-                
-                <form asp-controller="OnBoarding" asp-action="registroGuardar" method="post" enctype="multipart/form-data">
-                    <div>
-                        <label for="Email">Email</label>
-                        <input type="email" id="Email" name="Email" required>
-                    </div>
+    <section class="formulario-section fondo-blanco">
+        <div class="form-box">
 
-                    <div>
-                        <label for="Contrasenia">Contraseña</label>
-                        <input type="password" id="Contrasenia" name="Contrasenia" required>
-                    </div>
+            <h2>Registrate en Re-Estrena</h2>
 
-                    <div>
-                        <label for="NombreCompleto">Nombre completo</label>
-                        <input type="text" id="NombreCompleto" name="NombreCompleto" required>
-                    </div>
+            <form asp-controller="OnBoarding" asp-action="registroGuardar" method="post" enctype="multipart/form-data">
 
-                    <div>
-                        <label for="Usuario">Usuario</label>
-                        <input type="text" id="Usuario" name="Usuario" required>
-                    </div>
+                <div>
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email" required>
+                </div>
 
-                    <div>
-                        <label for="Pais">País</label>
-                        <input type="text" id="Pais" name="Pais">
-                    </div>
+                <div>
+                    <label for="Contrasenia">Contraseña</label>
+                    <input type="password" id="Contrasenia" name="Contrasenia" required>
+                </div>
 
-                    <div>
-                        <label for="Telefono">Teléfono</label>
-                        <input type="tel" id="Telefono" name="Telefono">
-                    </div>
+                <div>
+                    <label for="Usuario">Usuario</label>
+                    <input type="text" id="Usuario" name="Usuario" required>
+                </div>
 
-                    <div>
-                        <input type="checkbox" id="privacidad" name="privacidad" required>
-                        <label for="privacidad">Acepto la política de privacidad</label>
-                    </div>
+                <div>
+                    <label for="NombreCompleto">Nombre completo</label>
+                    <input type="text" id="NombreCompleto" name="NombreCompleto" required>
+                </div>
 
-                    <div>
-                        <p>Si querés enterarte de cosas nuevas, suscríbete a nuestro Newsletter:</p>
-                        <input type="email" id="newsletter" name="newsletter" placeholder="Ingresá tu mail">
-                    </div>
+                <div>
+                    <label for="Pais">País</label>
+                    <input type="text" id="Pais" name="Pais">
+                </div>
 
-                    <button type="submit" class="btn-registrarse">Registrarse</button>
-                </form>
-            </div>
-        </section>
-    </main>
+                <div>
+                    <label for="Telefono">Teléfono</label>
+                    <input type="tel" id="Telefono" name="Telefono">
+                </div>
+
+                <div class="checkbox-line">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <label for="privacidad">Acepto la política de privacidad</label>
+                </div>
+
+                <p class="newsletter-text">
+                    Si querés enterarte de cosas nuevas, suscribite a nuestro Newsletter:
+                </p>
+                <input type="email" id="newsletter" name="newsletter" placeholder="Ingresá tu mail">
+
+                <button type="submit" class="btn-registrarse">Registrarse</button>
+
+            </form>
+
+        </div>
+    </section>
+
+</main>
 
 </body>
 </html>
