@@ -183,7 +183,6 @@ C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\ref\Re
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\appsettings.json
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\ReEstrena.staticwebassets.runtime.json
-C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\ReEstrena.staticwebassets.endpoints.json
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\ReEstrena.exe
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\ReEstrena.deps.json
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\ReEstrena.runtimeconfig.json
@@ -239,15 +238,9 @@ C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\scopedcss\bundle\ReEstrena.styles.css
 C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.csproj.Up2Date
 C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\ReEstrena.dll
 C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\refint\ReEstrena.dll
@@ -327,3 +320,9 @@ C:\Users\49002222\Re-Estrena\obj\Debug\net8.0\refint\ReEstrena.dll
 C:\Users\49002222\Re-Estrena\obj\Debug\net8.0\ReEstrena.pdb
 C:\Users\49002222\Re-Estrena\obj\Debug\net8.0\ReEstrena.genruntimeconfig.cache
 C:\Users\49002222\Re-Estrena\obj\Debug\net8.0\ref\ReEstrena.dll
+C:\Users\48793603\Re-Estrena\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets\msbuild.ReEstrena.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets\msbuild.build.ReEstrena.props
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ReEstrena.props
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ReEstrena.props
+C:\Users\48793603\Re-Estrena\obj\Debug\net8.0\staticwebassets.pack.json

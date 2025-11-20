@@ -4,7 +4,50 @@ html {
   width: 100%;
 }
 
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
 
+.main-header > a {
+  display: flex;
+  align-items: center;
+  color: #4a6c6c; /* Color del logo/título (ejemplo) */
+}
+
+.main-header img {
+  height: 30px; /* Tamaño del logo */
+  margin-right: 5px;
+}
+
+.main-header h1 {
+  font-size: 1.5em;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.main-header nav a {
+  margin-left: 15px;
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  color: #555;
+}
+
+/* Enlace "Comprar" */
+.main-header nav a:first-child {
+  font-weight: bold;
+}
+
+.main-header nav img {
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
 
 
 @media (min-width: 100%) {
@@ -651,3 +694,364 @@ float:left;
 margin-left: 2%;
 margin-right: 1rem;
 }
+
+/*USUARIO COMPRADOR*/
+.UsuarioC-Perfil{
+  display: flex;
+    background-color: #f5f0e3; /* Color beige/amarillento del fondo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.UsuarioC-Perfil > div:first-child {
+  flex: 0 0 150px; /* Ancho fijo para la zona de la foto */
+  margin-right: 30px;
+  text-align: center;
+}
+
+.UsuarioC-Perfil button[type="button"] { /* Botón "Subir foto" */
+  background-color: #d8e0e0;
+  border: 1px solid #ccc;
+  color: #555;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px; /* Espacio para simular la caja de la foto */
+  width: 100%;
+  height: 120px; /* Ajustar para simular el área grande */
+}
+
+.UsuarioC-Perfil > div:last-child {
+  flex-grow: 1; /* El resto del espacio para la info */
+}
+
+.UsuarioC-Perfil h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #333;
+}
+
+/* Estilo para el nombre de usuario y los íconos (simulando en el h2) */
+.UsuarioC-Perfil h2::after {
+  content: " @usu.nombre | \2699 \270E"; /* Símbolos de engranaje y lápiz */
+  font-size: 0.7em;
+  color: #888;
+  margin-left: 10px;
+}
+
+.UsuarioC-Perfil textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: none; /* Sin borde para el look de la imagen */
+  background-color: transparent; /* Fondo transparente */
+  resize: none;
+  font-size: 1em;
+  color: #444;
+}
+
+.UsuarioC-Perfil form {
+  position: relative;
+}
+
+.UsuarioC-Perfil button[type="submit"] { /* Botón "Editar" (no visible en la imagen, lo simulamos para cerrar la descripción) */
+  display: none; /* Ocultamos el botón Editar para replicar el texto directo */
+}
+
+/* --- Secciones de Listas (Favoritas y Wishlist) --- */
+
+.UsuarioC-Lista {
+  margin-bottom: 30px;
+}
+
+.UsuarioC-Lista h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.UsuarioC-Lista ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px;
+}
+
+/* Estilo de la tarjeta del producto */
+.UsuarioC-Lista li {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Simular la imagen de la tarjeta (no está en el HTML, pero es clave en el diseño) */
+.UsuarioC-Lista li::before {
+  content: "";
+  display: block;
+  height: 150px; /* Altura de la imagen */
+  background-color: #eee; /* Fondo gris para el placeholder */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 150px;
+  color: #888;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.UsuarioC-Lista h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.UsuarioC-Lista p {
+  margin: 3px 0;
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.3;
+}
+
+.UsuarioC-Lista p small {
+  color: #888;
+  display: block;
+  margin-top: 5px;
+}
+
+.UsuarioC-Lista p b { /* Precio */
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 1.2em;
+  color: #000;
+}
+
+/* Iconos de Favorito/Estrella (simulación) */
+.UsuarioC-Lista li::after {
+  content: " \2665"; /* Corazón */
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #f7a39d; /* Color rojo */
+  font-size: 1.2em;
+}
+
+
+/* --- Sección Botón Cerrar Sesión --- */
+main > section:last-child {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+main > section:last-child button {
+  background-color: #d1463e; /* Rojo distintivo */
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/*Pagina principal vendedor*/
+
+.perfil {
+  background-color: #f5f0e3; /* Fondo beige/amarillento */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.perfil > div {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Contenedor de la foto de perfil */
+.foto-perfil {
+  flex: 0 0 150px; /* Ancho fijo para la zona de la foto */
+  margin-right: 30px;
+  text-align: center;
+  padding: 5px; /* Simula un pequeño margen interior */
+  border-radius: 8px;
+  background-color: #e6e0d3; /* Un beige un poco más oscuro para el contenedor */
+  height: 150px; /* Altura del contenedor */
+  position: relative;
+}
+
+.foto-perfil img {
+  display: none; /* Ocultamos la img real si estamos usando el label/input */
+}
+
+/* Estilo para el botón "Subir foto" */
+.foto-perfil label {
+  display: block;
+  background-color: #d8e0e0;
+  border: 1px solid #ccc;
+  color: #555;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 130px; /* Centra verticalmente el texto */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.foto-perfil input[type="file"] {
+  display: none; /* Oculta el input de archivo */
+}
+
+/* Sección de datos y descripción */
+.datos-perfil {
+  flex-grow: 1;
+}
+
+.datos-perfil > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.datos-perfil h2 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.datos-perfil .username {
+  color: #888;
+  margin: 0;
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+/* Botones de Editar (lápiz) y Configuración (engranaje) */
+.datos-perfil button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #555;
+  margin-left: 10px;
+}
+
+/* El texto de descripción no tiene una etiqueta explícita para él solo,
+ así que asumimos que es contenido directo o un <p> con estilos
+ para simular la descripción del usuario. Usaremos un selector genérico para el texto. */
+.datos-perfil {
+  /* Estilo para la descripción, asumiendo que el texto está en el contenedor */
+  line-height: 1.5;
+  font-size: 0.95em;
+  color: #444;
+}
+
+/* --- Sección Publicaciones --- */
+.publicaciones h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Contenedor de las tarjetas de publicaciones */
+.publicaciones > div:first-of-type {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px;
+}
+
+/* Estilo de la tarjeta individual (article) */
+.publicaciones article {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.publicaciones article h4 {
+  margin: 0 30px 5px 0; /* Espacio para el icono de editar */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Icono/enlace de Editar Publicación */
+.publicaciones article > a {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.2em;
+  color: #777;
+}
+
+.publicaciones article img {
+  width: 100%;
+  height: 200px; /* Altura fija para las imágenes */
+  object-fit: cover;
+  margin: 5px 0 10px;
+  border-radius: 5px;
+  /* Simulación del cuadro de imagen en el ejemplo (si no hay foto) */
+  background-color: #eee;
+}
+
+.publicaciones article p {
+  margin: 3px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Estilo para la caja verde de la descripción */
+.publicaciones article p:nth-of-type(1) { /* Asumiendo que esta es la descripción principal */
+  background-color: #e8f5e9; /* Tono verde claro */
+  border: 1px solid #c8e6c9;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el precio */
+.publicaciones article p:last-of-type {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: black;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* --- Botón Cerrar Sesión --- */
+main > div:last-of-type {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+main button[type="submit"] {
+  background-color: #8699b0; /* Color azul grisáceo de la imagen */
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*Pagina Principal Comprador*/
+
