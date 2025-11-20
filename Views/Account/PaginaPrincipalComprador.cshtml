@@ -14,7 +14,7 @@
     <header>
         <div>
             <a href="@Url.Action("VerPaginaPrincipalC", "Account")">
-                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena" element>
+                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
                 <h1>Re-Estrena</h1>
             </a>
             <nav>
@@ -28,11 +28,15 @@
             </nav>
         </div>
     </header>
-    <main class="ofertas-container">
-        <form method="get" action='@Url.Action("buscarProducto", "Account")'>
-            <input type="text" name="descripcion" placeholder="Buscar productos..." />
-            <button type="submit">🔍</button>
-        </form>
+    <main>
+    <div class="buscador">
+            <form method="get" action='@Url.Action("buscarProducto", "Account")'>
+                <input type="text" name="descripcion" placeholder="Buscar productos..." />
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+    <section class="ofertas-container">
+        
         <div>
             <h2>Ofertas</h2>
         </div>
@@ -85,85 +89,110 @@
             }
             else
             {
-                <p>No hay ofertas disponibles en este momento.</p>
+                <p>No hay publicaciones disponibles en este momento.</p>
             }
         </section>
-    </main>
+    </section>
     
-   <div class="grid-ofertas">
-        
-        <div class="publicacion-card">
-            <div class="card-header">
-                <h3>Tartan Whisper</h3>
-                <div class="actions">
-                    <span style="color: gold;">&#9733;</span> 
-                    <span style="color: #d1463e;">&#9829;</span> 
-                </div>
-            </div>
-            <div class="card-image-container">
-                <img src="scarf_tartan_whisper.jpg" alt="Bufanda de lana escocesa">
-            </div>
-            <div class="card-description">
-                <p>Bufanda de lana con clásico estampado escocés.</p>
-            </div>
-            <div class="card-footer">
-                <div class="card-tags">
-                    <p>#bufanda</p>
-                    <p>#rojo</p>
-                    <p>#glamour</p>
-                </div>
-                <div class="card-price">$45</div>
+  <section class="grid-ofertas">
+    
+    <div class="publicacion-card">
+        <div>
+            <h3>Tartan Whisper</h3>
+            <div class="actions">
+                <span style="color: gold;">&#9733;</span> 
+                <span style="color: #d1463e;">&#9829;</span> 
             </div>
         </div>
-
-        <div class="publicacion-card">
-            <div class="card-header">
-                <h3>Denim Daze</h3>
-                <div class="actions">
-                    <span style="color: gold;">&#9733;</span> 
-                    <span style="color: #d1463e;">&#9829;</span> 
-                </div>
-            </div>
-            <div class="card-image-container">
-                <img src="denim_shorts.jpg" alt="Shorts de mezclilla deshilachados">
-            </div>
-            <div class="card-description">
-                <p>Short de mezclilla azul con diseño deshilachado y ruedo destructivo.</p>
-            </div>
-            <div class="card-footer">
-                <div class="card-tags">
-                    <p>#denim</p>
-                    <p>#azul</p>
-                    <p>#short</p>
-                </div>
-                <div class="card-price">$50</div>
-            </div>
+        <div>
+            <img src="scarf_tartan_whisper.jpg" alt="Bufanda de lana escocesa">
         </div>
-
-        <div class="publicacion-card">
-            <div class="card-header">
-                <h3>Olive Mirage</h3>
-                <div class="actions">
-                    <span style="color: gold;">&#9733;</span> 
-                    <span style="color: #d1463e;">&#9829;</span> 
-                </div>
-            </div>
-            <div class="card-image-container">
-                <img src="olive_jacket.jpg" alt="Chaqueta bomber verde y beige">
-            </div>
-            <div class="card-description">
-                <p>Chaqueta liviana estilo retro en tonos beige y verde oliva.</p>
-            </div>
-            <div class="card-footer">
-                <div class="card-tags">
-                    <p>#beige</p>
-                    <p>#chaqueta</p>
-                    <p>#militar</p>
-                </div>
-                <div class="card-price">$150</div>
-            </div>
+        <div>
+            <p>Bufanda de lana con clásico estampado escocés.</p>
         </div>
-
+        <div>
+            <div>
+                <p>#bufanda</p>
+                <p>#rojo</p>
+                <p>#glamour</p>
+            </div>
+            <div>$45</div>
+        </div>
     </div>
+
+    <div class="publicacion-card">
+        <div>
+            <h3>Denim Daze</h3>
+            <div class="actions">
+                <span style="color: gold;">&#9733;</span> 
+                <span style="color: #d1463e;">&#9829;</span> 
+            </div>
+        </div>
+        <div>
+            <img src="denim_shorts.jpg" alt="Shorts de mezclilla deshilachados">
+        </div>
+        <div>
+            <p>Short de mezclilla azul con diseño deshilachado y ruedo destructivo.</p>
+        </div>
+        <div>
+            <div>
+                <p>#denim</p>
+                <p>#azul</p>
+                <p>#short</p>
+            </div>
+            <div>$50</div>
+        </div>
+    </div>
+
+    <div class="publicacion-card">
+        <div>
+            <h3>Olive Mirage</h3>
+            <div class="actions">
+                <span style="color: gold;">&#9733;</span> 
+                <span style="color: #d1463e;">&#9829;</span> 
+            </div>
+        </div>
+        <div>
+            <img src="olive_jacket.jpg" alt="Chaqueta bomber verde y beige">
+        </div>
+        <div>
+            <p>Chaqueta liviana estilo retro en tonos beige y verde oliva.</p>
+        </div>
+        <div>
+            <div>
+                <p>#beige</p>
+                <p>#chaqueta</p>
+                <p>#militar</p>
+            </div>
+            <div>$150</div>
+        </div>
+    </div>
+    
+    <div class="publicacion-card">
+        <div>
+            <h3>Coral Reef</h3>
+            <div class="actions">
+                <span style="color: gold;">&#9733;</span> 
+                <span style="color: #d1463e;">&#9829;</span> 
+            </div>
+        </div>
+        <div>
+            <img src="coral_dress.jpg" alt="Vestido de verano color coral">
+        </div>
+        <div>
+            <p>Vestido corto de algodón en color coral brillante, ideal para el verano.</p>
+        </div>
+        <div>
+            <div>
+                <p>#verano</p>
+                <p>#vestido</p>
+                <p>#coral</p>
+            </div>
+            <div>$85</div>
+        </div>
+    </div>
+    </main>
+
+</section>
 </body>
 </html>

@@ -8,16 +8,18 @@
 <body>
     <header>
         <div>
-            <a href='@Url.Action("VerPaginaPrincipalC", "Account")'>
+            <a href="@Url.Action("VerPaginaPrincipalC", "Account")">
                 <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
                 <h1>Re-Estrena</h1>
             </a>
             <nav>
-                <a href='@Url.Action("VerPaginaPrincipalV", "Account")'>Vender</a>
-                <a href='@Url.Action("VerCarrito", "Purchase")'><img src="cart_icon.png" alt="Carrito" title="Carrito"></a>
-                <a href='@Url.Action("VerUsuarioC", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
-                <a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a>
-                <a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a>
+                <ul>
+                    <li><a href='@Url.Action("VerPaginaPrincipalV", "Account")'>Vender</a></li>
+                    <li><a href='@Url.Action("VerCarrito", "Purchase")'><img src="cart_icon.png" alt="Carrito" title="Carrito"></a></li>
+                    <li><a href='@Url.Action("VerUsuarioC", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a></li>
+                    <li><a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a></li>
+                    <li><a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a></li>
+                </ul>
             </nav>
         </div>
     </header>
