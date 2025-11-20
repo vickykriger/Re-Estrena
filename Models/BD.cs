@@ -292,4 +292,37 @@ public static class BD
             return connection.QuerySingleOrDefault<string>(query, new { pIdLista = idLista });
         }
     }
+    public static string[] SepararPorEspacio(string texto)
+    {
+        char[] delimitador = new char[] { ' ' };
+        string[] partes = texto.Split(delimitador, StringSplitOptions.RemoveEmptyEntries);
+        return partes;
+    }
+    public static int agregarEtiqueta(string etiqueta)
+    {
+        string query = "SELECT COUNT(IdEtiqueta) AS Cantidad FROM Etiquetas WHERE Nombre = @pNombre";
+        int cantidad;
+        int idEtiqueta;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            cantidad = connection.QuerySingle<int>(query, new { pNombre = nombreEtiqueta });
+        }
+        if(cantidad==0)
+        {
+            string query1 = "INSERT INTO Etiquetas (Nombre) OUTPUT INSERTED.IdEtiqueta VALUES (@pNombre)";
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                idEtiqueta = connection.QuerySingle<int>(query1,new { pNombre = etiquetaLimpia });
+            }
+        }
+        return idEtiqueta;
+    }
+    public static void agregarEtiquetaPublicacion(ESTA MAL ESTO)
+    {
+        string query = "INSERT INTO PublicacionEtiqueta (IdPublicacion, IdEtiqueta) VALUES (@pIdPublicacion, @pIdEtiqueta)";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Execute(query, new{pIdPublicacion = idPublicacion, pIdEtiqueta = idEtiqueta});
+        }
+    }
 }

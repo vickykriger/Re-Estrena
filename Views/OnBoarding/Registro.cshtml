@@ -12,22 +12,22 @@
 </head>
 <body>
 <header>
-      <a href='@Url.Action("index", "OnBoarding")'>
+    <a href='@Url.Action("index", "OnBoarding")'>
         <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
         <h1>Re-Estrena</h1>
-      </a>
-        <nav>
-          <ul>
-            <li><a href='@Url.Action("login", "OnBoarding")'> Iniciar Sesion</a></li>
+    </a>
+    <nav>
+        <ul>
+            <li><a href='@Url.Action("login", "OnBoarding")'>Iniciar Sesión</a></li>
             <li><a href='@Url.Action("registro", "OnBoarding")'>Registrarse</a></li>
-          </ul>
-        </nav> 
-    </header>
+        </ul>
+    </nav>
+</header>
 
 <main class="registro-container">
     
     <div>
-        <img src="/images/image.png" alt="Ropa de colores" class="imagen-ropa">
+        <img src="/imagenes/registrarse.png" alt="Ropa de colores" class="imagen-ropa">
     </div>
 
     <section class="formulario-section">
@@ -75,7 +75,11 @@
                 <p>
                     Si querés enterarte de cosas nuevas, suscribite a nuestro Newsletter:
                 </p>
-                <input type="email" id="newsletter" name="newsletter" placeholder="Ingresá tu mail">
+
+               
+                <div>
+                    <input type="email" id="newsletter" name="newsletter" placeholder="Ingresá tu mail">
+                </div>
 
                 <button type="submit">Registrarse</button>
 

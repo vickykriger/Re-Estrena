@@ -13,8 +13,16 @@
       "PackagePath": "staticwebassets\\fonts\\Crackajack.woff2"
     },
     {
+      "Id": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\iniciarSesion.png",
+      "PackagePath": "staticwebassets\\imagenes\\iniciarSesion.png"
+    },
+    {
       "Id": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\logo.png",
       "PackagePath": "staticwebassets\\imagenes\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\registrarse.png",
+      "PackagePath": "staticwebassets\\imagenes\\registrarse.png"
     },
     {
       "Id": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\ropa.png",

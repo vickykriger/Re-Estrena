@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CLI5cyYY+XcDcKP/wtqKTgI7VSEVMkNkKz9a1ByLYxo=",
+  "Hash": "MiNE7DsoddhdFuqwH2fXSimHqSXmZqTYojFpZlCaFc8=",
   "Source": "ReEstrena",
   "BasePath": "_content/ReEstrena",
   "Mode": "Default",
@@ -74,6 +74,25 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Crackajack.woff2"
     },
     {
+      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\iniciarSesion.png",
+      "SourceId": "ReEstrena",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "BasePath": "_content/ReEstrena",
+      "RelativePath": "imagenes/iniciarSesion.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagenes\\iniciarSesion.png"
+    },
+    {
       "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\logo.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
@@ -91,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagenes\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\registrarse.png",
+      "SourceId": "ReEstrena",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "BasePath": "_content/ReEstrena",
+      "RelativePath": "imagenes/registrarse.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagenes\\registrarse.png"
     },
     {
       "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\ropa.png",

@@ -29,60 +29,21 @@
         </div>
     </header>
 
-    <main class="main-content">
-        <section class="product-container">
-            <div class="product-image-section">
-                <img src="@ViewBag.Publicacion.Imagen" alt="@ViewBag.Publicacion.NombreProducto" class="product-image">
+    <main>
+        <section class="verPublicacion">
+            <div class="imagen-producto">
+                <img src="@ViewBag.Publicacion.Foto" alt="@ViewBag.Publicacion.NombreProducto">
             </div>
-
-            <div class="product-info-section">
-
-                <div class="product-header">
-                    <h1 class="product-title">@ViewBag.Publicacion.NombreProducto</h1>
-                    <form asp-action="likear" asp-controller="Account" method="post">
-                        <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.IdPublicacion">
-                        <button type="submit">❤️</button>
-                    </form>
-                </div>
-
-                <div class="product-description">
-                    <p>@Html.Raw(ViewBag.Publicacion.Descripcion?.Replace("\n", "<br>") ?? "Sin descripción")</p>
-                </div>
-
-                <div class="product-tags">
-                    <h3>Etiquetas/categorías:</h3>
-                    <div class="tags-list">
-                        @if (ViewBag.Publicacion.Etiquetas != null)
-                        {
-                            @foreach (var etiqueta in ViewBag.Publicacion.Etiquetas.Split(','))
-                            {
-                                <p class="tag">@etiqueta.Trim()</p>
-                            }
-                        }
-                    </div>
-                </div>
-
-                <!-- Información del vendedor -->
-                <div class="seller-info">
-                    <p><strong>Vendedor:</strong> <p class="seller-name">@ViewBag.Publicacion.NombreVendedor</p></p>
-                </div>
-
-                <!-- Precio y botón de compra -->
-                <div class="product-footer">
-                    <div>
-                        <p class="price-label">Precio:</p>
-                        <p class="price-value">$@ViewBag.Publicacion.Precio</p>
-                    </div>
-                    <form asp-action="AgregarACarrito" asp-controller="Purchase" method="post">
-                        <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.Id">
-                        <button type="submit" class="btn-add-to-cart">Agregar al carrito</button>
-                    </form>
-                </div>
-
-                <!-- Botón para agregar a lista (wishlist) -->
-                <div>
-                    <button>📤</button>
-                </div>
+            <div>
+                <h2>@ViewBag.Publicacion.NombreProducto</h2>
+                <p class="info-texto">@ViewBag.Publicacion.Descripcion</p>
+            </div>
+            <div class="tags-area">
+                @* Este campo no está en la clase Publicacion, lo simulamos o asumimos que viene en otra ViewBag o debe ser renderizado aparte. *@
+                <p style="margin: 0;">#cartera #citybag #mujer #marron #isabelmarant</p>
+            </div>
+            <div class="pie-item">
+                <p>Precio: <b>$@ViewBag.Publicacion.Precio</b></p>
             </div>
         </section>
     </main>
