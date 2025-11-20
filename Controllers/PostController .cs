@@ -8,13 +8,17 @@ namespace ReEstrena.Controllers
 {
     public class PostController : Controller
     {
-        public IActionResult subirPublicacion(string nombreProducto, string descripcion, string foto, decimal precio)
+        public IActionResult subirPublicacionGuardar(string nombreProducto, string descripcion, string foto, decimal precio)
         {
             int id = Objeto.StringToObject<Usuario>(HttpContext.Session.GetString("user")).IdUsuario;
             Publicacion publicacion = new Publicacion(id, descripcion, foto, precio, nombreProducto);
             ViewBag.subido = BD.subirPublicacion(publicacion);
             ViewBag.Publicacion = publicacion;
             return View("VerPublicacion");
+        }
+        public IActionResult subirPublicacion()
+        {
+            return View("SubirPublicacion");
         }
         public IActionResult eliminarPublicacion(int idProducto)
         {

@@ -17,6 +17,7 @@ namespace ReEstrena.Models
         public string Pais { get; private set; }
         public int Telefono { get; private set; }
         public string Foto {get; private set; }
+        public string Descripcion {get; private set;}
 
         public Usuario()
         {
