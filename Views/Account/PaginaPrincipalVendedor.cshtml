@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-    <header>
-        <div class="main-header">
+    <header class="main-header">
+        <div>
             <a href='@Url.Action("VerPaginaPrincipalV", "Account")'>
                 <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
                 <h1>Re-Estrena</h1>
@@ -30,7 +30,7 @@
         <section class="perfil">
             <div>
                 <div class="foto-perfil">
-                    <img src='@(ViewBag.Usuario.FotoPerfil ?? "  ~/images/default-avatar.png")" alt="Foto de perfil'>
+                    <img src='@ViewBag.Usuario.Foto' alt="foto">
                     <form asp-action="subirFoto" asp-controller="Account" method="post" enctype="multipart/form-data">
                         <label for="foto-upload">Subir foto</label>
                         <input type="file" id="foto-upload" name="foto" accept="image/*" onchange="this.form.submit()">

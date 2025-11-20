@@ -12,17 +12,19 @@
 </head>
 <body>
     <header>
-        <div class="main-header">
+        <div>
             <a href="@Url.Action("VerPaginaPrincipalC", "Account")">
-                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena" element>
                 <h1>Re-Estrena</h1>
             </a>
             <nav>
-                <a href='@Url.Action("VerPaginaPrincipalV", "Account")'>Vender</a>
-                <a href='@Url.Action("VerCarrito", "Purchase")'><img src="cart_icon.png" alt="Carrito" title="Carrito"></a>
-                <a href='@Url.Action("VerUsuarioC", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a>
-                <a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a>
-                <a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a>
+                <ul>
+                    <li><a href='@Url.Action("VerPaginaPrincipalV", "Account")'>Vender</a></li>
+                    <li><a href='@Url.Action("VerCarrito", "Purchase")'><img src="cart_icon.png" alt="Carrito" title="Carrito"></a></li>
+                    <li><a href='@Url.Action("VerUsuarioC", "Account")'><img src="user_icon.png" alt="Usuario" title="Perfil usuario"></a></li>
+                    <li><a href='@Url.Action("VerNotificaciones", "Account")'><img src="bell_icon.png" alt="Notificaciones" title="Notificaciones"></a></li>
+                    <li><a href='@Url.Action("VerMensajes", "Account")'><img src="msg_icon.png" alt="Mensajes" title="Mensajes"></a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -87,6 +89,81 @@
             }
         </section>
     </main>
+    
+   <div class="grid-ofertas">
+        
+        <div class="publicacion-card">
+            <div class="card-header">
+                <h3>Tartan Whisper</h3>
+                <div class="actions">
+                    <span style="color: gold;">&#9733;</span> 
+                    <span style="color: #d1463e;">&#9829;</span> 
+                </div>
+            </div>
+            <div class="card-image-container">
+                <img src="scarf_tartan_whisper.jpg" alt="Bufanda de lana escocesa">
+            </div>
+            <div class="card-description">
+                <p>Bufanda de lana con clásico estampado escocés.</p>
+            </div>
+            <div class="card-footer">
+                <div class="card-tags">
+                    <p>#bufanda</p>
+                    <p>#rojo</p>
+                    <p>#glamour</p>
+                </div>
+                <div class="card-price">$45</div>
+            </div>
+        </div>
 
+        <div class="publicacion-card">
+            <div class="card-header">
+                <h3>Denim Daze</h3>
+                <div class="actions">
+                    <span style="color: gold;">&#9733;</span> 
+                    <span style="color: #d1463e;">&#9829;</span> 
+                </div>
+            </div>
+            <div class="card-image-container">
+                <img src="denim_shorts.jpg" alt="Shorts de mezclilla deshilachados">
+            </div>
+            <div class="card-description">
+                <p>Short de mezclilla azul con diseño deshilachado y ruedo destructivo.</p>
+            </div>
+            <div class="card-footer">
+                <div class="card-tags">
+                    <p>#denim</p>
+                    <p>#azul</p>
+                    <p>#short</p>
+                </div>
+                <div class="card-price">$50</div>
+            </div>
+        </div>
+
+        <div class="publicacion-card">
+            <div class="card-header">
+                <h3>Olive Mirage</h3>
+                <div class="actions">
+                    <span style="color: gold;">&#9733;</span> 
+                    <span style="color: #d1463e;">&#9829;</span> 
+                </div>
+            </div>
+            <div class="card-image-container">
+                <img src="olive_jacket.jpg" alt="Chaqueta bomber verde y beige">
+            </div>
+            <div class="card-description">
+                <p>Chaqueta liviana estilo retro en tonos beige y verde oliva.</p>
+            </div>
+            <div class="card-footer">
+                <div class="card-tags">
+                    <p>#beige</p>
+                    <p>#chaqueta</p>
+                    <p>#militar</p>
+                </div>
+                <div class="card-price">$150</div>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
