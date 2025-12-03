@@ -1,0 +1,94 @@
+@{
+    ViewData["Title"] = "Registrarse - Re-Estrena";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+<header>
+    <a href='@Url.Action("index", "OnBoarding")'>
+        <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+        <h1>Re-Estrena</h1>
+    </a>
+    <nav>
+        <ul>
+            <li><a href='@Url.Action("login", "OnBoarding")'>Iniciar Sesión</a></li>
+            <li><a href='@Url.Action("registro", "OnBoarding")'>Registrarse</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="registro-container">
+    
+    <div>
+        <img src="/imagenes/registrarse.png" alt="Ropa de colores" class="imagen-ropa">
+    </div>
+
+    <section class="formulario-section">
+        <div>
+
+            <h2>Registrate en Re-Estrena</h2>
+
+            <form asp-controller="OnBoarding" asp-action="registroGuardar" method="post" enctype="multipart/form-data">
+
+                <div>
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email" required>
+                </div>
+
+                <div>
+                    <label for="Contrasenia">Contraseña</label>
+                    <input type="password" id="Contrasenia" name="Contrasenia" required>
+                </div>
+
+                <div>
+                    <label for="Usuario">Usuario</label>
+                    <input type="text" id="Usuario" name="Usuario" required>
+                </div>
+
+                <div>
+                    <label for="NombreCompleto">Nombre completo</label>
+                    <input type="text" id="NombreCompleto" name="NombreCompleto" required>
+                </div>
+
+                <div>
+                    <label for="Pais">País</label>
+                    <input type="text" id="Pais" name="Pais">
+                </div>
+
+                <div>
+                    <label for="Telefono">Teléfono</label>
+                    <input type="tel" id="Telefono" name="Telefono">
+                </div>
+
+                <div class="checkbox-line">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <label for="privacidad">Acepto la política de privacidad</label>
+                </div>
+
+                <p>
+                    Si querés enterarte de cosas nuevas, suscribite a nuestro Newsletter:
+                </p>
+
+               
+                <div>
+                    <input type="email" id="newsletter" name="newsletter" placeholder="Ingresá tu mail">
+                </div>
+
+                <button type="submit">Registrarse</button>
+
+            </form>
+
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

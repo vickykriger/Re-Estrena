@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-Estrena</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+       <a href='@Url.Action("index", "OnBoarding")'>
+        <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+        <h1>RE-ESTRENA</h1>
+      </a>
+        <nav>
+          <ul>
+            <li><a href='@Url.Action("login", "OnBoarding")'>Iniciar Sesión</a></li>
+            <li><a href='@Url.Action("registro", "OnBoarding")'>Registrarse</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+  <section class = "landing-intro">
+    <img src="~/imagenes/ropa.png" alt="Ropa de colores">
+    <div>
+      <h2>Dale una nueva vida a la moda.</h2>
+      <p>Compra y vende ropa con estilo, sin culpa y con conciencia.</p>
+    </div>
+  </section>
+
+
+ <section class="landing-Sobre">
+  <div class="col-izq">
+    <h2>¿Qué es ReEstrena?</h2>
+    <img src="~/imagenes/logo.png" alt="Logo">
+  </div>
+
+  <div class="col-der">
+    <p>
+      Reestrena es una tienda online de moda circular. Ofrecemos ropa de segunda mano en excelente estado.
+      También puedes publicar tus prendas para darles una segunda oportunidad (¡y ganar dinero!).
+    </p>
+  </div>
+</section>
+
+ 
+  <section class="landing-Elegirnos">
+    <h2>¿Por qué elegirnos?</h2>
+    <ul>
+      <li>Moda sostenible</li>
+      <li>Piezas únicas y auténticas</li>
+      <li>Precios accesibles</li>
+      <li>Compra segura y fácil</li>
+    </ul>
+  </section>
+
+ 
+  <section class="landing-ProduDestacados">
+    <h2>Productos destacados:</h2>
+      <div>
+        <article>
+          <img src="~/imagenes/remera.jpg" alt="Remera básica de algodón">
+          <h3>Remera básica de algodón</h3>
+          <p>Remera blanca de algodón CHAIN, corte oversize con estampa vintage en negro.</p>
+        </article>
+
+        <article>
+          <img src="~/imagenes/minifalda.jpg" alt="Minifalda negra">
+          <h3>Minifalda negra de polyester</h3>
+          <p>Minifalda negra de poliéster con encaje blanco y moños rosa, estilo romántico.</p>
+        </article>
+
+        <article>
+          <img src="~/imagenes/zapatos.jpg" alt="Zapatos de cuero">
+          <h3>Zapatos de cuero rojo y negro</h3>
+          <p>Zapato de cuero negro y rojo, taco medio, estilo vintage con detalle calado en el borde.</p>
+        </article>
+    </div>
+  </section>
+
+  <section class = "landing-arribaFooter">
+    <p>¿Querés comprar o vender? Crea tu cuenta gratis y comenzá ahora</p>
+      <a href='@Url.Action("registro", "OnBoarding")'>Registrarse</a>
+  </section>
+  
+</body>
+</html>

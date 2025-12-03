@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificaciones vendedor - Re-Estrena</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body class="body-notificaciones">
+ <header>
+        <div>
+            <a href="@Url.Action("VerPaginaPrincipalV", "Account")">
+                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+                <h1>Re-Estrena</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href='@Url.Action("VerPaginaPrincipalC", "Account")' onclick="validar(this)">Comprar</a></li>
+                    <li><a href='@Url.Action("subirPublicacion", "Post")'><img src="~/imagenes/mas.png" alt="Subir" title="Subir"></a></li>
+                    <li><a href='@Url.Action("VerPaginaPrincipalV", "Account")'><img src="~/imagenes/perfil.png" alt="Usuario" title="Usuario"></a></li>
+                    <li><a href='@Url.Action("VerNotificacionesV", "Account")'><img src="~/imagenes/campana.png" alt="Notificaciones" title="Notificaciones"></a></li>
+                    <li><a href='@Url.Action("VerMensajesV", "Account")'><img src="~/imagenes/mensaje.png" alt="Mensajes" title="Mensajes"></a></li>
+                </ul>
+            </nav>
+        </div>
+  </header>
+
+  <main>
+  <section class="notifications-section">
+    <h3>Notificaciones</h3>
+
+    <div class="notification-item unread">
+            <img src="avatar-placeholder.png" alt="Avatar de usuario">
+            <div>
+                <h6>Tu pedido fue recibido.</h6>
+                <span>14/10</span>
+            </div>
+            <img src = "~/imagenes/tacho.png"  alt = "tacho">
+        </div>
+
+        <div class="notification-item unread">
+            <img src="avatar-placeholder.png" alt="Avatar de usuario">
+            <div>
+                <h6>El repartidor esta en camino.</h6>
+                <span>14/10</span>
+            </div>
+            <img src = "~/imagenes/tacho.png"  alt = "tacho">
+        </div>
+
+        <div class="notification-item">
+            <img src="avatar-placeholder.png" alt="Avatar de usuario" class="avatar-img">
+            <div>
+                <h6>Tu Paris City Bag esta en camino.</h6>
+                <span>13/10</span>
+            </div>
+            <img src = "~/imagenes/tacho.png"  alt = "tacho">
+        </div>
+
+         <div class="notification-item">
+            <img src="avatar-placeholder.png" alt="Avatar de usuario" class="avatar-img">
+            <div>
+                <h6>Tu Paris City Bag esta en el correo.</h6>
+                <span>13/10</span>
+            </div>
+            <img src = "~/imagenes/tacho.png"  alt = "tacho">
+        </div>
+
+        <div class="notification-item">
+            <img src="avatar-placeholder.png" alt="Avatar de usuario" class="avatar-img">
+            <div>
+                <h6>Se recibió tu transferencia.</h6>
+                <span>04/10</span>
+            </div>
+            <img src = "~/imagenes/tacho.png"  alt = "tacho">
+        </div>
+
+        <div class="notification-item">
+            <img src="avatar-placeholder.png" alt="Avatar de usuario" class="avatar-img">
+            <div>
+                <h6>¡Mira las nuevas ofertas!</h6>
+                <span>03/10</span>
+            </div>
+            <img src = "~/imagenes/tacho.png"  alt = "tacho">
+        </div>
+
+  </section>
+  <script asp-src-include="~/js/site.js"></script>
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+@{
+    ViewData["Title"] = "Mensajes";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Re-Estrena</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="@Url.Action("VerPaginaPrincipalV", "Account")">
+                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+                <h1>Re-Estrena</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href='@Url.Action("VerPaginaPrincipalC", "Account")' onclick="validar(this)">Comprar</a></li>
+                    <li><a href='@Url.Action("subirPublicacion", "Post")'><img src="~/imagenes/mas.png" alt="Subir" title="Subir"></a></li>
+                    <li><a href='@Url.Action("VerPaginaPrincipalV", "Account")'><img src="~/imagenes/perfil.png" alt="Usuario" title="Usuario"></a></li>
+                    <li><a href='@Url.Action("VerNotificacionesV", "Account")'><img src="~/imagenes/campana.png" alt="Notificaciones" title="Notificaciones"></a></li>
+                    <li><a href='@Url.Action("VerMensajesV", "Account")'><img src="~/imagenes/mensaje.png" alt="Mensajes" title="Mensajes"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+    <div class="mensajes-container">
+      <section class="chat-list-panel">
+          <h2>Mensajes</h2>
+          
+          <div class="chat-list-item active">
+              <img src="user_default_icon.png" alt="Avatar">
+              <div class="chat-info">
+                  <h6>Tomás Ezequiel...</h6>
+                  <p >Wow! Que rápido!</p>
+              </div>
+              <div class="chat-meta">
+                  <span class="unread-count">10</span>
+                  <span class="message-date">10/10</span>
+                  <img src = "~/imagenes/tacho.png"  alt = "tacho">
+              </div>
+          </div>
+
+          <div class="chat-list-item">
+              <img src="user_default_icon.png" alt="Avatar">
+              <div class="chat-info">
+                  <h6>Sofia Belén</h6>
+                  <p class="last-message">En qué quedamos?</p>
+              </div>
+              <div class="chat-meta">
+                  <span class="unread-count">07</span>
+                  <span class="message-date">07/10</span>
+                  <img src = "~/imagenes/tacho.png"  alt = "tacho">
+              </div>
+          </div>
+          
+      </section>
+      
+      <section class="chat-conversation-panel">
+          
+          <div class = "conversation-header">
+              <h3>Tomás Ezequiel Rojas</h3>
+          </div>
+          
+          <div class="chat-messages-area">
+              
+              <span>10/10/2025</span>
+
+              <div class="message-incoming">
+                  <p>Hola! Tu pedido esta en camino!</p>
+                  <span>10:00 AM</span> 
+              </div>
+
+              <div class="message-outgoing">
+                  <p>Wow! Que rápido!</p>
+                  <span>10:01 AM</span>
+              </div>
+
+              <span>16/10/2025</span>
+              
+          </div>
+          
+          <div class = "conversation-footer">
+              <input type="text" placeholder="Escribí tu mensaje">
+              <button>
+                  <span>➤</span>
+              </button>
+          </div>
+          
+      </section>
+    </div>
+      
+
+    </div>
+    <script asp-src-include="~/js/site.js"></script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,76 @@
+@{
+    ViewData["Title"] = "Buscador - Re-Estrena";
+}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="@Url.Action("VerPaginaPrincipalC", "Account")">
+                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+                <h1>Re-Estrena</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href='@Url.Action("VerPaginaPrincipalV", "Account")' onclick="validar(this)">Vender</a></li>
+                    <li><a href='@Url.Action("VerCarrito", "Purchase")'><img src="~/imagenes/carrito.png" alt="Carrito" title="Carrito"></a></li>
+                    <li><a href='@Url.Action("VerUsuarioC", "Account")'><img src="~/imagenes/perfil.png" alt="Usuario" title="Perfil usuario"></a></li>
+                    <li><a href='@Url.Action("VerNotificaciones", "Account")'><img src="~/imagenes/campana.png" alt="Notificaciones" title="Notificaciones"></a></li>
+                    <li><a href='@Url.Action("VerMensajes", "Account")'><img src="~/imagenes/mensaje.png" alt="Mensajes" title="Mensajes"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="buscador">
+            <form asp-action="buscarProducto" asp-controller="Account" method="get" class="search-form">
+                <button type="submit" class="search-button"><img src="~/imagenes/lupa.png" alt="buscar">
+                    <p>@ViewBag.Buscado</p>
+                </button>
+            </form>
+        </div>
+    @{
+            if (ViewBag.Publicaciones != null && ViewBag.Publicaciones.Count > 0)
+            {
+                <section class="productos-grid">
+                    @foreach (var publicacion in ViewBag.Publicaciones)
+                    {
+                        <div class="producto">
+                            <h3>@publicacion.NombreProducto</h3>
+                            <form method="post" action='@Url.Action("likear", "Account", new { idPublicacion = publicacion.IdPublicacion })'>
+                                    <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
+                                    <button type="submit"><img src="~/imagenes/corazon.png" alt="likear"></button>
+                            </form>
+                            <div class="productoIMG">
+                            <img src="~/imagenes/@publicacion.Foto" alt="@publicacion.NombreProducto">
+                            </div>
+                            <p>@publicacion.Descripcion</p>
+                            <div class="tagPrecio">
+                                <p class="etiquetas-placeholder" id="etiquetas-@publicacion.IdPublicacion">...</p>
+                                <p class="precio"> $@publicacion.Precio</p>
+                            </div>
+                            <a href='@Url.Action("verPublicacion", "Post", new { idPublicacion = publicacion.IdPublicacion })'>Ver publicacion</a>
+                        </div>
+                    }
+                </section>
+            }
+            else
+            {
+                <p >No se encontraron productos</p>
+                <p>Intenta con otras palabras clave</p>
+            }
+        }
+    <script asp-src-include="~/js/site.js"></script>
+    </main>
+</body>
+</html>

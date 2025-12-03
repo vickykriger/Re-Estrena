@@ -1,0 +1,71 @@
+@{
+    ViewData["Title"] = "Editar Publicacion";
+    var publicacion = ViewBag.Publicacion;
+}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="@Url.Action("VerPaginaPrincipalV", "Account")">
+                <img src="~/imagenes/logo.png" alt="Logo Re-Estrena">
+                <h1>Re-Estrena</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href='@Url.Action("VerPaginaPrincipalC", "Account")' onclick="validar(this)">Comprar</a></li>
+                    <li><a href='@Url.Action("subirPublicacion", "Post")'><img src="~/imagenes/mas.png" alt="Subir" title="Subir"></a></li>
+                    <li><a href='@Url.Action("VerPaginaPrincipalV", "Account")'><img src="~/imagenes/perfil.png" alt="Usuario" title="Usuario"></a></li>
+                    <li><a href='@Url.Action("VerNotificacionesV", "Account")'><img src="~/imagenes/campana.png" alt="Notificaciones" title="Notificaciones"></a></li>
+                    <li><a href='@Url.Action("VerMensajesV", "Account")'><img src="~/imagenes/mensaje.png" alt="Mensajes" title="Mensajes"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+<main >
+        <section class="unaPublicacion">
+            <form method="post" action='@Url.Action("VerPaginaPrincipalV", "Account")'class="emoji">
+                    <button type="submit"><img src="~/imagenes/tacho.png" alt="volver"></button>
+            </form>
+            <form action="/Post/subirPublicacionGuardar" method="post" enctype="multipart/form-data" class="todo">
+                
+                <div class="fotoPub">
+                    <input type="text" id="foto" name="foto" placeholder="Foto" value="@(publicacion != null ? publicacion.Foto : "")">
+                </div>
+                <div class="infoPub">
+                    <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Nombre del producto" value="@(publicacion != null ? publicacion.NombreProducto : "")">
+                    <textarea id="descripcion" name="descripcion" rows="8" cols="30" placeholder="Información del producto">@(publicacion != null ? publicacion.Descripcion : "")></textarea>
+                </div>
+                <div class="etiquetasPub">
+                    <input type="text" id="etiquetas" name="etiquetas" placeholder="Agregar etiquetas">
+                </div>
+                <div class="precioPub">
+                    <input type="number" id="precio" name="precio" placeholder="Precio:" min="0" step="1.00" value="@(publicacion != null ? publicacion.Precio : 0)">
+                </div>
+                <input type="hidden" name="idProducto" value="@ViewBag.Publicacion.IdPublicacion">
+                <div class="botonPub">
+                    <button type="submit">Guardar Cambios</button>
+                </div>
+            </form>
+        </section>
+        @if(ViewBag.ErrorMessage != null)
+        {
+            <p>@ViewBag.ErrorMessage</p>
+        }
+        <script asp-src-include="~/js/site.js"></script>
+</main>
+
+
+</body>
+</html>
+
