@@ -7,8 +7,8 @@ using System.Linq;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost\SQLEXPRESS;
-    DataBase=BD;Integrated Security =True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=localhost;
+    DataBase=BD;Integrated Security =True;TrustServerCertificate=True;"
 
     public static bool registrarse(Usuario user)
     {

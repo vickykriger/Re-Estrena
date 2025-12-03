@@ -36,7 +36,7 @@ namespace ReEstrena.Controllers
                     }
                     ViewBag.Etiquetas=BD.devolverEtiquetasPorPublicacion(idPub);
                 }
-                return View("EditarPublicacion");
+                return RedirectToAction("VerPaginaPrincipalV", "Account");
             }
             else
             {

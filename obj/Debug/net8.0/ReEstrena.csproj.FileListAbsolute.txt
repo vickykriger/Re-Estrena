@@ -491,3 +491,4 @@ C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\re
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\ReEstrena.pdb
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\ReEstrena.genruntimeconfig.cache
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\ref\ReEstrena.dll
+C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\ReEstrena.sourcelink.json
