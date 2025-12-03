@@ -29,9 +29,9 @@ public static class BD
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string insertUser = @"
-                INSERT INTO Usuarios (Email, Contrasenia, NombreUsuario, NombreCompleto, Pais, Telefono, Foto, Descripcion)
+                INSERT INTO Usuarios (Email, Contrasenia, NombreUsuario, NombreCompleto, Telefono, Foto, Descripcion)
                 OUTPUT INSERTED.IdUsuario
-                VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pPais, @pTelefono, @pFoto, @pDescripcion);
+                VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pTelefono, @pFoto, @pDescripcion);
             ";
 
             nuevoIdUsuario = connection.QuerySingle<int>(
@@ -42,7 +42,6 @@ public static class BD
                     pContrasenia = user.Contrasenia,
                     pUsuario = user.NombreUsuario,
                     pNombreCompleto = user.NombreCompleto,
-                    pPais = user.Pais,
                     pTelefono = user.Telefono,
                     pFoto = user.Foto,
                     pDescripcion = user.Descripcion
@@ -204,10 +203,10 @@ public static class BD
 
     public static void editarUsuario(Usuario user, int id)
     {
-        string query = "UPDATE Usuarios SET Email = @pEmail, Contrasenia = @pContrasenia, NombreUsuario = @pNombreUsuario, NombreCompleto = @pNombreCompleto, Pais = @pPais, Telefono = @pTelefono, Descripcion = @pDescripcion WHERE IdUsuario = @pIdUsuario";
+        string query = "UPDATE Usuarios SET Email = @pEmail, Contrasenia = @pContrasenia, NombreUsuario = @pNombreUsuario, NombreCompleto = @pNombreCompleto, Telefono = @pTelefono, Descripcion = @pDescripcion WHERE IdUsuario = @pIdUsuario";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pNombreUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pPais = user.Pais, pTelefono = user.Telefono, pDescripcion = user.Descripcion, pIdUsuario = id });
+            connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pNombreUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto,  pTelefono = user.Telefono, pDescripcion = user.Descripcion, pIdUsuario = id });
         }
     }
 
@@ -359,4 +358,26 @@ public static class BD
             return connection.Query<Publicacion>(query).ToList();
         }
     }
+
+    public static bool EstaEnLista(int idPublicacion, int idLista, int idUsuario)
+{
+    // Verifica si la publicación existe en la lista Y si esa lista pertenece al usuario (BAC)
+    string query = @"
+        SELECT COUNT(PL.IdPublicacion) FROM PublicacionLista PL
+        INNER JOIN Listas L ON PL.IdLista = L.IdLista
+        WHERE PL.IdPublicacion = @pIdPublicacion 
+        AND PL.IdLista = @pIdLista 
+        AND L.IdUsuario = @pIdUsuario"; // <--- CLAVE DE SEGURIDAD
+        
+    using (SqlConnection connection = new SqlConnection(_connectionString))
+    {
+        // QuerySingle<int> devolverá 1 (está) o 0 (no está)
+        int count = connection.QuerySingle<int>(query, new { 
+            pIdPublicacion = idPublicacion, 
+            pIdLista = idLista, 
+            pIdUsuario = idUsuario 
+        });
+        return count > 0;
+    }
+}
 }

@@ -57,9 +57,11 @@
             }
             <p><strong>Total:</strong> $@total.ToString("N2")</p>
             </div>
-            <div class="botonPub">
-                <button type="submit">Continuar compra</button>
-            </div>
+            <form method="post" action='@Url.Action("VerMensajes", "Account")'>
+                <div class="botonPub">
+                    <button type="submit">Continuar compra</button>
+                </div>
+            </form>
         }
         else
         {
@@ -69,6 +71,10 @@
         }
 
     </section>
+    @if(ViewBag.ErrorMessage != null)
+        {
+            <p>@ViewBag.ErrorMessage</p>
+        }
     <script asp-src-include="~/js/site.js"></script>
     </main>
 </body>

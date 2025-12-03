@@ -43,7 +43,12 @@
 
                     <button type="submit" class="btn-login">Iniciar sesión</button>
                 </form>
-
+                @{
+                    if(@ViewBag.MensajeError!=null)
+                    {
+                        <p>@ViewBag.MensajeError</p>
+                    }
+                }
 
                 <section class="registrate">
                     <div>
@@ -54,6 +59,10 @@
             </div>
         </section>
     </main>
+    @if(ViewBag.ErrorMessage != null)
+        {
+            <p>@ViewBag.ErrorMessage</p>
+        }
     <footer>
         <p>© Copyright. Todos los derechos reservados a Re-Estrena</p>
     </footer>

@@ -48,9 +48,18 @@
         <div class="infoU">
             <img src="~/imagenes/lapiz.png" alt="Editar perfil">
             <img src="~/imagenes/config.png" alt="Configuración">
-            <h2>@ViewBag.Usuario.NombreCompleto</h2>
-            <p>@ViewBag.Usuario.NombreUsuario</p>
-            <p>@ViewBag.Usuario.Descripcion</p>
+            @{
+            if (ViewBag.Usuario != null)
+            {
+                <h2>@ViewBag.Usuario.NombreCompleto</h2>
+                <p>@ViewBag.Usuario.NombreUsuario</p>
+                <p>@ViewBag.Usuario.Descripcion</p>
+            }
+            else
+            {
+                <p>Error: Información de usuario no disponible.</p>
+            }
+            }
         </div>
 
 
@@ -103,7 +112,10 @@
                 <button type="submit">Cerrar sesión</button>
             </form>
         </section>
-        
+        @if(ViewBag.ErrorMessage != null)
+        {
+            <p>@ViewBag.ErrorMessage</p>
+        }
         <script asp-src-include="~/js/site.js"></script>
     </main>
 </body>

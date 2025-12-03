@@ -34,6 +34,14 @@
         <div>
 
             <h2>Registrate en Re-Estrena</h2>
+            @{
+                if(@ViewBag.MensajeError != null)
+                {
+                    <div class="alert error-message">
+                        <p>@ViewBag.MensajeError</p>
+                    </div>
+                }
+            }
 
             <form asp-controller="OnBoarding" asp-action="registroGuardar" method="post" enctype="multipart/form-data">
 
@@ -58,13 +66,8 @@
                 </div>
 
                 <div>
-                    <label for="Pais">País</label>
-                    <input type="text" id="Pais" name="Pais">
-                </div>
-
-                <div>
                     <label for="Telefono">Teléfono</label>
-                    <input type="tel" id="Telefono" name="Telefono">
+                    <input type="tel" id="Telefono" name="Telefono" pattern="[0-9]{8,15}" placeholder="Solo números, min 8 dígitos" minlength="8">
                 </div>
 
                 <div class="checkbox-line">
@@ -87,7 +90,10 @@
 
         </div>
     </section>
-
+@if(ViewBag.ErrorMessage != null)
+        {
+            <p>@ViewBag.ErrorMessage</p>
+        }
 </main>
 
 </body>

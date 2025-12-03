@@ -53,35 +53,35 @@
       <li>Compra segura y fácil</li>
     </ul>
   </section>
-
- 
   <section class="landing-ProduDestacados">
     <h2>Productos destacados:</h2>
       <div>
-        <article>
-          <img src="~/imagenes/remera.jpg" alt="Remera básica de algodón">
-          <h3>Remera básica de algodón</h3>
-          <p>Remera blanca de algodón CHAIN, corte oversize con estampa vintage en negro.</p>
-        </article>
-
-        <article>
-          <img src="~/imagenes/minifalda.jpg" alt="Minifalda negra">
-          <h3>Minifalda negra de polyester</h3>
-          <p>Minifalda negra de poliéster con encaje blanco y moños rosa, estilo romántico.</p>
-        </article>
-
-        <article>
-          <img src="~/imagenes/zapatos.jpg" alt="Zapatos de cuero">
-          <h3>Zapatos de cuero rojo y negro</h3>
-          <p>Zapato de cuero negro y rojo, taco medio, estilo vintage con detalle calado en el borde.</p>
-        </article>
-    </div>
+        @{
+            if (ViewBag.Publicaciones != null && ViewBag.Publicaciones.Count > 0)
+            {
+                    @foreach (var publicacion in ViewBag.Publicaciones)
+                    {
+                        <article>
+                            <img src="~/imagenes/@publicacion.Foto" alt="@publicacion.NombreProducto">
+                            <h3>@publicacion.NombreProducto</h3>
+                            <p>@publicacion.Descripcion</p>
+                        </article>
+                    }
+            }
+            else
+            {
+                <p>No hay publicaciones disponibles en este momento.</p>
+            }
+        }
+      </div>
   </section>
-
   <section class = "landing-arribaFooter">
     <p>¿Querés comprar o vender? Crea tu cuenta gratis y comenzá ahora</p>
       <a href='@Url.Action("registro", "OnBoarding")'>Registrarse</a>
   </section>
-  
+  @if(ViewBag.ErrorMessage != null)
+        {
+            <p>@ViewBag.ErrorMessage</p>
+        }
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8ollCoFY4E2ncLpZipGZhnxHEci0dBHm6fUiW6Vyxwc=",
+  "Hash": "2xNxy9ZPu9lpLCEri1BkwJ1QwN7OLkyzQNayI/pX3WQ=",
   "Source": "ReEstrena",
   "BasePath": "_content/ReEstrena",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ReEstrena\\wwwroot",
       "Source": "ReEstrena",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\css\\site.css",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\favicon.ico",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\fonts\\Crackajack.woff2",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\fonts\\Crackajack.woff2",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "fonts/Crackajack.woff2",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Crackajack.woff2"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\botas.webp",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\botas.webp",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/botas.webp",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\botas.webp"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\campana.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\campana.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/campana.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\campana.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\campera.webp",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\campera.webp",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/campera.webp",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\campera.webp"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\carrito.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\carrito.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/carrito.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\carrito.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\cartera.webp",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\cartera.webp",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/cartera.webp",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\cartera.webp"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\collar.webp",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\collar.webp",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/collar.webp",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\collar.webp"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\config.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\config.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/config.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\config.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\corazon.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\corazon.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/corazon.png",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\corazon.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\etiquetas.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\etiquetas.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/etiquetas.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\etiquetas.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\iniciarSesion.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\iniciarSesion.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/iniciarSesion.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\iniciarSesion.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\lapiz.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\lapiz.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/lapiz.png",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\lapiz.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\likeado.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\likeado.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/likeado.png",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\likeado.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\logo.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\logo.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/logo.png",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\lupa.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\lupa.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/lupa.png",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\lupa.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\mas.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\mas.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/mas.png",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\mas.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\mensaje.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\mensaje.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/mensaje.png",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\mensaje.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\minifalda.jpg",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\minifalda.jpg",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/minifalda.jpg",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\minifalda.jpg"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\perfil.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\perfil.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/perfil.png",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\perfil.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\registrarse.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\registrarse.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/registrarse.png",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\registrarse.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\remera.jpg",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\remera.jpg",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/remera.jpg",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\remera.jpg"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\ropa.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\ropa.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/ropa.png",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\ropa.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\tacho.png",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\tacho.png",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/tacho.png",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\tacho.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\imagenes\\zapatos.jpg",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\zapatos.jpg",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "imagenes/zapatos.jpg",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\zapatos.jpg"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\js\\site.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49439065\\Downloads\\Re-Estrena-master\\Re-Estrena\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

@@ -10,7 +10,7 @@ namespace ReEstrena.Controllers
     {
         public IActionResult subirPublicacionGuardar(string nombreProducto, string descripcion, string foto, string etiquetas, decimal precio)
         {
-            string idString = HttpContext.Session.GetString("IdUsuario");
+            string idString = HttpContext.Session.GetString("user");
             int idUsuario = 0;
             if (!string.IsNullOrEmpty(idString))
             {
@@ -56,7 +56,7 @@ namespace ReEstrena.Controllers
         }
         public IActionResult editarPublicacionGuardar(string nombreProducto, string descripcion, string foto, decimal precio, int idPub)
         {
-            string idString = HttpContext.Session.GetString("IdUsuario");
+            string idString = HttpContext.Session.GetString("user");
             int id = 0;
             if (!string.IsNullOrEmpty(idString))
             {

@@ -34,7 +34,7 @@ namespace ReEstrena.Controllers
                 carrito.Add(BD.DevolverPublicacion(idProducto));
             }
             HttpContext.Session.SetString("carrito", Objeto.ListToString<Publicacion>(carrito));
-            return RedirectToAction("VerPublicacion", "Post", new { idPublicacion = idProducto });
+            return RedirectToAction("VerCarrito");
         }
 
         public IActionResult EliminarDelCarrito(int idPublicacion)

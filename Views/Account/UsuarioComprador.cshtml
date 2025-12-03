@@ -29,7 +29,7 @@
             @{
                 if(ViewBag.Usuario.Foto != null)
                 {
-                    <img src="@ViewBag.Usuario.Foto" alt="@ViewBag.Usuario.Foto">
+                    <img src="~/imagenes/@ViewBag.Usuario.Foto" alt="@ViewBag.Usuario.Foto">
                 }
                 else
                 {
@@ -60,8 +60,12 @@
                         <div class="producto">
                             <h3>@publicacion.NombreProducto</h3>
                             <form method="post" action='@Url.Action("likear", "Account", new { idPublicacion = publicacion.IdPublicacion })'>
-                                    <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
-                                    <button type="submit"><img src="~/imagenes/likeado.png" alt="likear"></button>
+                                <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
+                                    <button type="button" onclick="cambiarImagen(this)">
+                                        <img id="corazon-@publicacion.IdPublicacion" 
+                                            src="~/imagenes/corazon.png" 
+                                            alt="likear" />
+                                    </button>
                             </form>
                             <div class="productoIMG">
                             <img src="~/imagenes/@publicacion.Foto" alt="@publicacion.NombreProducto">
@@ -88,6 +92,10 @@
             <button type="submit">Cerrar sesión</button>
         </form>
     </section>
+    @if(ViewBag.ErrorMessage != null)
+        {
+            <p>@ViewBag.ErrorMessage</p>
+        }
     <script asp-src-include="~/js/site.js"></script>
 </main>
 

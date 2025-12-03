@@ -20,8 +20,6 @@ namespace ReEstrena.Models
         [JsonProperty]
         public string NombreCompleto { get; private set; }
         [JsonProperty]
-        public string Pais { get; private set; }
-        [JsonProperty]
         public int Telefono { get; private set; }
         [JsonProperty]
         public string Foto {get; private set; }
@@ -33,13 +31,12 @@ namespace ReEstrena.Models
 
         }
 
-        public Usuario(string email, string contrasenia, string nombreUsuario, string nombreCompleto, string pais, int telefono)
+        public Usuario(string email, string contrasenia, string nombreUsuario, string nombreCompleto, int telefono)
         {
             Email = email;
             Contrasenia = contrasenia;
             NombreUsuario = nombreUsuario;
             NombreCompleto = nombreCompleto;
-            Pais = pais;
             Telefono = telefono;
         }
     }
