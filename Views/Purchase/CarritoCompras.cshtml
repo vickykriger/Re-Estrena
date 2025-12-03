@@ -31,14 +31,12 @@
     </header>
     <main>
         @{
-            // Mensaje de Error (Ej: Producto ya en carrito, ID inválido, etc.)
             if (TempData["Error"] != null)
             {
                 <div class="alert alert-danger">
                     <p>@TempData["Error"]</p>
                 </div>
             }
-            // Mensaje de Éxito/Información (Ej: Producto agregado con éxito)
             if (TempData["Info"] != null)
             {
                 <div class="alert alert-info">

@@ -19,6 +19,7 @@ html {
   font-weight: normal;
   font-style: normal;
 }
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #ffffff;
@@ -55,6 +56,7 @@ footer {
   overflow-x: hidden;
   width: 100%;
 }
+
 :root {
   font-size: 62.5%;
 }
@@ -203,12 +205,14 @@ header h1 {
   margin-left: auto;
   margin-right: auto;
 }
+
 .landing-intro img {
   width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
 }
+
 .landing-intro div {
   width: 60%;
   position: absolute;
@@ -219,17 +223,20 @@ header h1 {
   color: white;
   font-size: 1.1em;
   font-weight: bold;
-  text-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.6);
+  text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.6);
 }
+
 .landing-intro h2 {
   font-size: 2rem;
   margin: 0;
   color: white;
 }
+
 .landing-intro p {
   font-size: 1.5rem;
   margin-top: 1%;
 }
+
 .landing-Sobre {
   background-color: #ffffff;
   padding: 6rem 0;
@@ -242,14 +249,17 @@ header h1 {
   margin-left: auto;
   margin-right: auto;
 }
+
 .col-izq h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
+
 .col-izq img {
   width: 14rem;
   margin: 0 auto;
 }
+
 .col-der p {
   font-size: 2.2rem;
   color: #333;
@@ -258,6 +268,7 @@ header h1 {
   margin: 0 auto;
   text-align: left;
 }
+
 .landing-Elegirnos {
   background-color: #ffffff;
   text-align: center;
@@ -268,6 +279,7 @@ header h1 {
   margin-right: auto;
   box-sizing: border-box;
 }
+
 .landing-Elegirnos h2 {
   background-color: #f2e5ce;
   display: inline-block;
@@ -279,6 +291,7 @@ header h1 {
   width: 100%;
   text-align: center;
 }
+
 .landing-Elegirnos ul {
   list-style: none;
   padding: 0;
@@ -289,6 +302,7 @@ header h1 {
   display: flex;
   justify-self: center;
 }
+
 .landing-Elegirnos li {
   background: #ffffff;
   padding: 5% 6%;
@@ -296,7 +310,7 @@ header h1 {
   font-size: 2rem;
   font-weight: 600;
   color: #333;
-  box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.1);
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 60%;
   text-align: center;
@@ -305,10 +319,12 @@ header h1 {
   justify-content: center;
   transition: transform .2s ease, box-shadow .2s ease;
 }
+
 .landing-Elegirnos li:hover {
   transform: translateY(-0.4rem);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
+
 .landing-ProduDestacados {
   background-color: #f2e5ce;
   border-radius: 0.8rem;
@@ -320,25 +336,28 @@ header h1 {
   margin-right: auto;
   box-sizing: border-box;
 }
+
 .landing-ProduDestacados div {
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  gap: 15rem; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15rem;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
+
 .landing-ProduDestacados article {
   background-color: #ffffff;
   border-radius: 0.5rem;
   width: 25rem;
   height: 25rem;
   padding: 1rem;
-  box-shadow: 0 0 0.3rem rgba(0,0,0,0.1);
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
   object-fit: cover;
   overflow: hidden;
 }
+
 .landing-ProduDestacados article img {
   width: 100%;
   height: 12rem;
@@ -347,6 +366,7 @@ header h1 {
   border-top-right-radius: 0.8rem;
   margin-bottom: 0.8rem;
 }
+
 .landing-arribaFooter {
   background-color: #ffffff;
   text-align: center;
@@ -354,9 +374,11 @@ header h1 {
   width: 100%;
   overflow-x: hidden;
 }
+
 .landing-arribaFooter p {
   font-size: 1.5rem;
 }
+
 .landing-arribaFooter a {
   background-color: #a8bba2;
   color: white;
@@ -364,39 +386,44 @@ header h1 {
   border-radius: 0.6rem;
   font-weight: bold;
 }
+
 .landing-arribaFooter a:hover {
   background-color: #77a277;
 }
+
 .landing {
-    width: 100vw;
-    height: 7vh;
-    background: #71849b;
-    color: #232323;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding-left: 2vw;
-    font-size: 1.25rem;
-    box-sizing: border-box;
-    gap: 1vw;
+  width: 100vw;
+  height: 7vh;
+  background: #71849b;
+  color: #232323;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 2vw;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+  gap: 1vw;
 }
+
 .landing img {
-    height: 5vh;
-    margin-right: 0.5vw;
+  height: 5vh;
+  margin-right: 0.5vw;
 }
+
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1vw;
-    position: absolute;
-    right: 4vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1vw;
+  position: absolute;
+  right: 4vw;
 }
+
 nav li a {
-    color: #232323;
-    text-decoration: none;
-    font-weight: 500;
+  color: #232323;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 
@@ -413,6 +440,7 @@ main.fotito {
   align-items: center;
   padding: 0;
 }
+
 .login-box {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 2.08rem;
@@ -427,6 +455,7 @@ main.fotito {
   position: relative;
   overflow: visible;
 }
+
 .login-box h2 {
   font-size: 1.82rem !important;
   margin-bottom: 3.25rem !important;
@@ -434,6 +463,7 @@ main.fotito {
   font-weight: 700;
   color: #1a212d;
 }
+
 .login-box form {
   width: 100%;
   display: flex;
@@ -441,9 +471,11 @@ main.fotito {
   gap: 1.95rem;
   align-items: center;
 }
+
 .login-box label {
   display: none !important;
 }
+
 .login-box input[type="text"],
 .login-box input[type="password"] {
   width: 100% !important;
@@ -455,6 +487,7 @@ main.fotito {
   box-sizing: border-box !important;
   margin: 0 !important;
 }
+
 .btn-login {
   display: block !important;
   width: 100% !important;
@@ -470,9 +503,11 @@ main.fotito {
   cursor: pointer !important;
   transition: background 0.2s, transform 0.1s !important;
 }
+
 .btn-login:hover {
   background: #8fa58c !important;
 }
+
 .btn-login:active {
   transform: scale(0.98);
 }
@@ -484,6 +519,7 @@ main.fotito {
   margin-top: 3.9rem;
   text-align: center;
 }
+
 .registrate p {
   font-size: 1.3rem !important;
   font-weight: 700 !important;
@@ -491,6 +527,7 @@ main.fotito {
   margin-bottom: 1.3rem !important;
   color: #1a212d !important;
 }
+
 .registrate a {
   display: block !important;
   width: 100% !important;
@@ -505,9 +542,11 @@ main.fotito {
   transition: background 0.2s, transform 0.1s !important;
   box-sizing: border-box !important;
 }
+
 .registrate a:hover {
   background: #8fa58c !important;
 }
+
 .registrate a:active {
   transform: scale(0.98);
 }
@@ -523,9 +562,7 @@ main.fotito {
   align-items: center;
 }
 
-.buscador p{
-  
-}
+.buscador p {}
 
 .buscador form {
   display: flex;
@@ -554,9 +591,9 @@ main.fotito {
   background: transparent;
   border: none;
   cursor: pointer;
-  display: flex; 
-  align-items: center; 
-  gap: 0.5rem; 
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 
@@ -623,10 +660,11 @@ main.fotito {
   min-height: 38rem;
 }
 
-.producto:hover { /* Selector corregido */
+.producto:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.15);
 }
+
 .producto h3 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -694,45 +732,86 @@ main.fotito {
   white-space: nowrap;
 }
 
-
 .producto a {
-  font-style: normal;
-  align-items: right;
+  display: inline-block;
+  background-color: #7F99B7;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.8rem;
+  text-decoration: none;
   text-align: center;
-  background-color: #879782;
-  color: #000;
-  border: 0.1rem solid black;
-  border-radius: 0.4rem;
-  width: 40%;
-  margin-left: 30%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
 }
 
-.producto a:hover{
-  width: 45%;
+.producto a:hover {
+  background-color: #657991;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.producto a:active {
+  background-color: #2f3944;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 
 .producto form {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 10;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
 }
 
+.like-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.like-button img {
+    height: 1.5rem;
+    width: 1.5rem;
+    position: static; 
+    margin: 0;
+    padding: 0;
+}
 
 .producto form button {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
+  padding-right: 1rem;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 
 .producto form button img {
   height: 2rem;
   width: 2rem;
-  margin: 0;
+  margin-left: 97%;
+  position: relative;
 }
 
 
@@ -861,6 +940,13 @@ main.fotito {
   background-color: #8fa58c;
 }
 
+.fotoU img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: solid 0.2rem black;
+}
 
 .userLista {
   width: 78%;
@@ -932,19 +1018,19 @@ main.fotito {
 
 /*MENSAJES*/
 .mensajes-container {
-  display: flex; 
+  display: flex;
   width: 100%;
-  max-width: 115rem; 
-  height: 75rem;   
+  max-width: 115rem;
+  height: 75rem;
 
-  margin-top: 5rem ; 
+  margin-top: 5rem;
   margin-bottom: 5rem;
   margin-left: auto;
-  margin-right: auto; 
-  border: 3px solid #A4B39F; 
+  margin-right: auto;
+  border: 3px solid #A4B39F;
   background-color: #fff;
-  flex-shrink: 0; 
-  box-shadow: none; 
+  flex-shrink: 0;
+  box-shadow: none;
 }
 
 .chat-list-panel {
@@ -956,78 +1042,78 @@ main.fotito {
   flex-direction: column;
 }
 
-.chat-list-panel h2{
+.chat-list-panel h2 {
   flex-shrink: 0;
   padding: 0.625rem;
   margin: 0;
- border-bottom: 1px solid #ccc;
- text-align: center;
- background-color: #A4B39F;
- color: #000;
- line-height: 1;
- font-size: 2.5rem;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  background-color: #A4B39F;
+  color: #000;
+  line-height: 1;
+  font-size: 2.5rem;
 }
 
 .conversation-header {
-flex-shrink: 0; 
-padding: 0.625rem;
-margin: 0;
-border-bottom: 1px solid #ccc;
-text-align: center;
-background-color: #A4B39F; 
-color: #000;
-line-height: 1;
-font-size: 1rem;
+  flex-shrink: 0;
+  padding: 0.625rem;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  background-color: #A4B39F;
+  color: #000;
+  line-height: 1;
+  font-size: 1rem;
 }
 
 
 .chat-list-item {
-display: flex;
-padding: 0.5rem;
-cursor: pointer;
-border-bottom: 1px solid #eee;
-align-items: center;
-transition: background-color 0.2s;
-flex-shrink: 0;
+  display: flex;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
 }
 
 .chat-list-item:hover {
-background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .chat-list-item.active {
-background-color: #d8e6f1;
+  background-color: #d8e6f1;
 }
 
 .chat-list-item img {
-width: 2.5rem;
-height: 2.5rem;
-border-radius: 50%;
-margin-right: 0.5rem;
-opacity: 0.7; 
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  opacity: 0.7;
 }
 
 .chat-info {
-flex-grow: 1;
-min-width: 0;
+  flex-grow: 1;
+  min-width: 0;
 }
 
 .chat-info h6 {
-margin: 0;
-font-weight: bold;
-font-size: 2rem;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+  margin: 0;
+  font-weight: bold;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .chat-info p {
-margin: 0;
-font-size: 2rem;
-color: #666;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+  margin: 0;
+  font-size: 2rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .chat-meta {
@@ -1035,9 +1121,9 @@ text-overflow: ellipsis;
   font-size: 1.3rem;
   line-height: 1.2;
   margin-left: 0.5rem;
-  display: flex; 
-  flex-direction: row; 
-  align-items: center; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -1045,11 +1131,11 @@ text-overflow: ellipsis;
   width: 1.2rem;
   height: 1.2rem;
   cursor: pointer;
-  opacity: 0.7; 
-  order: 2; 
+  opacity: 0.7;
+  order: 2;
 }
 
-.unread-count { 
+.unread-count {
   display: block;
   color: white;
   background-color: #e74c3c;
@@ -1063,24 +1149,24 @@ text-overflow: ellipsis;
   margin-left: auto;
 }
 
-.read-check { 
-display: block;
-color: #4CAF50; 
-font-size: 0.9rem;
-line-height: 1.25rem;
-margin-bottom: 0.2rem;
-text-align: right;
-margin-left: auto;
+.read-check {
+  display: block;
+  color: #4CAF50;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.2rem;
+  text-align: right;
+  margin-left: auto;
 }
 
-.message-date { 
-display: block;
-color: #999;
-order: 3;
+.message-date {
+  display: block;
+  color: #999;
+  order: 3;
 }
 
-.delete-icon { 
-display: block;
+.delete-icon {
+  display: block;
   color: #c0392b;
   cursor: pointer;
   font-size: 0.8rem;
@@ -1088,40 +1174,40 @@ display: block;
 }
 
 .chat-conversation-panel {
-flex: 1; 
-display: flex; 
-flex-direction: column; 
-background-color: #fff;
-min-height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  min-height: 100%;
 }
 
 .conversation-header h3 {
-margin: 0;
-font-size: 2rem;
-color: #000;
-line-height: 1.2;
+  margin: 0;
+  font-size: 2rem;
+  color: #000;
+  line-height: 1.2;
 }
 
 .chat-messages-area {
-padding: 0.625rem;
-overflow-y: auto;
-flex-grow: 1; 
-min-height: 0; 
+  padding: 0.625rem;
+  overflow-y: auto;
+  flex-grow: 1;
+  min-height: 0;
 }
 
-.chat-messages-area > span { 
-text-align: center;
+.chat-messages-area>span {
+  text-align: center;
   display: block;
   font-size: 1rem;
   color: #999999;
   margin: 0.8rem 0;
 }
 
-.message-incoming, 
+.message-incoming,
 .message-outgoing {
-padding: 0.625rem 0.875rem;
+  padding: 0.625rem 0.875rem;
   margin-bottom: 0.5rem;
-  max-width: 70%; 
+  max-width: 70%;
   border-radius: 0.25rem;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   line-height: 1.3;
@@ -1129,46 +1215,46 @@ padding: 0.625rem 0.875rem;
   flex-direction: column;
 }
 
-.message-incoming p, 
+.message-incoming p,
 .message-outgoing p {
-margin: 0;
-padding: 0;
-font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
 }
 
 .message-incoming span,
 .message-outgoing span {
-display: none;
+  display: none;
 }
 
 .message-incoming {
-background-color: #d1d4d6; 
-color: #000000; 
-margin-right: auto; 
-margin-left: 0;
+  background-color: #d1d4d6;
+  color: #000000;
+  margin-right: auto;
+  margin-left: 0;
 }
 
 .message-outgoing {
-background-color: #6699c2; 
-color: #ffffff; 
-margin-left: auto; 
-margin-right: 0;
+  background-color: #6699c2;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .conversation-footer {
-flex-shrink: 0; 
-padding: 0.625rem;
-border-top: 1px solid #ccc;
-display: flex;
-align-items: center;
-background-color: #f5f5f5;
+  flex-shrink: 0;
+  padding: 0.625rem;
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
 }
 
 .conversation-footer input {
-flex-grow: 1;
+  flex-grow: 1;
   padding: 0.5rem;
   font-size: 0.9375rem;
-  border: 1px solid #A4B39F; 
+  border: 1px solid #A4B39F;
   border-radius: 0.25rem;
   margin-right: 0.5rem;
 }
@@ -1177,10 +1263,10 @@ flex-grow: 1;
   background-color: #6699c2;
   color: white;
   border: none;
-  padding: 0.3rem 0.5rem; 
+  padding: 0.3rem 0.5rem;
   border-radius: 0.25rem;
   cursor: pointer;
-  font-size: 0.6rem; 
+  font-size: 0.6rem;
   line-height: 1;
 }
 
@@ -1188,14 +1274,40 @@ flex-grow: 1;
   font-size: 0.8rem;
 }
 
+/*PROXIMAMENTE*/
+.proximamente {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 8rem;
+  height: calc(100vh - 8rem);
+  background-color: rgba(220, 50, 50, 0.9);
+  z-index: 1000;
+  background-color: rgba(220, 50, 50, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  animation: blinker 1.5s linear infinite;
+}
 
+.proximamente h1 {
+  margin: 0;
+  animation: blinker 1.5s linear infinite;
+}
 
 /*PUBLICACION*/
-.unaPublicacion{
+.unaPublicacion {
   background-color: #F2E5CE;
   border-radius: 0.8rem;
-  border:0.1rem solid black;
-  width:80%;
+  border: 0.1rem solid black;
+  width: 80%;
   max-width: 80%;
   margin-top: 1%;
   position: relative;
@@ -1207,38 +1319,58 @@ flex-grow: 1;
   box-sizing: border-box;
   height: auto;
 }
-.fotoPub { grid-area: fotoPub; }
-.infoPub { grid-area: infoPub; }
-.etiquetasPub { grid-area: etiquetasPub; }
-.precioPub { grid-area: precioPub; }
+
+.unaPublicacion .like-button img
+{
+  padding-right: 3rem;
+  padding-top: 3rem;
+  width: 3.5em;
+  height: auto;
+}
+.fotoPub {
+  grid-area: fotoPub;
+}
+
+.infoPub {
+  grid-area: infoPub;
+}
+
+.etiquetasPub {
+  grid-area: etiquetasPub;
+}
+
+.precioPub {
+  grid-area: precioPub;
+}
+
 .emoji {
   top: 1.5rem;
   right: 1.5rem;
   z-index: 10;
+  margin-left: 85%;
   position: absolute;
 }
-.todo{
+
+.todo {
   display: grid;
   grid:
-    "fotoPub infoPub infoPub" 1fr
-    "fotoPub infoPub infoPub" 1fr
-    "fotoPub infoPub infoPub" 1fr
-    "fotoPub infoPub infoPub" 1fr
-    "fotoPub etiquetasPub etiquetasPub" 1fr
-    "fotoPub precioPub precioPub" 1fr
-    "botonPub botonPub botonPub" auto
-    / 1fr 1fr 1fr;
+    "fotoPub infoPub infoPub" 1fr "fotoPub infoPub infoPub" 1fr "fotoPub infoPub infoPub" 1fr "fotoPub infoPub infoPub" 1fr "fotoPub etiquetasPub etiquetasPub" 1fr "fotoPub precioPub precioPub" 1fr "botonPub botonPub botonPub" auto / 1fr 1fr 1fr;
   gap: 1%;
   width: 100%;
   box-sizing: border-box;
 }
-.unaPublicacion .botonPub button{
+
+.unaPublicacion .botonPub button {
   margin-top: 2%;
 }
-.infoPub, .etiquetasPub, .precioPub {
+
+.infoPub,
+.etiquetasPub,
+.precioPub {
   padding: 1%;
 }
-.emoji button{
+
+.emoji button {
   background: none;
   border: none;
   cursor: pointer;
@@ -1246,24 +1378,25 @@ flex-grow: 1;
   margin-bottom: 1%;
 }
 
-.emoji button img{
+.emoji button img {
   height: 2rem;
   width: 2rem;
   margin: 0;
 }
 
-.unaPublicacion div{
+.unaPublicacion div {
   background-color: #ffffff;
   border-radius: 0.8rem;
-  border:0.1rem solid black;
+  border: 0.1rem solid black;
   margin-top: 1%;
   overflow: hidden;
 }
+
 .fotoPub img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0.8rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.8rem;
 }
 
 
@@ -1294,6 +1427,7 @@ flex-grow: 1;
   transform: translateY(-0.1rem);
   box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
 }
+
 div.botonPub {
   grid-area: botonPub;
   display: flex;
@@ -1302,19 +1436,22 @@ div.botonPub {
   width: 100%;
   margin-top: 1%;
   background-color: transparent;
-  border:none;
+  border: none;
 }
 
 
-.unaPublicacion input:focus, textarea:focus {
+.unaPublicacion input:focus,
+textarea:focus {
   border-color: #A4B39F;
   box-shadow: 0 0 0 0.3rem rgba(164, 179, 159, 0.2);
 }
 
 
-.unaPublicacion input:hover, textarea:hover {
+.unaPublicacion input:hover,
+textarea:hover {
   border-color: #bbb;
 }
+
 .unaPublicacion input[type="text"],
 .unaPublicacion input[type="number"],
 textarea {
@@ -1327,12 +1464,13 @@ textarea {
   font-family: inherit;
   margin-left: 1%;
 }
+
 /*CARRITO COMPRAS*/
 
-.total-carrito{
+.total-carrito {
   background-color: #F2E5CE;
-  border:0.1rem solid black;
-  width:80%;
+  border: 0.1rem solid black;
+  width: 80%;
   max-width: 80%;
   margin-top: 1%;
   padding: 1%;
@@ -1343,20 +1481,19 @@ textarea {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.carritoProducto{
+
+.carritoProducto {
   background-color: #F2E5CE;
-  border:0.1rem solid black;
-  width:80%;
+  border: 0.1rem solid black;
+  width: 80%;
   max-width: 80%;
   margin-top: 1%;
-  position: relative; /* Esto es importante para el posicionamiento absoluto del hijo */
+  position: relative;
+  /* Esto es importante para el posicionamiento absoluto del hijo */
   overflow: hidden;
   display: grid;
   grid:
-    "foto titulo" auto
-    "foto descripcion" auto
-    "foto precio" auto
-    / 1fr 5fr;
+    "foto titulo" auto "foto descripcion" auto "foto precio" auto / 1fr 5fr;
   margin-left: auto;
   margin-right: auto;
   gap: 1rem;
@@ -1397,7 +1534,7 @@ textarea {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 0.1rem solid black;
-  height:100%;
+  height: 100%;
   max-height: 100%;
 }
 
@@ -1422,7 +1559,83 @@ textarea {
   font-size: 1.2em;
 }
 
+#form-pago-dinamico {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #A4B39F;
+  border-radius: 8px;
+  background-color: #F2E5CE;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+#form-pago-dinamico h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#metodo-pago-form-interno {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: flex-start;
+  padding-left: 0;
+  width: 100%;
+}
+
+.opcion-pago {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #555;
+  padding: 8px 10px;
+  width: 100%;
+  justify-content: flex-start;
+  transition: background-color 0.2s;
+}
+
+.opcion-pago:hover {
+  background-color: #e9e9e9;
+  border-radius: 4px;
+}
+
+.opcion-pago input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.3);
+  accent-color: #6699c2;
+  margin-left: 0;
+}
+
+#btn-siguiente-pago {
+  background-color: #6699c2;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.1s;
+  display: block;
+  margin: 15px auto 0 auto;
+}
+
+#btn-siguiente-pago:hover {
+  background-color: #657991;
+  transform: translateY(-1px);
+}
+
+#btn-siguiente-pago:active {
+  background-color: #2f3944;
+  transform: translateY(0);
+}
 
 /*NOSE QUE HICIERON ACA, NO LO BORRO POR LAS DUDAS*/
 .main-content {
@@ -1430,6 +1643,7 @@ textarea {
   justify-content: center;
   padding: 4% 2%;
 }
+
 .product-container {
   background-color: #f5e8cd;
   width: 90%;
@@ -1440,51 +1654,61 @@ textarea {
   gap: 3%;
   box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.15);
 }
+
 .product-image-section {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
+
 .product-image {
   width: 85%;
   border-radius: 3%;
 }
+
 .product-info-section {
   display: flex;
   flex-direction: column;
   gap: 3%;
 }
+
 .product-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .product-title {
   margin: 0;
   font-size: 1.8rem;
   font-weight: 700;
 }
+
 .product-header button {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 2rem;
 }
+
 .product-description {
   font-size: 1rem;
   line-height: 1.5;
 }
+
 .product-tags h3 {
   margin: 0;
   margin-bottom: 1%;
   font-size: 1rem;
   color: #444;
 }
+
 .tags-list {
   display: flex;
   flex-wrap: wrap;
   gap: 2%;
 }
+
 .tag {
   background-color: white;
   border-radius: 1rem;
@@ -1492,30 +1716,36 @@ textarea {
   font-size: 0.85rem;
   border: 0.1rem solid #ddd;
 }
+
 .seller-info {
   font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 2%;
 }
+
 .seller-name {
   font-weight: 600;
 }
+
 .product-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 2%;
 }
+
 .price-label {
   margin: 0;
   font-weight: 600;
 }
+
 .price-value {
   margin: 0;
   font-size: 1.6rem;
   font-weight: 700;
 }
+
 .btn-add-to-cart {
   background-color: #b5c9a6;
   color: black;
@@ -1527,9 +1757,11 @@ textarea {
   font-weight: 600;
   transition: 0.3s;
 }
+
 .btn-add-to-cart:hover {
   background-color: #a0b38f;
 }
+
 button {
   background-color: white;
   border: 0.1rem solid #ccc;
@@ -1538,42 +1770,52 @@ button {
   padding: 0.5rem 1rem;
   border-radius: 0.8rem;
 }
+
 @media (max-width: 85rem) {
   .product-container {
     grid-template-columns: 100%;
   }
+
   .product-image {
     width: 70%;
   }
 }
+
 .logo-section {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .logo {
   height: 2.8rem;
 }
+
 .logo-section h1 {
   font-size: 2rem;
   color: #000;
   font-weight: 700;
   margin: 0;
 }
+
 .fondo-blanco {
   background: white;
 }
+
 .form-box {
   width: 70%;
   padding: 2rem;
 }
+
 .form-box form button {
   width: 69rem;
 }
+
 h2 {
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
+
 input,
 select {
   width: 100%;
@@ -1583,18 +1825,22 @@ select {
   border: 0.1rem solid #ddd;
   border-radius: 0.5rem;
 }
+
 .checkbox-line {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
 }
+
 .checkbox-line label {
   margin-left: 0.8rem;
 }
+
 .newsletter-text {
   margin-top: 1rem;
   font-size: 0.9rem;
 }
+
 .btn-registrarse {
   background-color: #8BA189;
   border: none;
@@ -1604,9 +1850,11 @@ select {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
 .btn-registrarse:hover {
   background-color: #7a9277;
 }
+
 .landing img {
   width: 3rem;
   height: auto;
@@ -1628,6 +1876,7 @@ main.registro-container {
   box-sizing: border-box;
   flex-grow: 1;
 }
+
 .registro-container>div:first-child {
   flex-basis: 90%;
   box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
@@ -1637,10 +1886,12 @@ main.registro-container {
   width: 80rem;
   margin-left: -35%;
 }
+
 .registro-container img {
   width: 100%;
   margin-left: 5%;
 }
+
 .formulario-section {
   flex-basis: 60%;
   width: 50%;
@@ -1651,14 +1902,17 @@ main.registro-container {
   flex-shrink: 0;
   margin-left: 10%;
 }
+
 .formulario-section div {
   justify-content: right;
 }
+
 .formulario-section h2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #333;
 }
+
 .formulario-section input:not([type="checkbox"]),
 .formulario-section select {
   width: 100%;
@@ -1670,11 +1924,13 @@ main.registro-container {
   font-size: 1rem;
   box-sizing: border-box;
 }
+
 .checkbox-line {
   display: flex;
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
+
 .checkbox-line input[type="checkbox"] {
   width: 1.8rem;
   height: 1.8rem;
@@ -1682,22 +1938,27 @@ main.registro-container {
   flex-shrink: 0;
   font-size: large;
 }
+
 .formulario-section form div label {
   font-size: medium;
   text-align: left;
 }
+
 .formulario-section p {
   font-size: large;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   color: #555;
 }
+
 .formulario-section div {
   font-size: large;
 }
+
 .formulario-section div h2 {
   font-size: x-large;
 }
+
 .formulario-section button[type="submit"] {
   display: block;
   width: 100%;
@@ -1712,15 +1973,18 @@ main.registro-container {
   cursor: pointer;
   transition: background-color 0.2s;
 }
+
 .formulario-section button[type="submit"]:hover {
   background-color: #8fa58c;
 }
+
 .productos-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   min-width: 0;
 }
+
 .col-derecha .precio {
   font-size: 2.2rem;
   font-weight: 700;
@@ -1728,6 +1992,7 @@ main.registro-container {
   color: #222;
   white-space: nowrap;
 }
+
 .col-derecha .btn-borrar {
   color: #8b0000;
   font-weight: 700;
@@ -1739,16 +2004,19 @@ main.registro-container {
   align-self: flex-end;
   margin-top: 0.8rem;
 }
+
 .col-derecha .btn-borrar:hover {
   text-decoration: underline;
   color: #b30000;
 }
+
 @media (max-width: 76.8rem) {
- 
+
   .col-derecha .precio {
     margin-bottom: 0;
   }
 }
+
 .resumen-container {
   width: 100%;
   background-color: #f4e9d2;
@@ -1760,6 +2028,7 @@ main.registro-container {
   top: 3rem;
   height: fit-content;
 }
+
 .resumen-container h3 {
   font-size: 2.2rem;
   font-weight: 700;
@@ -1768,14 +2037,17 @@ main.registro-container {
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
+
 .resumen-container table {
   width: 100%;
   font-size: 1.6rem;
   border-collapse: collapse;
 }
+
 .resumen-container td {
   padding: 0.8rem 0;
 }
+
 .resumen-container .total {
   font-weight: 800;
   font-size: 2.4rem;
@@ -1783,6 +2055,7 @@ main.registro-container {
   padding-top: 1.5rem;
   color: #222;
 }
+
 .resumen-container .btn-continuar {
   width: 100%;
   padding: 1.2rem;
@@ -1795,6 +2068,7 @@ main.registro-container {
   margin-top: 2rem;
   transition: background-color 0.2s;
 }
+
 .resumen-container .btn-continuar:hover {
   background-color: #9fb199;
 }
@@ -1827,107 +2101,102 @@ main.registro-container {
   align-items: center;
   padding: 1rem 1.5rem;
   border-bottom: 0.1rem solid #e0e0e0;
-  background-color: #f7f3e8; 
-  position: relative; 
+  background-color: #f7f3e8;
+  position: relative;
   cursor: pointer;
   height: 9rem;
 }
 
 .notification-item:last-child {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 .notification-item img {
   width: 4rem;
-  height: 4rem; 
+  height: 4rem;
   border-radius: 50%;
-  background-color: #ccc; 
-  margin-right: 1.5rem; 
-  content: '👤'; 
+  background-color: #ccc;
+  margin-right: 1.5rem;
+  content: '👤';
   font-size: 1.5rem;
   color: #fff;
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.notification-item > div {
-  flex-grow: 1; 
+.notification-item>div {
+  flex-grow: 1;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .notification-item h6 {
   font-size: 2rem;
   color: #333;
   margin: 0;
-  white-space: nowrap; 
-  overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.notification-item span:nth-of-type(1) { 
-  font-size: 1.3rem; 
+.notification-item span:nth-of-type(1) {
+  font-size: 1.3rem;
   color: #777;
   margin-top: 0.2rem;
 }
 
 .notification-item img[alt="tacho"] {
   width: 1.5rem;
-  height: 1.5rem; 
-  margin-left: auto; 
+  height: 1.5rem;
+  margin-left: auto;
   cursor: pointer;
-  opacity: 0.7; 
+  opacity: 0.7;
 }
 
 .notification-item.unread::before {
-  content: ''; 
-  width: 0.8rem; 
-  height: 0.8rem; 
-  background-color: #d80000; 
+  content: '';
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #d80000;
   border-radius: 50%;
   position: absolute;
-  top: 3.5rem; 
-  left: 1.5rem; 
+  top: 3.5rem;
+  left: 1.5rem;
   border: 0.1rem solid #f7f3e8;
-  z-index: 10; 
+  z-index: 10;
 }
 
 
-@media (max-width: 90rem) { 
+@media (max-width: 90rem) {
   .notifications-section {
-      margin-left: 2rem; 
-      margin-right: 2rem; 
-      padding-left: 2rem; 
-      padding-right: 2rem;
-      max-width: 60rem; 
-      width: 90%; 
-      margin-left: auto; 
-      margin-right: auto; 
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 60rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-@media (max-width: 90rem) { 
- .notifications-section h3 {
-  padding: 1rem 1.5rem;
-  background-color: #e6e6e6;
-  color: #333;
-  border-bottom: 0.1rem solid #ccc;
-  font-size: 1.5rem;
-  margin: 0;
-}
-}
-
-@media (max-width: 90rem) { 
-.notification-item h6 {
-  font-size: 1.5rem; 
-  color: #333;
-  margin: 0;
-  white-space: nowrap; 
-  overflow: hidden; 
-}
+@media (max-width: 90rem) {
+  .notifications-section h3 {
+    padding: 1rem 1.5rem;
+    background-color: #e6e6e6;
+    color: #333;
+    border-bottom: 0.1rem solid #ccc;
+    font-size: 1.5rem;
+    margin: 0;
+  }
 }
 
-
-
-
-
+@media (max-width: 90rem) {
+  .notification-item h6 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

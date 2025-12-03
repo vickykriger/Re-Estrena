@@ -46,15 +46,9 @@
                         string imagenCorazon = esFavorito ? "likeado.png" : "corazon.png";
                         string altCorazon = esFavorito ? "Quitar de favoritos" : "Añadir a favoritos";
         }
-            <form method="post" action='@Url.Action("likear", "Account")'> 
-                                <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.IdPublicacion" />
-                                    <button type="submit">
-                                        <img id="corazon-@ViewBag.Publicacion.IdPublicacion" 
-                                            src="~/imagenes/@imagenCorazon" 
-                                            alt="@altCorazon" 
-                                            title="@altCorazon" />
-                                    </button>
-                            </form>
+            <button type="button" class="like-button" data-id-publicacion="@ViewBag.Publicacion.IdPublicacion" onclick="toggleLike(@ViewBag.Publicacion.IdPublicacion)">
+                <img id="corazon-@ViewBag.Publicacion.IdPublicacion" src="~/imagenes/@imagenCorazon" alt="@altCorazon" title="@altCorazon" />
+            </button>
             <form action="/Purchase/agregarAlCarrito" method="post" enctype="multipart/form-data" class="todo">
                 <div class="fotoPub">
                     <img src="~/imagenes/@ViewBag.Publicacion.Foto" alt="@ViewBag.Publicacion.NombreProducto">

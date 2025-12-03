@@ -130,31 +130,35 @@ namespace ReEstrena.Controllers
         {
             string idString = HttpContext.Session.GetString("user");
             int idUsuario = 0;
+
             if (string.IsNullOrEmpty(idString) || !int.TryParse(idString, out idUsuario) || idUsuario <= 0)
             {
-                TempData["Info"] = "Debes iniciar sesión para gestionar Favoritos.";
-                return RedirectToAction("login", "OnBoarding");
+                return RedirectToAction("login", "OnBoarding"); 
             }
+
             int idListaFavoritos = BD.devolverIdListaUsuario(idUsuario);
             if (idListaFavoritos == 0)
             {
-                TempData["Error"] = "Error: No se encontró la lista de favoritos para tu usuario.";
-                return RedirectToAction("VerPaginaPrincipalC");
+                return Json(new { 
+                    success = false, 
+                    message = "Error: No se encontró la lista de favoritos para tu usuario." 
+                });
             }
+            string action = "";
             if (BD.EstaEnLista(idPublicacion, idListaFavoritos))
             {
                 BD.eliminarDeLista(idPublicacion, idListaFavoritos);
+                action = "removed";
             }
             else
             {
                 BD.agregarLista(idPublicacion, idListaFavoritos);
+                action = "added";
             }
-            string urlAnterior = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(urlAnterior) && Url.IsLocalUrl(urlAnterior))
-            {
-                return Redirect(urlAnterior);
-            }
-            return RedirectToAction("VerPaginaPrincipalC");
+            return Json(new { 
+                success = true, 
+                action = action 
+            });
         }
         public IActionResult verPublicacion(int idPublicacion)
         {

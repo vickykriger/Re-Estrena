@@ -62,15 +62,9 @@
                         string altCorazon = esFavorito ? "Quitar de favoritos" : "Añadir a favoritos";
                         <div class="producto">
                             <h3>@publicacion.NombreProducto</h3>
-                            <form method="post" action='@Url.Action("likear", "Account")'> 
-                                <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
-                                    <button type="submit" class="like-button">
-                                        <img id="corazon-@publicacion.IdPublicacion" 
-                                            src="~/imagenes/@imagenCorazon" 
-                                            alt="@altCorazon" 
-                                            title="@altCorazon" />
-                                    </button>
-                            </form>
+                            <button type="button" class="like-button" data-id-publicacion="@publicacion.IdPublicacion" onclick="toggleLike(@publicacion.IdPublicacion)">
+                                <img id="corazon-@publicacion.IdPublicacion" src="~/imagenes/@imagenCorazon" alt="@altCorazon" title="@altCorazon" />
+                            </button>
                             <div class="productoIMG">
                             <img src="~/imagenes/@publicacion.Foto" alt="@publicacion.NombreProducto">
                             </div>

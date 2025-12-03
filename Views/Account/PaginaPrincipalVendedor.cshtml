@@ -36,11 +36,11 @@
             @{
                 if(ViewBag.Usuario.Foto != null)
                 {
-                    <img src="@ViewBag.Usuario.Foto" alt="@ViewBag.Usuario.Foto">
+                    <img src="~/imagenes/@ViewBag.Usuario.Foto" alt="@ViewBag.Usuario.Foto">
                 }
                 else
                 {
-                    <button type="button">Subir foto</button>
+                    <img src="~/imagenes/perfil.png" alt="Foto de perfil predeterminada">
                 }
             }
            
@@ -79,7 +79,7 @@
                         {
                             <div class="producto">
                             <h3>@publicacion.NombreProducto</h3>
-                            <form method="post" action='@Url.Action("eliminarPublicacion", "Post")'> 
+                            <form method="post" action='@Url.Action("eliminarPublicacion", "Post")' onclick="validar(this)"> 
                                 <input type="hidden" name="id" value="@publicacion.IdPublicacion" />
                                 <button type="submit">
                                     <img src="~/imagenes/tacho.png" alt="eliminar">

@@ -5,13 +5,10 @@
     string etiquetasExistentes = "";
     List<ReEstrena.Models.Etiqueta> listaEtiquetas = ViewBag.Etiquetas as List<ReEstrena.Models.Etiqueta>;
 
-    // 1. Verificar si la lista no es nula
     if (listaEtiquetas != null)
     {
-        // 2. Verificar si la lista tiene elementos
         if (listaEtiquetas.Any()) 
         {
-            // 3. Formatear la lista a una cadena separada por espacios
             etiquetasExistentes = string.Join(" ", listaEtiquetas.Select(e => e.Nombre));
         }
     }
@@ -57,7 +54,16 @@
                 <input type="hidden" name="idPub" value="@publicacion.IdPublicacion">
 
                 <div class="fotoPub">
-                    <input type="text" id="foto" name="foto" placeholder="Foto" value="@(publicacion != null ? publicacion.Foto : "")">
+                    <label for="foto">Selecciona una imagen de producto:</label>
+                    <select id="foto" name="Foto" required class="select-imagen-producto">
+                        <option value="" disabled selected>-- Elige una imagen --</option>
+                        <option value="zapatos.webp">Zapatos</option>
+                        <option value="minifalda.webp">Minifalda</option>
+                        <option value="remera.webp">Remera</option>
+                    </select>
+                    <div class="preview-container">
+                        <img id="previewImg" src="" alt="Vista previa del producto" style="display: none;">
+                    </div>
                 </div>
                 <div class="infoPub">
                     <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Nombre del producto" value="@(publicacion != null ? publicacion.NombreProducto : "")">
