@@ -40,22 +40,37 @@
                 </button>
             </form>
         </div>
-    @{
+   @{
+            string idString = Context.Session.GetString("user");
+            int idUsuarioLogueado = 0;
+            int idListaFavoritos = 0;
+            if (int.TryParse(idString, out idUsuarioLogueado) && idUsuarioLogueado > 0)
+            {
+                idListaFavoritos = BD.devolverIdListaUsuario(idUsuarioLogueado);
+            }
             if (ViewBag.Publicaciones != null && ViewBag.Publicaciones.Count > 0)
             {
                 <section class="productos-grid">
                     @foreach (var publicacion in ViewBag.Publicaciones)
                     {
+                        bool esFavorito = false;
+                        if (idListaFavoritos > 0)
+                        {
+                            esFavorito = BD.EstaEnLista(publicacion.IdPublicacion, idListaFavoritos);
+                        }
+                        string imagenCorazon = esFavorito ? "likeado.png" : "corazon.png";
+                        string altCorazon = esFavorito ? "Quitar de favoritos" : "Añadir a favoritos";
                         <div class="producto">
                             <h3>@publicacion.NombreProducto</h3>
-                            <form method="post" action='@Url.Action("likear", "Account", new { idPublicacion = publicacion.IdPublicacion })'>
-                                <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
-                                    <button type="button" onclick="cambiarImagen(this)">
-                                        <img id="corazon-@publicacion.IdPublicacion" 
-                                            src="~/imagenes/corazon.png" 
-                                            alt="likear" />
-                                    </button>
-                            </form>
+                            <form method="post" action='@Url.Action("likear", "Account")'> 
+                                <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
+                                    <button type="submit" class="like-button">
+                                        <img id="corazon-@publicacion.IdPublicacion" 
+                                            src="~/imagenes/@imagenCorazon" 
+                                            alt="@altCorazon" 
+                                            title="@altCorazon" />
+                                    </button>
+                            </form>
                             <div class="productoIMG">
                             <img src="~/imagenes/@publicacion.Foto" alt="@publicacion.NombreProducto">
                             </div>
@@ -64,7 +79,7 @@
                                 <p class="etiquetas-placeholder" id="etiquetas-@publicacion.IdPublicacion">...</p>
                                 <p class="precio"> $@publicacion.Precio</p>
                             </div>
-                            <a href='@Url.Action("verPublicacion", "Post", new { idPublicacion = publicacion.IdPublicacion })'>Ver publicacion</a>
+                            <a href='@Url.Action("verPublicacion", "Post", new { idPublicacion = publicacion.IdPublicacion })'>Más información</a>
                         </div>
                     }
                 </section>

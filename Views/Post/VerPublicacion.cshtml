@@ -30,10 +30,31 @@
     </header>
     <main>
         <section class="unaPublicacion">
-            <form method="post" action='@Url.Action("likear", "Account", new { idPublicacion = ViewBag.Publicacion.IdPublicacion })' class="emoji">
-                    <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.IdPublicacion" />
-                    <button type="submit"><img src="~/imagenes/corazon.png" alt="likear"></button>
-            </form>   
+        @{string idString = Context.Session.GetString("user");
+            int idUsuarioLogueado = 0;
+            int idListaFavoritos = 0;
+            if (int.TryParse(idString, out idUsuarioLogueado) && idUsuarioLogueado > 0)
+            {
+                idListaFavoritos = BD.devolverIdListaUsuario(idUsuarioLogueado);
+            }
+        
+        bool esFavorito = false;
+                        if (idListaFavoritos > 0)
+                        {
+                            esFavorito = BD.EstaEnLista(@ViewBag.Publicacion.IdPublicacion, idListaFavoritos);
+                        }
+                        string imagenCorazon = esFavorito ? "likeado.png" : "corazon.png";
+                        string altCorazon = esFavorito ? "Quitar de favoritos" : "Añadir a favoritos";
+        }
+            <form method="post" action='@Url.Action("likear", "Account")'> 
+                                <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.IdPublicacion" />
+                                    <button type="submit">
+                                        <img id="corazon-@ViewBag.Publicacion.IdPublicacion" 
+                                            src="~/imagenes/@imagenCorazon" 
+                                            alt="@altCorazon" 
+                                            title="@altCorazon" />
+                                    </button>
+                            </form>
             <form action="/Purchase/agregarAlCarrito" method="post" enctype="multipart/form-data" class="todo">
                 <div class="fotoPub">
                     <img src="~/imagenes/@ViewBag.Publicacion.Foto" alt="@ViewBag.Publicacion.NombreProducto">

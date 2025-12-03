@@ -61,15 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 setTimeout(cargarTodasLasEtiquetas, 500);
 
-function cambiarImagen(buttonElement) {
-    const imagen = buttonElement.querySelector('img'); 
-    const srcActual = imagen.getAttribute('src');
-    if (srcActual.endsWith('/imagenes/corazon.png')) {
-        imagen.setAttribute('src', '/imagenes/likeado.png'); 
-    } else {
-        imagen.setAttribute('src', '/imagenes/corazon.png');
-    }
-}function metodoDePago() {
+
+function metodoDePago() {
     const opciones = ["Efectivo", "Billetera digital", "Tarjeta"];
     let htmlContent = '<h3>¿Cuál es tu método de pago?</h3>';
     htmlContent += '<div id="metodo-pago-form-interno">'; 
@@ -107,3 +100,13 @@ function continuarAlPago() {
         alert('Por favor, selecciona un método de pago antes de continuar.');
     }
 }
+const selectElement = document.getElementById('foto');
+const previewImg = document.getElementById('previewImg');
+
+selectElement.addEventListener('change', function() {
+    const selectedFileName = this.value;
+    if (selectedFileName) {
+        previewImg.src = `/imagenes/${selectedFileName}`; 
+        previewImg.style.display = 'block';
+    }
+});

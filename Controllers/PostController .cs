@@ -71,7 +71,7 @@ namespace ReEstrena.Controllers
             bool eliminado = BD.eliminarPublicacion(id);
             return RedirectToAction("VerPaginaPrincipalV", "Account");
         }
-        public IActionResult editarPublicacionGuardar(string nombreProducto, string descripcion, string foto, decimal precio, int idPub)
+        public IActionResult editarPublicacionGuardar(string nombreProducto, string descripcion, string foto, decimal precio, int idPub, string etiquetas)
         {
             string idString = HttpContext.Session.GetString("user");
             int id = 0;
@@ -97,10 +97,28 @@ namespace ReEstrena.Controllers
             }
 
             Publicacion publicacion = new Publicacion(id, descripcion, foto, precio, nombreProducto);
-
             BD.editarPublicacion(publicacion, idPub);
+            BD.limpiarEtiquetasDePublicacion(idPub);
+
+            if (!string.IsNullOrWhiteSpace(etiquetas))
+            {
+                string[] etiquetasArray = BD.SepararPorEspacio(etiquetas);
+                foreach (string etiqueta in etiquetasArray)
+                {
+                    if (!string.IsNullOrWhiteSpace(etiqueta))
+                    {
+                        int idEtiqueta = BD.agregarEtiqueta(etiqueta);
+
+                        if (idEtiqueta > 0)
+                        {
+                            BD.agregarEtiquetaPublicacion(idPub, idEtiqueta);
+                        }
+                    }
+                }
+            }
 
             TempData["SuccessMessage"] = "¡Publicación editada con éxito!";
+            // Redireccionamos a la vista del producto para ver los cambios
             return RedirectToAction("VerPaginaPrincipalV", "Account");
         }
         public IActionResult verPublicacion(int idPublicacion)

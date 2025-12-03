@@ -38,7 +38,13 @@
             </form>
             <form action="/Post/subirPublicacionGuardar" method="post" enctype="multipart/form-data" class ="todo">
                 <div class="fotoPub">
-                    <input type="text" id="foto" name="foto" required>
+                    <label for="foto">Selecciona una imagen de producto:</label>
+                    <select id="foto" name="Foto" required class="select-imagen-producto">
+                        <option value="" disabled selected>-- Elige una imagen --</option>
+                        <option value="zapatos.webp">Zapatos</option>
+                        <option value="minifalda.webp">Minifalda</option>
+                        <option value="remera.webp">Remera</option>
+                    </select>
                 </div>
                 <div class="infoPub">
                     <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Nombre del producto">

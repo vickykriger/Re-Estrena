@@ -181,14 +181,6 @@ public static class BD
         }
     }
 
-    public static void editarUsuario(Usuario user, int id)
-    {
-        string query = "UPDATE Usuarios SET Email = @pEmail, Contrasenia = @pContrasenia, NombreUsuario = @pNombreUsuario, NombreCompleto = @pNombreCompleto, Telefono = @pTelefono, Descripcion = @pDescripcion WHERE IdUsuario = @pIdUsuario";
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            connection.Execute(query, new { pEmail = user.Email, pContrasenia = user.Contrasenia, pNombreUsuario = user.NombreUsuario, pNombreCompleto = user.NombreCompleto, pTelefono = user.Telefono, pDescripcion = user.Descripcion, pIdUsuario = id });
-        }
-    }
 
     public static List<Publicacion> devolverPublicacionesVendedor(int idUsuario)
     {
@@ -210,7 +202,7 @@ public static class BD
         }
     }
 
-    
+
 
     public static List<Lista> devolverListasPorUsuario(int idUsuario)
     {
@@ -218,6 +210,15 @@ public static class BD
         {
             string query = "SELECT Listas.* FROM Listas INNER JOIN UsuariosLista ON Listas.IdLista = UsuariosLista.IdLista WHERE UsuariosLista.IdUsuario = @pIdUsuario";
             return connection.Query<Lista>(query, new { pIdUsuario = idUsuario }).ToList();
+        }
+    }
+
+    public static void limpiarEtiquetasDePublicacion(int idPublicacion)
+    {
+        string query = "DELETE FROM PublicacionEtiqueta WHERE IdPublicacion = @pIdPublicacion";
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Execute(query, new { pIdPublicacion = idPublicacion });
         }
     }
 
@@ -253,21 +254,23 @@ public static class BD
     }
     public static int agregarEtiqueta(string etiqueta)
     {
-        string query = "SELECT COUNT(IdEtiqueta) AS Cantidad FROM Etiquetas WHERE Nombre = @pNombre";
-        int cantidad;
         int idEtiqueta = 0;
+        string nombreNormalizado = etiqueta.ToLower().Trim();
+
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            cantidad = connection.QuerySingle<int>(query, new { pNombre = etiqueta });
-        }
-        if (cantidad == 0)
-        {
-            string query1 = "INSERT INTO Etiquetas (Nombre) OUTPUT INSERTED.IdEtiqueta VALUES (@pNombre)";
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            string selectQuery = "SELECT IdEtiqueta FROM Etiquetas WHERE Nombre = @pNombre";
+            idEtiqueta = connection.QuerySingleOrDefault<int>(selectQuery, new { pNombre = nombreNormalizado });
+
+            if (idEtiqueta > 0)
             {
-                idEtiqueta = connection.QuerySingle<int>(query1, new { pNombre = etiqueta });
+                return idEtiqueta;
             }
+
+            string insertQuery = "INSERT INTO Etiquetas (Nombre) OUTPUT INSERTED.IdEtiqueta VALUES (@pNombre)";
+            idEtiqueta = connection.QuerySingle<int>(insertQuery, new { pNombre = nombreNormalizado });
         }
+
         return idEtiqueta;
     }
     public static void agregarEtiquetaPublicacion(int? idPublicacion, int idEtiqueta)
@@ -314,16 +317,14 @@ public static class BD
     }
     public static int devolverIdListaUsuario(int idUser)
     {
-        string query = "SELECT TOP 1 IdLista FROM UsuariosLista WHERE IdUsuario = @pIdUsuario ORDER BY IdLista;";
-        int idListaUsuario = -1;
+        string query = "SELECT TOP 1 IdLista FROM Listas WHERE IdUsuario = @pIdUsuario AND NombreLista = 'Favoritos';";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            idListaUsuario = connection.Execute(query, new
+            return connection.QuerySingleOrDefault<int>(query, new
             {
                 pIdUsuario = idUser,
             });
         }
-        return idListaUsuario;
     }
     public static void agregarLista(int idPublicacion, int idListaUsuario)
     {

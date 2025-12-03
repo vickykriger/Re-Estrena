@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2xNxy9ZPu9lpLCEri1BkwJ1QwN7OLkyzQNayI/pX3WQ=",
+  "Hash": "F/nI0vt+DQr+ccXcIO1zToGMkyQmOhFU6hik2EGuwkQ=",
   "Source": "ReEstrena",
   "BasePath": "_content/ReEstrena",
   "Mode": "Default",
@@ -378,12 +378,12 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\mensaje.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\minifalda.jpg",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\minifalda.webp",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
-      "RelativePath": "imagenes/minifalda.jpg",
+      "RelativePath": "imagenes/minifalda.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -394,7 +394,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imagenes\\minifalda.jpg"
+      "OriginalItemSpec": "wwwroot\\imagenes\\minifalda.webp"
     },
     {
       "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\perfil.png",
@@ -435,12 +435,12 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\registrarse.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\remera.jpg",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\remera.webp",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
-      "RelativePath": "imagenes/remera.jpg",
+      "RelativePath": "imagenes/remera.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -451,7 +451,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imagenes\\remera.jpg"
+      "OriginalItemSpec": "wwwroot\\imagenes\\remera.webp"
     },
     {
       "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\ropa.png",
@@ -492,12 +492,12 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\tacho.png"
     },
     {
-      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\zapatos.jpg",
+      "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\zapatos.webp",
       "SourceId": "ReEstrena",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\",
       "BasePath": "_content/ReEstrena",
-      "RelativePath": "imagenes/zapatos.jpg",
+      "RelativePath": "imagenes/zapatos.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -508,7 +508,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imagenes\\zapatos.jpg"
+      "OriginalItemSpec": "wwwroot\\imagenes\\zapatos.webp"
     },
     {
       "Identity": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\js\\site.js",

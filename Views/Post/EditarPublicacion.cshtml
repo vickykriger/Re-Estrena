@@ -1,6 +1,20 @@
 @{
     ViewData["Title"] = "Editar Publicacion";
     var publicacion = ViewBag.Publicacion;
+
+    string etiquetasExistentes = "";
+    List<ReEstrena.Models.Etiqueta> listaEtiquetas = ViewBag.Etiquetas as List<ReEstrena.Models.Etiqueta>;
+
+    // 1. Verificar si la lista no es nula
+    if (listaEtiquetas != null)
+    {
+        // 2. Verificar si la lista tiene elementos
+        if (listaEtiquetas.Any()) 
+        {
+            // 3. Formatear la lista a una cadena separada por espacios
+            etiquetasExistentes = string.Join(" ", listaEtiquetas.Select(e => e.Nombre));
+        }
+    }
 }
 
 
@@ -50,7 +64,7 @@
                     <textarea id="descripcion" name="descripcion" rows="8" cols="30" placeholder="Información del producto">@(publicacion != null ? publicacion.Descripcion : "")</textarea>
                 </div>
                 <div class="etiquetasPub">
-                    <input type="text" id="etiquetas" name="etiquetas" placeholder="Agregar etiquetas">
+                    <input type="text" id="etiquetas" name="etiquetas" placeholder="Agregar etiquetas, tenes que volver a escribir todas" value="@etiquetasExistentes">
                 </div>
                 <div class="precioPub">
                     <input type="number" id="precio" name="precio" placeholder="Precio:" min="0" step="1.00" value="@(publicacion != null ? publicacion.Precio : 0)">

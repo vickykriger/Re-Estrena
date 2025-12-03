@@ -623,7 +623,6 @@ main.fotito {
   min-height: 38rem;
 }
 
-
 .producto:hover { /* Selector corregido */
   transform: translateY(-0.3rem);
   box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.15);

@@ -135,49 +135,30 @@ namespace ReEstrena.Controllers
                 TempData["Info"] = "Debes iniciar sesión para gestionar Favoritos.";
                 return RedirectToAction("login", "OnBoarding");
             }
-
-            int IdListaFavoritos = BD.devolverIdListaUsuario(idUsuario);
-            if (IdListaFavoritos != -1)
+            int idListaFavoritos = BD.devolverIdListaUsuario(idUsuario);
+            if (idListaFavoritos == 0)
             {
-                bool yaEstaEnFavoritos = BD.EstaEnLista(idPublicacion, IdListaFavoritos);
-
-                if (yaEstaEnFavoritos)
-                {
-                    BD.eliminarDeLista(idPublicacion, IdListaFavoritos);
-                    TempData["Info"] = "Publicación eliminada de Favoritos.";
-                }
-                else
-                {
-                    BD.agregarLista(idPublicacion, IdListaFavoritos);
-                    TempData["Info"] = "Publicación añadida a Favoritos.";
-                }
-
-                string urlAnterior = Request.Headers["Referer"].ToString();
-                if (!string.IsNullOrEmpty(urlAnterior))
-                {
-                    return Redirect(urlAnterior);
-                }
+                TempData["Error"] = "Error: No se encontró la lista de favoritos para tu usuario.";
+                return RedirectToAction("VerPaginaPrincipalC");
             }
-
-
-
+            if (BD.EstaEnLista(idPublicacion, idListaFavoritos))
+            {
+                BD.eliminarDeLista(idPublicacion, idListaFavoritos);
+            }
+            else
+            {
+                BD.agregarLista(idPublicacion, idListaFavoritos);
+            }
+            string urlAnterior = Request.Headers["Referer"].ToString();
+            if (!string.IsNullOrEmpty(urlAnterior) && Url.IsLocalUrl(urlAnterior))
+            {
+                return Redirect(urlAnterior);
+            }
             return RedirectToAction("VerPaginaPrincipalC");
         }
         public IActionResult verPublicacion(int idPublicacion)
         {
             return RedirectToAction("verPublicacion", "Post", new { idPublicacion = idPublicacion });
-        }
-        public IActionResult editarUsuarioGuardar(string email, string contrasenia, string usuario, string nombreCompleto, int telefono)
-        {
-            string idString = HttpContext.Session.GetString("user");
-            int id = 0;
-            if (!string.IsNullOrEmpty(idString))
-            {
-                int.TryParse(idString, out id);
-            }
-            Usuario user = new Usuario(email, contrasenia, usuario, nombreCompleto, telefono);
-            BD.editarUsuario(user, id);
-            return View("UsuarioComprador");
         }
         public IActionResult eliminarDeLista(int idPublicacion, int idLista)
         {
