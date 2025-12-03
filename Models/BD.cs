@@ -8,7 +8,7 @@ using System.Linq;
 public static class BD
 {
     private static string _connectionString = @"Server=localhost;
-    DataBase=BD;Integrated Security =True;TrustServerCertificate=True;"
+    DataBase=BD;Integrated Security =True;TrustServerCertificate=True;";
 
     public static bool registrarse(Usuario user)
     {
@@ -133,7 +133,8 @@ public static class BD
 
     public static List<Publicacion> DevolverPublicacionesBuscador(string texto)
     {
-        try{
+        try
+        {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query = "SELECT * FROM Publicaciones WHERE Descripcion LIKE '%' + @ptexto + '%' OR NombreProducto LIKE '%' + @ptexto + '%'";
@@ -150,12 +151,25 @@ public static class BD
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute("DELETE FROM PublicacionLista WHERE IdPublicacion = @pIdPublicacion", new { pIdPublicacion = idPublicacion });
-            connection.Execute("DELETE FROM PublicacionEtiqueta WHERE IdPublicacion = @pIdPublicacion", new { pIdPublicacion = idPublicacion });
-            string query = "DELETE FROM Publicaciones WHERE IdPublicacion = @pIdPublicacion";
-            int filasAfectadas = connection.Execute(query, new { pIdPublicacion = idPublicacion });
+            connection.Open();
+            SqlTransaction transaction = connection.BeginTransaction();
+            try
+            {
+                var parametros = new { pIdPublicacion = idPublicacion };
+                connection.Execute("DELETE FROM PublicacionLista WHERE IdPublicacion = @pIdPublicacion", parametros, transaction: transaction);
+                connection.Execute("DELETE FROM PublicacionEtiqueta WHERE IdPublicacion = @pIdPublicacion", parametros, transaction: transaction);
 
-            return filasAfectadas > 0;
+                string query = "DELETE FROM Publicaciones WHERE IdPublicacion = @pIdPublicacion";
+                int filasAfectadas = connection.Execute(query, parametros, transaction: transaction);
+
+                transaction.Commit();
+                return filasAfectadas > 0;
+            }
+            catch (Exception)
+            {
+                transaction.Rollback();
+                return false;
+            }
         }
     }
 

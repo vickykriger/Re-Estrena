@@ -48,9 +48,10 @@ namespace ReEstrena.Controllers
         {
             return View("SubirPublicacion");
         }
+        [HttpPost]
         public IActionResult eliminarPublicacion(int id)
         {
-            ViewBag.eliminado = BD.eliminarPublicacion(id);
+            bool eliminado = BD.eliminarPublicacion(id);
             return RedirectToAction("VerPaginaPrincipalV", "Account");
         }
         public IActionResult editarPublicacionGuardar(string nombreProducto, string descripcion, string foto, decimal precio, int idPub)

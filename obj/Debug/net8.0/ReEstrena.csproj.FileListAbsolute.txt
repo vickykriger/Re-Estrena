@@ -402,13 +402,6 @@ C:\Users\49439065\Re-Estrena\obj\Debug\net8.0\refint\ReEstrena.dll
 C:\Users\49439065\Re-Estrena\obj\Debug\net8.0\ReEstrena.pdb
 C:\Users\49439065\Re-Estrena\obj\Debug\net8.0\ReEstrena.genruntimeconfig.cache
 C:\Users\49439065\Re-Estrena\obj\Debug\net8.0\ref\ReEstrena.dll
-C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\bin\Debug\net8.0\ReEstrena.staticwebassets.endpoints.json
-C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\bin\Debug\net8.0\appsettings.json
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\bin\Debug\net8.0\ReEstrena.staticwebassets.runtime.json
@@ -492,3 +485,9 @@ C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\Re
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\ReEstrena.genruntimeconfig.cache
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\ref\ReEstrena.dll
 C:\Users\Itrio\Downloads\Re-Estrena-master\Re-Estrena-master\obj\Debug\net8.0\ReEstrena.sourcelink.json
+C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\staticwebassets\msbuild.ReEstrena.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\staticwebassets\msbuild.build.ReEstrena.props
+C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ReEstrena.props
+C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ReEstrena.props
+C:\Users\49439065\Downloads\Re-Estrena-master\Re-Estrena\obj\Debug\net8.0\staticwebassets.pack.json

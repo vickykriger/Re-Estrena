@@ -53,8 +53,12 @@
                         <div class="producto">
                             <h3>@publicacion.NombreProducto</h3>
                             <form method="post" action='@Url.Action("likear", "Account", new { idPublicacion = publicacion.IdPublicacion })'>
-                                    <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
-                                    <button type="submit"><img src="~/imagenes/corazon.png" alt="likear"></button>
+                                <input type="hidden" name="idPublicacion" value="@publicacion.IdPublicacion" />
+                                    <button type="button" onclick="cambiarImagen(this)">
+                                        <img id="corazon-@publicacion.IdPublicacion" 
+                                            src="~/imagenes/corazon.png" 
+                                            alt="likear" />
+                                    </button>
                             </form>
                             <div class="productoIMG">
                             <img src="~/imagenes/@publicacion.Foto" alt="@publicacion.NombreProducto">

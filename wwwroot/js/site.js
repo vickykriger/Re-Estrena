@@ -60,3 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
     cargarTodasLasEtiquetas();
 });
 setTimeout(cargarTodasLasEtiquetas, 500);
+
+function cambiarImagen(buttonElement) {
+    const imagen = buttonElement.querySelector('img'); 
+    const srcActual = imagen.getAttribute('src');
+    if (srcActual.endsWith('/imagenes/corazon.png')) {
+        imagen.setAttribute('src', '/imagenes/likeado.png'); 
+    } else {
+        imagen.setAttribute('src', '/imagenes/corazon.png');
+    }
+}
