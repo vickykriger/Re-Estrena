@@ -1,10 +1,21 @@
-# ♻️ Re-Estrena: Redefine tu Moda, Juntos por la Sustentabilidad
+# 💖 Re-Estrena: Redefine tu Moda, Juntos por la Sustentabilidad 👗
 
 ## ✨ Descripción del Proyecto
 
 ¡Bienvenido a **Re-Estrena**! Somos la plataforma definitiva de compra y venta de ropa de segunda mano que transforma la moda en una práctica **consciente y sustentable**.
 
 En un mundo que necesita reducir su impacto ambiental, Re-Estrena te ofrece una manera sencilla y divertida de darle una segunda vida a tus prendas, promoviendo la **economía circular** y un **consumo más responsable**. Únete a nuestra comunidad y haz que la moda sostenible sea la nueva norma.
+
+---
+
+## 👩‍💻 Nuestro Equipo
+
+Estamos orgullosos de presentar a los creadores de Re-Estrena:
+
+* **Fidel Goldsman**
+* **Ignacio Kohn**
+* **Ailin Severino**
+* **Victoria Kriger**
 
 ---
 
@@ -19,6 +30,21 @@ En un mundo que necesita reducir su impacto ambiental, Re-Estrena te ofrece una 
 
 ---
 
+## ⚙️ Guía de Ejecución Local
+
+Para poner en marcha el proyecto Re-Estrena en tu entorno de desarrollo, sigue estos sencillos pasos:
+
+1.  **Descargar el Repositorio:** Descarga el archivo ZIP del repositorio completo a tu computadora.
+2.  **Preparar el Código:** Deszipea el archivo y abre la carpeta del proyecto en **Visual Studio (o Visual Studio Code)**.
+3.  **Configurar la Base de Datos:**
+    * Abre **SQL Server Management Studio (SSMS)**.
+    * Crea una nueva consulta.
+    * Copia el contenido del archivo llamado **`SCRIPT.SQL`** y pégalo en la consulta.
+    * **Ejecuta** el script. Esto creará la base de datos y las tablas necesarias.
+4.  **¡Ejecutar el Proyecto!** Ya puedes ejecutar el proyecto directamente desde Visual Studio.
+
+---
+
 ## 🔗 Recursos del Proyecto
 
 Aquí puedes encontrar la documentación completa, planificación y prototipos que utilizamos para construir Re-Estrena.
@@ -30,23 +56,3 @@ Aquí puedes encontrar la documentación completa, planificación y prototipos q
 | 📌 **Tablero Trello** | Gestión ágil de tareas, seguimiento de *sprints* y *backlog* del desarrollo. | [Acceder al Trello](https://trello.com/invite/b/68e7e9af1cbb9178c42dc743/ATTI5d0e0906c60e3ac841aba0e742b528d1702C8FE4/re-estrena) |
 
 ---
-
-## 💻 Tecnologías Utilizadas
-
-Este proyecto fue construido utilizando la pila de tecnologías .NET y Dapper para garantizar escalabilidad y rendimiento:
-
-* **Backend:** ASP.NET Core MVC (C#)
-* **Base de Datos:** SQL Server
-* **Mapeo de Datos:** Dapper
-* **Frontend:** HTML5, CSS3 y JavaScript (con Razor Views)
-
----
-
-## 🤝 Contribución
-
-Si quieres contribuir, reportar un bug o sugerir una mejora, por favor:
-
-1.  Abre un *Issue* en este repositorio con una descripción detallada.
-2.  Si deseas implementar una funcionalidad, crea un *Fork* del repositorio y envíanos un *Pull Request*.
-
-¡Gracias por ser parte de la moda del futuro!
