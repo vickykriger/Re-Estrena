@@ -69,4 +69,41 @@ function cambiarImagen(buttonElement) {
     } else {
         imagen.setAttribute('src', '/imagenes/corazon.png');
     }
+}function metodoDePago() {
+    const opciones = ["Efectivo", "Billetera digital", "Tarjeta"];
+    let htmlContent = '<h3>¿Cuál es tu método de pago?</h3>';
+    htmlContent += '<div id="metodo-pago-form-interno">'; 
+    opciones.forEach(opcion => {
+        htmlContent += `
+            <label class="opcion-pago">
+                <input type="radio" name="metodoPago" value="${opcion.toLowerCase().replace(' ', '-')}" required>
+                ${opcion}
+            </label><br>
+        `;
+    });
+    htmlContent += '<button type="button" id="btn-siguiente-pago">Siguiente</button>';
+    htmlContent += '</div>';
+    const botonContainer = document.querySelector('.botonPub');
+    if (botonContainer) {
+        let formContainer = document.getElementById('form-pago-dinamico');
+        
+        if (!formContainer) {
+            formContainer = document.createElement('div');
+            formContainer.id = 'form-pago-dinamico';
+            formContainer.innerHTML = htmlContent;
+            botonContainer.insertAdjacentElement('afterend', formContainer);
+            document.getElementById('btn-siguiente-pago').addEventListener('click', continuarAlPago);
+        } else {
+            formContainer.style.display = 'block';
+        }
+    }
+    return false; 
+}
+function continuarAlPago() {
+    const metodoSeleccionado = document.querySelector('input[name="metodoPago"]:checked');
+    if (metodoSeleccionado) {
+        window.location.href = '/Account/VerMensajes'; 
+    } else {
+        alert('Por favor, selecciona un método de pago antes de continuar.');
+    }
 }

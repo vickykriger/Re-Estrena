@@ -35,16 +35,19 @@
 <main >
         <section class="unaPublicacion">
             <form method="post" action='@Url.Action("VerPaginaPrincipalV", "Account")'class="emoji">
-                    <button type="submit"><img src="~/imagenes/tacho.png" alt="volver"></button>
+                <button type="submit"><img src="~/imagenes/tacho.png" alt="volver"></button>
             </form>
-            <form action="/Post/subirPublicacionGuardar" method="post" enctype="multipart/form-data" class="todo">
+        
+            <form action='@Url.Action("editarPublicacionGuardar", "Post")' method="post" enctype="multipart/form-data" class="todo">
                 
+                <input type="hidden" name="idPub" value="@publicacion.IdPublicacion">
+
                 <div class="fotoPub">
                     <input type="text" id="foto" name="foto" placeholder="Foto" value="@(publicacion != null ? publicacion.Foto : "")">
                 </div>
                 <div class="infoPub">
                     <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Nombre del producto" value="@(publicacion != null ? publicacion.NombreProducto : "")">
-                    <textarea id="descripcion" name="descripcion" rows="8" cols="30" placeholder="Información del producto">@(publicacion != null ? publicacion.Descripcion : "")></textarea>
+                    <textarea id="descripcion" name="descripcion" rows="8" cols="30" placeholder="Información del producto">@(publicacion != null ? publicacion.Descripcion : "")</textarea>
                 </div>
                 <div class="etiquetasPub">
                     <input type="text" id="etiquetas" name="etiquetas" placeholder="Agregar etiquetas">
@@ -52,7 +55,7 @@
                 <div class="precioPub">
                     <input type="number" id="precio" name="precio" placeholder="Precio:" min="0" step="1.00" value="@(publicacion != null ? publicacion.Precio : 0)">
                 </div>
-                <input type="hidden" name="idProducto" value="@ViewBag.Publicacion.IdPublicacion">
+                
                 <div class="botonPub">
                     <button type="submit">Guardar Cambios</button>
                 </div>

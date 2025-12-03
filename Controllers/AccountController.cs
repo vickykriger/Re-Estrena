@@ -55,7 +55,7 @@ namespace ReEstrena.Controllers
                 else
                 {
                     ViewBag.Usuario = user;
-                    ViewBag.Favoritas = BD.devolverPublicacionesPorLista(1);
+                    ViewBag.Favoritas = BD.devolverPublicacionesPorLista(BD.devolverIdListaUsuario(id));
                     return View("UsuarioComprador");
                 }
             }
@@ -130,33 +130,36 @@ namespace ReEstrena.Controllers
         {
             string idString = HttpContext.Session.GetString("user");
             int idUsuario = 0;
-
             if (string.IsNullOrEmpty(idString) || !int.TryParse(idString, out idUsuario) || idUsuario <= 0)
             {
                 TempData["Info"] = "Debes iniciar sesión para gestionar Favoritos.";
                 return RedirectToAction("login", "OnBoarding");
             }
 
-            const int IdListaFavoritos = 1;
-
-            bool yaEstaEnFavoritos = BD.EstaEnLista(idPublicacion, IdListaFavoritos, idUsuario);
-
-            if (yaEstaEnFavoritos)
+            int IdListaFavoritos = BD.devolverIdListaUsuario(idUsuario);
+            if (IdListaFavoritos != -1)
             {
-                BD.eliminarDeLista(idPublicacion, IdListaFavoritos);
-                TempData["Info"] = "Publicación eliminada de Favoritos.";
-            }
-            else
-            {
-                BD.agregarLista(idPublicacion, IdListaFavoritos);
-                TempData["Info"] = "Publicación añadida a Favoritos.";
+                bool yaEstaEnFavoritos = BD.EstaEnLista(idPublicacion, IdListaFavoritos);
+
+                if (yaEstaEnFavoritos)
+                {
+                    BD.eliminarDeLista(idPublicacion, IdListaFavoritos);
+                    TempData["Info"] = "Publicación eliminada de Favoritos.";
+                }
+                else
+                {
+                    BD.agregarLista(idPublicacion, IdListaFavoritos);
+                    TempData["Info"] = "Publicación añadida a Favoritos.";
+                }
+
+                string urlAnterior = Request.Headers["Referer"].ToString();
+                if (!string.IsNullOrEmpty(urlAnterior))
+                {
+                    return Redirect(urlAnterior);
+                }
             }
 
-            string urlAnterior = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(urlAnterior))
-            {
-                return Redirect(urlAnterior);
-            }
+
 
             return RedirectToAction("VerPaginaPrincipalC");
         }
@@ -176,35 +179,12 @@ namespace ReEstrena.Controllers
             BD.editarUsuario(user, id);
             return View("UsuarioComprador");
         }
-        public IActionResult hacerLista(string NombreLista)
-        {
-            string idString = HttpContext.Session.GetString("user");
-            int id = 0;
-            if (!string.IsNullOrEmpty(idString))
-            {
-                int.TryParse(idString, out id);
-            }
-            Lista lista = new Lista(id, NombreLista);
-            BD.hacerLista(lista);
-            string urlAnterior = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(urlAnterior))
-            {
-                return Redirect(urlAnterior);
-            }
-
-            return View("VerPaginaPrincipalC");
-        }
         public IActionResult eliminarDeLista(int idPublicacion, int idLista)
         {
             BD.eliminarDeLista(idPublicacion, idLista);
             ViewBag.Publicaciones = BD.devolverPublicacionesPorLista(idLista);
             ViewBag.NombreLista = BD.devolverNombreLista(idLista);
             return View("VerLista");
-        }
-        public IActionResult eliminarLista(int idLista)
-        {
-            BD.eliminarLista(idLista);
-            return View("UsuarioComprador");
         }
         public IActionResult DevolverEtiquetasPorPublicacion(int idPublicacion)
         {

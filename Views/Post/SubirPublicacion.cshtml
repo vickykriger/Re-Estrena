@@ -38,14 +38,14 @@
             </form>
             <form action="/Post/subirPublicacionGuardar" method="post" enctype="multipart/form-data" class ="todo">
                 <div class="fotoPub">
-                    <input type="text" id="foto" name="foto" placeholder="Subir foto">
+                    <input type="text" id="foto" name="foto" required>
                 </div>
                 <div class="infoPub">
                     <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Nombre del producto">
                     <textarea id="descripcion" name="descripcion" rows="8" cols="30" placeholder="Información del producto"></textarea>
                 </div>
                 <div class="etiquetasPub">
-                    <input type="text" id="etiquetas" name="etiquetas" placeholder="Agregar etiquetas">
+                    <input type="text" id="etiquetas" name="etiquetas" placeholder="Agregar etiquetas, no uses #, solo separalas con un espacio.">
                 </div>
                 <div class="precioPub">
                     <input type="number" id="precio" name="precio" placeholder="Precio:" min="0" step="1.00">

@@ -1280,6 +1280,7 @@ flex-grow: 1;
   transition: all 0.3s;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
   width: 33%;
+  margin-bottom: 1%;
 }
 
 

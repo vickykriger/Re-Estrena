@@ -31,7 +31,7 @@
     <main>
         <section class="unaPublicacion">
             <form method="post" action='@Url.Action("likear", "Account", new { idPublicacion = ViewBag.Publicacion.IdPublicacion })' class="emoji">
-                    <input type="hidden" name="idPublicacion" value="ViewBag.Publicacion.IdPublicacion" />
+                    <input type="hidden" name="idPublicacion" value="@ViewBag.Publicacion.IdPublicacion" />
                     <button type="submit"><img src="~/imagenes/corazon.png" alt="likear"></button>
             </form>   
             <form action="/Purchase/agregarAlCarrito" method="post" enctype="multipart/form-data" class="todo">
