@@ -22,7 +22,7 @@ namespace ReEstrena.Models
         [JsonProperty]
         public int Telefono { get; private set; }
         [JsonProperty]
-        public IFormFile Foto {get; private set; }
+        public string Foto {get; private set; }
         [JsonProperty]
         public string Descripcion {get; private set;}
 

@@ -28,8 +28,7 @@ public static class BD
         int nuevoIdUsuario;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string insertUser = @"
-                INSERT INTO Usuarios (Email, Contrasenia, NombreUsuario, NombreCompleto, Telefono, Foto, Descripcion)
+            string insertUser = @" INSERT INTO Usuarios (Email, Contrasenia, NombreUsuario, NombreCompleto, Telefono, Foto, Descripcion)
                 OUTPUT INSERTED.IdUsuario
                 VALUES (@pEmail, @pContrasenia, @pUsuario, @pNombreCompleto, @pTelefono, @pFoto, @pDescripcion);
             ";

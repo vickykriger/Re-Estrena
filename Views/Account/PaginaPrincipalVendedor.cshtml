@@ -79,7 +79,7 @@
                         {
                             <div class="producto">
                             <h3>@publicacion.NombreProducto</h3>
-                            <form method="post" action='@Url.Action("eliminarPublicacion", "Post")' onclick="validar(this)"> 
+                            <form method="post" action='@Url.Action("eliminarPublicacion", "Post")'> 
                                 <input type="hidden" name="id" value="@publicacion.IdPublicacion" />
                                 <button type="submit">
                                     <img src="~/imagenes/tacho.png" alt="eliminar">

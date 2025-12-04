@@ -164,6 +164,7 @@ namespace ReEstrena.Controllers
         {
             return RedirectToAction("verPublicacion", "Post", new { idPublicacion = idPublicacion });
         }
+        [HttpPost]
         public IActionResult eliminarDeLista(int idPublicacion, int idLista)
         {
             BD.eliminarDeLista(idPublicacion, idLista);

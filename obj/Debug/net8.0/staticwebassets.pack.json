@@ -1,159 +1,175 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\fonts\\Crackajack.woff2",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\fonts\\Crackajack.woff2",
       "PackagePath": "staticwebassets\\fonts\\Crackajack.woff2"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\botas.webp",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\ailu.webp",
+      "PackagePath": "staticwebassets\\imagenes\\ailu.webp"
+    },
+    {
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\botas.webp",
       "PackagePath": "staticwebassets\\imagenes\\botas.webp"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\campana.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\campana.png",
       "PackagePath": "staticwebassets\\imagenes\\campana.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\campera.webp",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\campera.webp",
       "PackagePath": "staticwebassets\\imagenes\\campera.webp"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\carrito.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\carrito.png",
       "PackagePath": "staticwebassets\\imagenes\\carrito.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\cartera.webp",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\cartera.webp",
       "PackagePath": "staticwebassets\\imagenes\\cartera.webp"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\collar.webp",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\collar.webp",
       "PackagePath": "staticwebassets\\imagenes\\collar.webp"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\config.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\config.png",
       "PackagePath": "staticwebassets\\imagenes\\config.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\corazon.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\corazon.png",
       "PackagePath": "staticwebassets\\imagenes\\corazon.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\etiquetas.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\etiquetas.png",
       "PackagePath": "staticwebassets\\imagenes\\etiquetas.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\iniciarSesion.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\iniciarSesion.png",
       "PackagePath": "staticwebassets\\imagenes\\iniciarSesion.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\lapiz.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\lapiz.png",
       "PackagePath": "staticwebassets\\imagenes\\lapiz.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\likeado.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\likeado.png",
       "PackagePath": "staticwebassets\\imagenes\\likeado.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\logo.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\logo.png",
       "PackagePath": "staticwebassets\\imagenes\\logo.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\lupa.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\lupa.png",
       "PackagePath": "staticwebassets\\imagenes\\lupa.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\mas.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\mas.png",
       "PackagePath": "staticwebassets\\imagenes\\mas.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\mensaje.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\mensaje.png",
       "PackagePath": "staticwebassets\\imagenes\\mensaje.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\minifalda.webp",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\minifalda.webp",
       "PackagePath": "staticwebassets\\imagenes\\minifalda.webp"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\perfil.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\perfil.png",
       "PackagePath": "staticwebassets\\imagenes\\perfil.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\registrarse.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\registrarse.png",
       "PackagePath": "staticwebassets\\imagenes\\registrarse.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\remera.webp",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\remera.webp",
       "PackagePath": "staticwebassets\\imagenes\\remera.webp"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\ropa.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\ropa.png",
       "PackagePath": "staticwebassets\\imagenes\\ropa.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\tacho.png",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\sofi.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\sofi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\tacho.png",
       "PackagePath": "staticwebassets\\imagenes\\tacho.png"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\imagenes\\zapatos.webp",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\valu.webp",
+      "PackagePath": "staticwebassets\\imagenes\\valu.webp"
+    },
+    {
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\vicky.webp",
+      "PackagePath": "staticwebassets\\imagenes\\vicky.webp"
+    },
+    {
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\imagenes\\zapatos.webp",
       "PackagePath": "staticwebassets\\imagenes\\zapatos.webp"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\49439065\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\48793603\\Re-Estrena\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
